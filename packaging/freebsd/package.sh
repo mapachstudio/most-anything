@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Build and package Craft Anything for FreeBSD:
+# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+# Build and package Most Anything for FreeBSD:
 #
 #   $DIST/craft-anything-<version>-freebsd-x86_64.tar.gz   a /usr/local-style tree:
 #       craft-anything-<version>-freebsd-x86_64/{bin, share/applications, share/icons,
@@ -17,7 +18,7 @@ set -euo pipefail
 # shellcheck source=../env.sh
 . "$(dirname "${BASH_SOURCE[0]}")/../env.sh"
 LINUX="$ROOT/packaging/linux"
-APP_ID=ai.storyteller.craft-anything
+APP_ID=com.grupomostmexico.mostanything
 
 SKIP_BUILD=0
 DRY_RUN=0
@@ -60,7 +61,7 @@ if [ "$DRY_RUN" = 0 ] && [ "$(uname -s)" != FreeBSD ]; then
 fi
 BASENAME="craft-anything-$VERSION-freebsd-$ARCH"
 
-echo "==> Craft Anything $VERSION for FreeBSD $ARCH"
+echo "==> Most Anything $VERSION for FreeBSD $ARCH"
 
 # The release VM has 12 GB; full parallelism on the biggest crates runs it out of memory.
 export CARGO_BUILD_JOBS="${CARGO_BUILD_JOBS:-4}"
@@ -96,7 +97,7 @@ for b in "${BINS[@]}"; do
 done
 # The desktop entry, metainfo and icons are the freedesktop files Linux ships.
 install -m 644 "$LINUX/$APP_ID.desktop" "$STAGE/share/applications/$APP_ID.desktop"
-sed -e "s/@VERSION@/$VERSION/g" -e "s/@DATE@/$CRAFT_ANYTHING_BUILD_DATE/g" \
+sed -e "s/@VERSION@/$VERSION/g" -e "s/@DATE@/$MOST_ANYTHING_BUILD_DATE/g" \
   "$LINUX/$APP_ID.metainfo.xml.in" >"$STAGE/share/metainfo/$APP_ID.metainfo.xml"
 cp -R "$ROOT/assets/app-icon/hicolor" "$STAGE/share/icons/"
 copy_docs "$STAGE/share/doc/craft-anything"

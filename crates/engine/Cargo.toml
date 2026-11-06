@@ -1,6 +1,7 @@
+# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 [package]
 name = "craft-anything-engine"
-description = "Craft Anything engine: session, projects, the tool registry every surface dispatches through, settings and jobs"
+description = "Most Anything engine: session, projects, the tool registry every surface dispatches through, settings and jobs"
 version.workspace = true
 edition.workspace = true
 license.workspace = true

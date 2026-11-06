@@ -1,3 +1,4 @@
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # Roadmap
 
 The shared plan for reaching the product described in the README, for people and agents alike.
@@ -494,7 +495,7 @@ Owner: open · Status: in progress
       and model-with-variant command forms, and share transport selection between preflight and runs.
 - [x] Rebase after #567 and translate the ten model-selection strings and two agent tool titles
       in the Russian catalogue, restoring coverage and catalogue key parity.
-- [ ] Supply and verify the run's Craft Anything MCP server in native OpenCode before enabling
+- [ ] Supply and verify the run's Most Anything MCP server in native OpenCode before enabling
       explicit model/thinking execution (currently refused for chat and builds, locally and over SSH).
 - [ ] Verify OpenCode model discovery and an explicit thinking selection on a live SSH host,
       and complete a live generation with the selected model and variant (local catalogue verified).

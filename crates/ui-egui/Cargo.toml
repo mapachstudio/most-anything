@@ -1,6 +1,7 @@
+# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 [package]
 name = "craft-anything-ui-egui"
-description = "The Craft Anything egui interface: Beginner and Experienced modes"
+description = "The Most Anything egui interface: Beginner and Experienced modes"
 version.workspace = true
 edition.workspace = true
 license.workspace = true

@@ -1,4 +1,5 @@
-//! Evidence: the one result type every Craft Anything tool returns.
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+//! Evidence: the one result type every Most Anything tool returns.
 //!
 //! An [`Evidence`] record says what was looked at (the subject), what was asked (operation and
 //! params), what came back (the result), how sure we are ([`Confidence`]), on whose authority
@@ -76,7 +77,7 @@ pub struct Subject {
 /// The conditions an observation was made under.
 #[derive(Debug, Clone, Default, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Environment {
-    /// True when only Craft Anything's own engines ran (no Ghidra or other third-party decompiler).
+    /// True when only Most Anything's own engines ran (no Ghidra or other third-party decompiler).
     pub clean_room: bool,
     /// Engine that produced the result: `builtin`, `ghidra`, `jadx`, `adb`, `cdp`, …
     pub engine: String,

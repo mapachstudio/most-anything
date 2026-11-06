@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Sample data for the offscreen snapshot and UI tests: a tiny fake program, a few evidence records
 //! and a conversation. Nothing here touches the disk or the network.
 
@@ -216,7 +217,7 @@ pub fn detected() -> Vec<Detected> {
 fn workspace(slug: &str, name: &str, request: &str, target: TargetRef, status: Status, age_min: u64) -> Workspace {
     let at = craft_anything_engine::inbox::now_ms().saturating_sub(age_min * 60_000);
     Workspace {
-        root: PathBuf::from(format!("/demo/Craft Anything/{slug}")),
+        root: PathBuf::from(format!("/demo/Most Anything/{slug}")),
         manifest: Manifest {
             version: craft_anything_engine::workspace::MANIFEST_VERSION,
             name: name.into(),

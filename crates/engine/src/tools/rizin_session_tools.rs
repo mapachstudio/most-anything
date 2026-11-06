@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Rizin debug sessions, through [`craft_anything_engines::rizin`]: each session is one owned
 //! `rizin -d` process that either started a program (stopped before its first instruction) or
 //! attached to a running one. Any Rizin command works in it (`dr`, `db`, `dc`, `ds`, `pd`, `px`…),
@@ -331,11 +332,11 @@ mod tests {
         assert!(e.call("native_rizin_session_end", json!({"session_id": "nope"}), CallOptions::new(Caller::Mcp)).is_err());
     }
 
-    /// A real round trip, only where `CRAFT_ANYTHING_TEST_RIZIN` names a Rizin: start this test
+    /// A real round trip, only where `MOST_ANYTHING_TEST_RIZIN` names a Rizin: start this test
     /// program under the debugger (it never runs past its entry), read registers, close.
     #[test]
     fn live_session_with_rizin() {
-        let Some(rizin) = std::env::var_os("CRAFT_ANYTHING_TEST_RIZIN").map(PathBuf::from) else { return };
+        let Some(rizin) = std::env::var_os("MOST_ANYTHING_TEST_RIZIN").map(PathBuf::from) else { return };
         let mut s = crate::testing::session();
         s.settings.engines.tools.rizin = Some(rizin);
         let e = Engine::new(s);

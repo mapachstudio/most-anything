@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! What the AI has used: each project's building time, tokens and reported cost (saved by its
 //! runs in `usage.json`, so they add up across restarts), and the session's total since the app
 //! opened. An API key's cost comes from what it was charged; Claude Code gives its own estimate
@@ -107,7 +108,7 @@ pub fn duration_words(d: Duration) -> String {
 }
 
 /// The tooltip for usage: what each number is, and what it counts (`counts`, e.g. "Every build
-/// of this project." or "Since Craft Anything opened.").
+/// of this project." or "Since Most Anything opened.").
 pub fn explain(u: &ProjectUsage, counts: &str) -> String {
     let mut lines = vec![trf("{in} in, {out} out.", &[("in", &tokens_words(u.input_tokens)), ("out", &tokens_words(u.output_tokens))])];
     if u.priced && u.estimated_usd() >= NOT_MONEY {

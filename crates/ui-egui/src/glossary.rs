@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! A small built-in glossary: plain-English meanings for technical words, shown on hover in
 //! Beginner mode. Our own wording.
 
@@ -35,9 +36,9 @@ pub static GLOSSARY: &[(&str, &str)] = &[
     ("ghidra", "A free reverse-engineering tool from the NSA. Deep mode uses it for extra detail; Clean room mode never does."),
     (
         "clean room",
-        "Nothing inside the original is read: not its code, files or page source. Craft Anything works from what you can see: pictures, the page as a visitor sees it, and watching it run.",
+        "Nothing inside the original is read: not its code, files or page source. Most Anything works from what you can see: pictures, the page as a visitor sees it, and watching it run.",
     ),
-    ("deep mode", "Craft Anything reads the original's code, files and page source with every tool it has, and with Ghidra when it's installed."),
+    ("deep mode", "Most Anything reads the original's code, files and page source with every tool it has, and with Ghidra when it's installed."),
     ("hex", "A way of writing bytes as two-character codes (00 to FF). The rawest view of a file."),
     ("byte", "The smallest unit of data in a file: a number from 0 to 255."),
     ("bytes", "The smallest units of data in a file: numbers from 0 to 255."),

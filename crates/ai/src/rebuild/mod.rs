@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! The rebuild workflow: study a target, have a coding agent build it in the workspace's `app/`
 //! folder, check the build against the target, and refine — asking the person when needed.
 //!
@@ -576,7 +577,7 @@ impl Worker {
             logs: Some(crate::failure_log::dir_in(&config_dir)),
             resume: ws.manifest.agent_session.clone(),
             preamble: Some(
-                "You work inside Craft Anything for a person who doesn't code. The message below is your task.
+                "You work inside Most Anything for a person who doesn't code. The message below is your task.
 
 "
                 .into(),
@@ -1220,7 +1221,7 @@ fn kept_session(ws: &Workspace) -> Option<String> {
 }
 
 /// What an API-backend builder is told first: its tools differ from an agent app's.
-const API_BUILDER: &str = "Your tools: build_files_list, build_file_read, build_file_write and build_file_edit for the project's files (paths relative to the project folder, e.g. app/src/main.rs), and build_command_run for commands, which run in app/ (never start dev servers or watchers). Where the steps below mention Read, Write, Edit or Bash, use these. For the checklist step use build_checklist (the same shape as TodoWrite: todos with content, activeForm and status) and call it again as you go. You can't look at pictures: use capture/README.md, capture/capture.json and the evidence instead. Ask the person with core_person_ask only when a choice really changes the result. Other Craft Anything tools are available too; enable a toolset with enable_toolset when you need it. rebuild_check isn't available in this loop: Craft Anything checks your build after each turn instead.";
+const API_BUILDER: &str = "Your tools: build_files_list, build_file_read, build_file_write and build_file_edit for the project's files (paths relative to the project folder, e.g. app/src/main.rs), and build_command_run for commands, which run in app/ (never start dev servers or watchers). Where the steps below mention Read, Write, Edit or Bash, use these. For the checklist step use build_checklist (the same shape as TodoWrite: todos with content, activeForm and status) and call it again as you go. You can't look at pictures: use capture/README.md, capture/capture.json and the evidence instead. Ask the person with core_person_ask only when a choice really changes the result. Other Most Anything tools are available too; enable a toolset with enable_toolset when you need it. rebuild_check isn't available in this loop: Most Anything checks your build after each turn instead.";
 
 /// Added to a refinement for a builder that can check its own work.
 const CHECK_BEFORE_REPLYING: &str = " Before you reply, check your build again with rebuild_check and fix what it still lists.";

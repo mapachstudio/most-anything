@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Android apps with built-in parsers: the APK (manifest from binary XML, permissions,
 //! components, signing certificates, DEX files, native libraries), DEX classes and methods with a
 //! smali-like bytecode listing, cross-DEX references, compiled resources per locale, and whether
@@ -106,7 +107,7 @@ pub fn specs() -> Vec<ToolSpec> {
         spec(
             "engines_apktool_check",
             "Is Apktool available?",
-            "Report whether Apktool is installed (Settings path, managed engine store, then PATH) and its version. Craft Anything's built-in resource and manifest decoders need nothing installed; Apktool is optional.",
+            "Report whether Apktool is installed (Settings path, managed engine store, then PATH) and its version. Most Anything's built-in resource and manifest decoders need nothing installed; Apktool is optional.",
             "Check whether the optional Apktool helper is installed.",
             Android,
             e.union(Effects::LAUNCHES_PROCESS),
@@ -1236,7 +1237,7 @@ fn engines_apktool_check(ctx: &mut Ctx<'_>, params: Value) -> Result<ToolOutput,
     let summary = match (&found, &version) {
         (Some(p), Some(v)) => format!("Apktool {v} is available at {}. The built-in decoder is used by default and needs nothing installed.", p.display()),
         (Some(p), None) => format!("Apktool was found at {} but did not report a version. The built-in decoder works without it.", p.display()),
-        (None, _) => "Apktool is not installed. That's fine: android_resources_read and android_package_show use Craft Anything's built-in decoders.".into(),
+        (None, _) => "Apktool is not installed. That's fine: android_resources_read and android_package_show use Most Anything's built-in decoders.".into(),
     };
     let b = builder(ctx, "engines_apktool_check", Subject { kind: "engine".into(), sha256: None, name: Some("apktool".into()) }, json!({}))
         .result(json!({

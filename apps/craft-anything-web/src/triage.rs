@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! What a dropped file is: native triage for programs, a signature check for everything else.
 //!
 //! Pure and synchronous (no clock, threads or file system), so it is safe in the browser.
@@ -67,7 +68,7 @@ pub fn look(file_name: &str, bytes: &[u8]) -> Look {
 
 /// A plain description of a sniffed kind, and where to look next.
 fn describe(kind: &str) -> (&'static str, &'static str) {
-    const DESKTOP: &str = "Open it in the Craft Anything desktop app to look inside.";
+    const DESKTOP: &str = "Open it in the Most Anything desktop app to look inside.";
     match kind {
         "wasm" => ("a WebAssembly module (code that runs in browsers and other hosts)", DESKTOP),
         "dex" => ("Android app code (a DEX file)", DESKTOP),

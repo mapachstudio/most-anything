@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Finding Ghidra and the Java it runs on, and getting both for the person once they agree:
 //! pinned releases, each checked against its publisher's SHA-256 before anything is unpacked.
 
@@ -7,7 +8,7 @@ use std::path::{Path, PathBuf};
 
 /// Ghidra's engine id, as the engine table, Settings and every listing name it.
 pub const ID: &str = "ghidra";
-/// The Ghidra release Craft Anything installs (it needs Java 21).
+/// The Ghidra release Most Anything installs (it needs Java 21).
 pub const VERSION: &str = "12.1.4";
 /// What the person downloads, for the question we ask first (Ghidra 543 MB + Java 196 MB).
 pub const DOWNLOAD_MB: u32 = 740;

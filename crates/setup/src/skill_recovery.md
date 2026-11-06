@@ -1,3 +1,4 @@
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 <!-- craft-anything skill reference -->
 # Connection and recovery
 
@@ -12,7 +13,7 @@
 Setup only ever adds or updates the `craft-anything` entry. It keeps comments and every other server,
 writes a `.craft-anything.backup` copy of the original file first (never overwriting an older backup),
 and puts the original back if the result doesn't read back correctly. `craft-anything-cli uninstall`
-removes only entries and skill files that Craft Anything itself created.
+removes only entries and skill files that Most Anything itself created.
 
 Command-line fallback when no app is connected: every tool is a subcommand, for example
 `craft-anything-cli triage /path/to/program` or

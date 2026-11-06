@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! The Project screen: one thing being made. Left: what it is, the four steps, checks and
 //! actions (preview, folder, details). Right: a plain-words activity feed with question and
 //! approval cards, and a box to ask for changes. Technical detail (each tool the agent used)
@@ -1489,7 +1490,7 @@ fn continue_card(app: &mut CraftApp, ui: &mut Ui, ws: &Workspace) {
     let (title, body) = if interrupted(app, ws) {
         (
             "This build stopped part-way",
-            "Craft Anything or the computer closed while it was working. Everything so far is kept; Continue picks up where it stopped.",
+            "Most Anything or the computer closed while it was working. Everything so far is kept; Continue picks up where it stopped.",
         )
     } else {
         ("Paused", "Everything so far is kept. Continue picks up where it stopped.")

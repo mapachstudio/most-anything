@@ -1,13 +1,14 @@
-# Using Codex with Craft Anything
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
+# Using Codex with Most Anything
 
-Craft Anything reaches Codex in two ways, and both have to get past Codex's own tool approval.
+Most Anything reaches Codex in two ways, and both have to get past Codex's own tool approval.
 
 ## Why a tool can be refused
 
 `codex exec` is non-interactive: it has no one to ask, so its approval policy is `never`. A tool
 that an MCP server doesn't mark read-only (such as `rebuild_start`, which runs a coding agent) is
 refused before our server sees the call, with `requires approval, but approval policy is never`.
-Codex's own settings decide this; Craft Anything's consent is a second, separate check.
+Codex's own settings decide this; Most Anything's consent is a second, separate check.
 
 ## What we set
 
@@ -15,7 +16,7 @@ Only tools that ask the person themselves are approved on Codex's side
 (`AGENT_APP_PREAPPROVED_TOOLS` in the engine, today just `rebuild_start`; a test checks each one
 asks for consent). Every other tool keeps whatever approval policy you set in Codex.
 
-- **Connecting Codex to Craft Anything** (`craft-anything-cli setup --client codex --yes`, or the
+- **Connecting Codex to Most Anything** (`craft-anything-cli setup --client codex --yes`, or the
   Connect screen) writes the entry in `~/.codex/config.toml` (`$CODEX_HOME/config.toml` if set):
 
   ```toml
@@ -33,13 +34,13 @@ asks for consent). Every other tool keeps whatever approval policy you set in Co
   `craft-anything-cli doctor --client codex` reports an entry without the approval as "a different
   copy or shape of the command"; running setup again fixes it.
 - **Building with Codex from the app** starts `codex exec` with the same setting on its `-c`
-  flags, so nothing in your config is needed. Chats and builds also start the Craft Anything MCP
+  flags, so nothing in your config is needed. Chats and builds also start the Most Anything MCP
   server with `--all-tools`: Codex doesn't refresh its callable tool list after `enable_toolset`,
   so every tool permitted by the current mode is listed from startup. Clean room restrictions still apply.
 
 ## Who still asks
 
-Approving `rebuild_start` in Codex doesn't remove Craft Anything's own consent: it runs a coding
+Approving `rebuild_start` in Codex doesn't remove Most Anything's own consent: it runs a coding
 agent, so our server asks before it runs. Who can answer depends on how the server was started:
 
 - **Builds started from the app** run the server with the project's inbox, so the person answers

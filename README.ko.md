@@ -1,3 +1,4 @@
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 <p align="center">
   <a href="https://getartcraft.com/">
     <picture>
@@ -8,10 +9,10 @@
 </p>
 
 <p align="center">
-  <img src="assets/app-icon/hicolor/256x256/apps/ai.storyteller.craft-anything.png" width="128" height="128" alt="Craft Anything 아이콘: 파란 타일 위에 새겨진 까마귀">
+  <img src="assets/app-icon/hicolor/256x256/apps/com.grupomostmexico.mostanything.png" width="128" height="128" alt="Most Anything 아이콘: 파란 타일 위에 새겨진 까마귀">
 </p>
 
-<h1 align="center">Craft Anything</h1>
+<h1 align="center">Most Anything</h1>
 
 <p align="center">
   <a href="README.md">English</a> · <a href="README.ja.md">日本語</a> · <a href="README.zh.md">简体中文</a> · <b>한국어</b>
@@ -35,7 +36,7 @@
 </p>
 
 <p align="center">
-  <a href="#downloads"><b>Craft Anything 다운로드</b></a> ·
+  <a href="#downloads"><b>Most Anything 다운로드</b></a> ·
   <a href="https://getartcraft.com/">ArtCraft</a> ·
   <a href="https://getartcraft.com/apps">모든 Crafting Apps</a>
 </p>
@@ -43,7 +44,7 @@
 <br>
 
 <p align="center">
-  <img src="docs/images/project-website.png" alt="Craft Anything의 웹사이트 프로젝트: 검사는 아직 맞지 않는 부분과 각 페이지가 얼마나 비슷한지 보여 주고, 빌더는 자기 버전이 준비됐다고 말하며, 승인 카드는 명령을 실행하기 전에 묻고, 계획은 네 단계 중 두 단계가 끝났음을 보여 줌" width="100%">
+  <img src="docs/images/project-website.png" alt="Most Anything의 웹사이트 프로젝트: 검사는 아직 맞지 않는 부분과 각 페이지가 얼마나 비슷한지 보여 주고, 빌더는 자기 버전이 준비됐다고 말하며, 승인 카드는 명령을 실행하기 전에 묻고, 계획은 네 단계 중 두 단계가 끝났음을 보여 줌" width="100%">
   <br>
   <sub>웹사이트 프로젝트: 각 검사는 빌드가 원본과 얼마나 비슷한지 보여 주고, 규칙을 벗어나는 작업은 직접 승인하며, 계획에서는 남은 일을 확인할 수 있습니다.</sub>
 </p>
@@ -92,7 +93,7 @@
 
 ## <a id="how-it-works"></a>작동 방식
 
-Craft Anything에서 대상을 지정하고 원하는 것을 말한 뒤 Start를 누르세요. 네 단계로 진행하며,
+Most Anything에서 대상을 지정하고 원하는 것을 말한 뒤 Start를 누르세요. 네 단계로 진행하며,
 결정이 필요할 때는 알기 쉬운 말로 직접 물어봅니다:
 
 1. **Study:** 원본을 살펴봅니다. 화면 너비별 페이지, 코드, 파일, 실행 방식을 확인합니다.
@@ -126,7 +127,7 @@ Craft Anything에서 대상을 지정하고 원하는 것을 말한 뒤 Start를
 
 ## <a id="clean-room-or-deep"></a>Clean room 또는 Deep
 
-- **Clean room**(기본값): 코드, 파일, 페이지 소스 등 원본 내부는 일절 읽지 않습니다. Craft Anything은
+- **Clean room**(기본값): 코드, 파일, 페이지 소스 등 원본 내부는 일절 읽지 않습니다. Most Anything은
   오직 눈에 보이는 것만으로 작업합니다. 사용자가 추가한 이미지, 방문자가 보는 웹사이트(스크린샷, 보이는 텍스트,
   측정한 레이아웃, 색상, 글꼴, 간격, 열어 본 메뉴), 그리고 허용한 경우 캡처한 앱 화면이 여기에 해당합니다.
   내부를 들여다보는 도구는 거부되며, Deep 모드를 켜는 방법을 알려 줍니다.
@@ -144,7 +145,7 @@ Craft Anything에서 대상을 지정하고 원하는 것을 말한 뒤 Start를
 
 ## <a id="ai"></a>AI
 
-빌드하려면 컴퓨터에 코딩 에이전트가 있어야 합니다. **Claude Code**를 먼저 지원합니다. Craft Anything은 설치된 순정 `claude` 프로그램을 변조 없이 그대로 실행하며, 사용자의 기존 로그인을 사용합니다. Craft Anything은 계정을 열람하거나 다루지 않습니다. 이 사용에는 본인이 Anthropic과 맺은 약관이 적용됩니다. 방법과 이유는 [docs/claude-code.md](docs/claude-code.md)를 보세요. Codex 어댑터도 있지만 실제 설치 환경에서는 아직 검증되지 않았습니다. 질문과 분석에는 Anthropic, OpenAI, OpenRouter, 그리고 로컬 OpenAI 호환 서버를 사용할 수 있습니다(Settings → AI).
+빌드하려면 컴퓨터에 코딩 에이전트가 있어야 합니다. **Claude Code**를 먼저 지원합니다. Most Anything은 설치된 순정 `claude` 프로그램을 변조 없이 그대로 실행하며, 사용자의 기존 로그인을 사용합니다. Most Anything은 계정을 열람하거나 다루지 않습니다. 이 사용에는 본인이 Anthropic과 맺은 약관이 적용됩니다. 방법과 이유는 [docs/claude-code.md](docs/claude-code.md)를 보세요. Codex 어댑터도 있지만 실제 설치 환경에서는 아직 검증되지 않았습니다. 질문과 분석에는 Anthropic, OpenAI, OpenRouter, 그리고 로컬 OpenAI 호환 서버를 사용할 수 있습니다(Settings → AI).
 
 ## <a id="built-for-agents"></a>에이전트를 위한 설계
 
@@ -156,7 +157,7 @@ craft-anything-cli mcp                                        # serve them to an
 craft-anything-cli rebuild https://example.com "Recreate this website"
 ```
 
-결과는 신뢰도, 범위, 한계가 적힌 근거 기록입니다. 큰 결과는 요약을 먼저 보여 주고, `core_evidence_browse`로 나눠 볼 수 있습니다. `craft-anything-cli setup`은 Craft Anything을 코딩 에이전트 앱에 연결합니다.
+결과는 신뢰도, 범위, 한계가 적힌 근거 기록입니다. 큰 결과는 요약을 먼저 보여 주고, `core_evidence_browse`로 나눠 볼 수 있습니다. `craft-anything-cli setup`은 Most Anything을 코딩 에이전트 앱에 연결합니다.
 
 ## <a id="under-the-hood"></a>내부 구조
 
@@ -188,14 +189,14 @@ craft-anything-cli rebuild https://example.com "Make the header blue" --continue
 craft-anything-cli rebuild - "Add a contact form" --project-folder "<your folder>" --existing edit
 ```
 
-새 프로젝트는 `Documents/Craft Anything`에 저장됩니다(Settings → General에서 바꿀 수 있습니다). 각 프로젝트 폴더에는 `craft.json`(요청, 대상, 상태, 기록), `capture/`(대상에서 기록한 것), `app/`(생성된 프로젝트), `checks/`(원본과의 각 비교), `investigation.cany/`(근거), `inbox/`(미답변 질문)가 들어 있습니다.
+새 프로젝트는 `Documents/Most Anything`에 저장됩니다(Settings → General에서 바꿀 수 있습니다). 각 프로젝트 폴더에는 `craft.json`(요청, 대상, 상태, 기록), `capture/`(대상에서 기록한 것), `app/`(생성된 프로젝트), `checks/`(원본과의 각 비교), `investigation.cany/`(근거), `inbox/`(미답변 질문)가 들어 있습니다.
 
 직접 고른 폴더에서 프로젝트를 시작할 수도 있습니다(Start 아래의 "Choose a folder…" 또는 `--project-folder`). 폴더에 이미 파일이 있다면 그 파일이 무엇인지 지정하면 됩니다. 빌더가 그 자리에서 바로 수정할 앱 자체인지, 아니면 시작점으로 삼을 참고 자료(이 경우 앱은 그 옆 `app/`에 빌드됨)인지 고를 수 있습니다(Settings → General에서 선택을 기억하게 할 수 있습니다). Settings → General에는 다른 폴더의 프로젝트 목록도 함께 표시되며, 목록에서 제거해도 목록에서만 빠질 뿐 실제 파일은 지워지지 않습니다.
 
 ## <a id="status"></a>현재 상태
 
 > [!IMPORTANT]
-> **현재 상태:** Craft Anything은 Early Alpha 단계입니다. 지금 되는 것, 일부만 되는 것, 다음 계획은 다음과 같습니다:
+> **현재 상태:** Most Anything은 Early Alpha 단계입니다. 지금 되는 것, 일부만 되는 것, 다음 계획은 다음과 같습니다:
 >
 > - **지금 되는 것:** 데스크톱 앱(Simple 및 Advanced), CLI, MCP 서버. Claude Code를 빌더로 쓰는 웹사이트, 앱, 게임의 Study → Build → Check → Refine 워크플로. 세 가지 화면 너비의 웹사이트 검사. Unity, Unreal 또는 Godot 게임 재구현. Ghidra를 쓰는 Deep 모드. 이미지 및 3D 모델 생성(선택 사항, 본인의 fal.ai 키 사용). 플러그인(MCP 서버, 그리고 `wasm-plugins` 옵션으로 빌드할 때 WASM 컴포넌트).
 > - **부분적으로 됨:** API 키와 다른 코딩 에이전트로 빌드(구현은 되었지만 실제 실행은 아직 안 함), 앱과 게임의 동작 검사, 모의 대상(stand-in)으로만 테스트된 일부 엔진 도구.
@@ -203,7 +204,7 @@ craft-anything-cli rebuild - "Add a contact form" --project-folder "<your folder
 >
 > [docs/STATUS.md](docs/STATUS.md)에 자세한 내용과 각 부분을 확인한 방법이, [docs/tool-status.md](docs/tool-status.md)에 도구별 점검표가, [docs/ROADMAP.md](docs/ROADMAP.md)에 항목별 계획이 있습니다. 이슈를 남기거나, [디스코드](https://discord.gg/artcraft)에서 고장 난 부분을 알려 주세요.
 
-**책임 있는 사용.** Craft Anything은 본인이 소유하거나 살펴볼 권한이 있는 소프트웨어에만 사용하세요. DRM, 로그인, 안티치트를 절대 우회하지 않습니다. 재구현은 근거를 바탕으로 레이아웃, 스타일, 동작을 재현하며, 에이전트는 본인이 소유하거나 허가받았음을 확인하지 않는 한 로고, 사진, 텍스트를 복사하지 않도록 지시받습니다.
+**책임 있는 사용.** Most Anything은 본인이 소유하거나 살펴볼 권한이 있는 소프트웨어에만 사용하세요. DRM, 로그인, 안티치트를 절대 우회하지 않습니다. 재구현은 근거를 바탕으로 레이아웃, 스타일, 동작을 재현하며, 에이전트는 본인이 소유하거나 허가받았음을 확인하지 않는 한 로고, 사진, 텍스트를 복사하지 않도록 지시받습니다.
 
 ## <a id="downloads"></a>다운로드
 
@@ -286,7 +287,7 @@ RISC-V(riscv64): `craft-anything-<ver>-linux-riscv64.tar.gz`, tarball만 제공�
   <a href="https://discord.gg/artcraft"><b>discord.gg/artcraft</b></a> ·
   <a href="https://getartcraft.com/">getartcraft.com</a> ·
   <a href="https://getartcraft.com/apps">The Crafting Apps</a> ·
-  <a href="https://github.com/storytold/craft-anything">Craft Anything</a>
+  <a href="https://github.com/storytold/craft-anything">Most Anything</a>
 </p>
 
 ---
@@ -309,19 +310,19 @@ RISC-V(riscv64): `craft-anything-<ver>-linux-riscv64.tar.gz`, tarball만 제공�
 | <img src="https://raw.githubusercontent.com/storytold/cadcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.cadcraft.png" alt="" width="32" height="32">                         | **CADCraft**       | 컴퓨터 지원 설계(CAD)                                    | [GitHub](https://github.com/storytold/cadcraft)       | [웹사이트](https://getartcraft.com/apps/cadcraft)       |
 | <img src="https://raw.githubusercontent.com/storytold/gridcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.gridcraft.png" alt="" width="32" height="32">                       | **GridCraft**      | 스프레드시트와 데이터                                    | [GitHub](https://github.com/storytold/gridcraft)      | [웹사이트](https://getartcraft.com/apps/gridcraft)      |
 | <img src="https://raw.githubusercontent.com/storytold/texturecraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.texturecraft.png" alt="" width="32" height="32">                 | **TextureCraft**   | 3D 텍스처 페인팅                                         | [GitHub](https://github.com/storytold/texturecraft)   | [웹사이트](https://getartcraft.com/apps/texturecraft)   |
-| <img src="https://raw.githubusercontent.com/storytold/craft-anything/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.craft-anything.png" alt="" width="32" height="32">             | **Craft Anything** | 원하는 소프트웨어를 분석하고, 나만의 작품을 만들어 보세요 | [GitHub](https://github.com/storytold/craft-anything) | [웹사이트](https://getartcraft.com/apps/craft-anything) |
+| <img src="https://raw.githubusercontent.com/storytold/craft-anything/main/assets/app-icon/hicolor/64x64/apps/com.grupomostmexico.mostanything.png" alt="" width="32" height="32">             | **Most Anything** | 원하는 소프트웨어를 분석하고, 나만의 작품을 만들어 보세요 | [GitHub](https://github.com/storytold/craft-anything) | [웹사이트](https://getartcraft.com/apps/craft-anything) |
 | <img src="https://raw.githubusercontent.com/tangency-labs/solidcraft/main/assets/icons/app/linux/exports/hicolor/64x64/apps/io.tangencylabs.solidcraft.png" alt="" width="32" height="32"> | **SolidCraft**     | Tangency Labs의 파라메트릭 3D CAD(커뮤니티 앱)           | [GitHub](https://github.com/tangency-labs/solidcraft) |                                                         |
 
 ## <a id="license-and-credits"></a>라이선스와 크레딧
 
-Craft Anything은 [MIT](LICENSE-MIT) 또는 [Apache-2.0](LICENSE-APACHE) 듀얼 라이선스이며, 원하는 쪽을 선택할 수 있습니다.
-Copyright (c) 2026 ArtCraft Team and the Craft Anything contributors. 필수 고지는 [NOTICE](NOTICE)에 있습니다.
+Most Anything은 [MIT](LICENSE-MIT) 또는 [Apache-2.0](LICENSE-APACHE) 듀얼 라이선스이며, 원하는 쪽을 선택할 수 있습니다.
+Copyright (c) 2026 ArtCraft Team and the Craft Anything contributors; modificaciones Copyright (c) 2026 Grupo MOST. 필수 고지는 [NOTICE](NOTICE)에 있습니다.
 
 동봉된 폰트, 아이콘, 이미지 및 기타 에셋은 각자의 오픈 라이선스를 유지합니다. 각 항목의 작성자, 출처, 라이선스는 [ATTRIBUTION.md](ATTRIBUTION.md)에 나와 있습니다.
 
 스크린샷에 보이는 것은 그 용도로 만든 예시 프로젝트입니다: example.com, 뱀 게임, 작은 계산기 프로그램.
 
-[`docs/brand/`](docs/brand/)에 있는 ArtCraft 이름, 워드마크, 로고는 ArtCraft Team의 상표이며 이 라이선스의 적용을 받지 않습니다. 수정하지 않은 상태에서만, 이 저장소와 Craft Anything의 일부로서만 사용할 수 있으며, 이때 [`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt)를 따라야 합니다. 포크와 수정본은 이를 제거해야 합니다.
+[`docs/brand/`](docs/brand/)에 있는 ArtCraft 이름, 워드마크, 로고는 Grupo MOST의 상표이며 이 라이선스의 적용을 받지 않습니다. 수정하지 않은 상태에서만, 이 저장소와 Most Anything의 일부로서만 사용할 수 있으며, 이때 [`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt)를 따라야 합니다. 포크와 수정본은 이를 제거해야 합니다.
 
 <p align="center">
   <a href="https://getartcraft.com/"><img alt="ArtCraft" src="docs/brand/artcraft-mark.svg" width="28"></a><br>

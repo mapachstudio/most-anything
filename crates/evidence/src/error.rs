@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! The error contract shared by every tool, the CLI and the MCP server.
 
 use serde::{Deserialize, Serialize};
@@ -45,7 +46,7 @@ pub enum ErrorCode {
     ProgramFailed,
     /// The user (or project policy) declined consent for a tool that runs code or changes a device.
     ConsentRequired,
-    /// A bug in Craft Anything itself. Reported, never panicked.
+    /// A bug in Most Anything itself. Reported, never panicked.
     Internal,
 }
 

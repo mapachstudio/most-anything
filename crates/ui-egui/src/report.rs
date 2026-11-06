@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! A readable Markdown report of the conversation and the evidence behind it.
 
 use crate::TargetInfo;
@@ -88,7 +89,7 @@ pub fn markdown(chat: &[ChatItem], target: Option<&TargetInfo>, clean_room: bool
             evidence_md(&mut out, e);
         }
     }
-    let _ = writeln!(out, "\n---\nMade with Craft Anything {}.", env!("CARGO_PKG_VERSION"));
+    let _ = writeln!(out, "\n---\nMade with Most Anything {}.", env!("CARGO_PKG_VERSION"));
     out
 }
 

@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! OpenAI chat completions (and every OpenAI-compatible server: OpenRouter, Ollama, LM Studio,
 //! llama.cpp, vLLM…): streaming, function tools, and a ReAct text fallback for models without
 //! tool calling.
@@ -23,7 +24,7 @@ pub const GEMINI_DEFAULT_MODEL: &str = "gemini-3.8-flash";
 pub const GEMINI_MODELS: &[&str] = &[GEMINI_DEFAULT_MODEL, "gemini-4-argon"];
 /// Generic app identification for OpenRouter (no personal data).
 pub const APP_REFERER: &str = "https://github.com/storytold/craft-anything";
-pub const APP_TITLE: &str = "Craft Anything";
+pub const APP_TITLE: &str = "Most Anything";
 /// OpenCode Go (a subscription): an OpenAI-compatible base, the key from its console, and a session
 /// header the service asks every client to send so routing and prompt caching follow a conversation.
 pub const OPENCODE_GO_BASE: &str = "https://opencode.ai/inference/go/openai/v1";

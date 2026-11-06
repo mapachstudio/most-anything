@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Targets: what we're looking at, loaded once, identified by content hash.
 
 use craft_anything_evidence::{ErrorCode, Subject, ToolError, sha256_hex};
@@ -44,7 +45,7 @@ impl TargetContext {
             let target = Target::load(&self.path)?;
             if target.sha256 != self.sha256 {
                 return Err(ToolError::invalid("The shared target changed after it was opened.")
-                    .with_remediation("Reopen the target in Craft Anything, then start a new conversation."));
+                    .with_remediation("Reopen the target in Most Anything, then start a new conversation."));
             }
             target
         };

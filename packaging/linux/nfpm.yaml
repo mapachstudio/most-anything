@@ -1,7 +1,8 @@
+# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 # .deb and .rpm packages (nfpm: https://nfpm.goreleaser.com). Run by package.sh, which stages
 # the file tree, substitutes its path for ${STAGE} (nfpm doesn't expand env vars in `src`),
 # drops the lines marked `#cli` when the workspace has no apps/craft-anything-cli, and exports VERSION,
-# NFPM_ARCH and CRAFT_ANYTHING_MAINTAINER.
+# NFPM_ARCH and MOST_ANYTHING_MAINTAINER.
 #
 #   nfpm package -f packaging/linux/nfpm.yaml -p deb -t dist/release/
 name: craft-anything
@@ -13,8 +14,8 @@ version_schema: semver
 release: 1
 section: devel
 priority: optional
-maintainer: ${CRAFT_ANYTHING_MAINTAINER}
-vendor: Learning Machines LLC
+maintainer: ${MOST_ANYTHING_MAINTAINER}
+vendor: Grupo MOST
 homepage: https://getartcraft.com/apps/craft-anything
 license: MIT OR Apache-2.0
 description: |-

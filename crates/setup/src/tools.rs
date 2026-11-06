@@ -1,4 +1,5 @@
-//! Connecting Craft Anything to coding-agent apps, as tools (registered next to the engine's own
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+//! Connecting Most Anything to coding-agent apps, as tools (registered next to the engine's own
 //! through `Engine::shared`), so it can be done without the app: what would change, applying it,
 //! the health checks, and removing our entries again. Ids follow docs/tool-ids.md.
 
@@ -27,7 +28,7 @@ pub fn specs() -> Vec<ToolSpec> {
         spec(
             "setup_plan",
             "Plan connecting agent apps",
-            "What connecting Craft Anything to coding-agent apps (Claude Code, Codex, Cursor…) would change: each config file, the lines that change, and the skill files. Writes nothing.",
+            "What connecting Most Anything to coding-agent apps (Claude Code, Codex, Cursor…) would change: each config file, the lines that change, and the skill files. Writes nothing.",
             "Shows what connecting your agent apps would change.",
             Effects::READ_ONLY,
             schema_of::<SetupParams>,
@@ -36,8 +37,8 @@ pub fn specs() -> Vec<ToolSpec> {
         spec(
             "setup_apply",
             "Connect agent apps",
-            "Connect Craft Anything to coding-agent apps: register its MCP server in their config files (backing each up first) and install the skill. Changes other apps' files, so it asks first.",
-            "Connects your agent apps to Craft Anything.",
+            "Connect Most Anything to coding-agent apps: register its MCP server in their config files (backing each up first) and install the skill. Changes other apps' files, so it asks first.",
+            "Connects your agent apps to Most Anything.",
             changes_apps,
             schema_of::<SetupParams>,
             setup_apply,
@@ -54,7 +55,7 @@ pub fn specs() -> Vec<ToolSpec> {
         spec(
             "setup_uninstall",
             "Disconnect agent apps",
-            "Remove Craft Anything's entries and skill from every agent app's config. Changes other apps' files, so it asks first.",
+            "Remove Most Anything's entries and skill from every agent app's config. Changes other apps' files, so it asks first.",
             "Disconnects your agent apps.",
             changes_apps.union(Effects::MAY_DISCARD_DATA),
             schema_of::<NoParams>,

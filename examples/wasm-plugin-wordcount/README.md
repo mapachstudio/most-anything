@@ -1,6 +1,7 @@
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # Example WASM plugin: word count
 
-A Craft Anything plugin with one tool, `count_words`, written in Rust. It implements
+A Most Anything plugin with one tool, `count_words`, written in Rust. It implements
 `craft-anything:plugin/tools` from [`crates/engines/wit/plugin.wit`](../../crates/engines/wit/plugin.wit)
 and imports nothing, so it runs sandboxed: no files, network or environment.
 
@@ -18,7 +19,7 @@ what it exports.
 
 ## Use
 
-Craft Anything built with `--features wasm-plugins`, and in `config.toml`:
+Most Anything built with `--features wasm-plugins`, and in `config.toml`:
 
 ```toml
 [[plugins.wasm]]
@@ -32,6 +33,6 @@ Its tool is then `wordcount_count_words`, everywhere: the app, the CLI
 ## Check it
 
 ```sh
-CRAFT_ANYTHING_TEST_WASM_PLUGIN=/full/path/to/wordcount.wasm \
+MOST_ANYTHING_TEST_WASM_PLUGIN=/full/path/to/wordcount.wasm \
   cargo test -p craft-anything-engines --features wasm-plugins the_example_plugin
 ```

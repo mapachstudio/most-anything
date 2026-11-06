@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Projects (what the person is making) as tools, so every client — the app, the CLI, an MCP
 //! agent — can list them, read one with its conversation, and answer its questions without the
 //! app. Ids follow docs/tool-ids.md.
@@ -122,7 +123,7 @@ pub fn specs() -> Vec<ToolSpec> {
         ToolSpec {
             id: "project_delete",
             title: "Delete a project",
-            summary: "Delete a project: everything Craft Anything made in its folder (its records, checks, and what was built in app/). The person's own files stay (an app edited in place, the files a project started from). Can't be undone, so `confirm` must be true; stop a build first.",
+            summary: "Delete a project: everything Most Anything made in its folder (its records, checks, and what was built in app/). The person's own files stay (an app edited in place, the files a project started from). Can't be undone, so `confirm` must be true; stop a build first.",
             beginner: "Deletes something you made. Your own files are kept.",
             toolset: Toolset::Projects,
             effects: Effects::WRITES_FILESYSTEM,

@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Session lifecycle, evidence bundles and unknowns.
 
 use crate::project::write_atomic;
@@ -408,7 +409,7 @@ fn core_evidence_import(ctx: &mut Ctx<'_>, params: Value) -> Result<ToolOutput, 
     let bytes = std::fs::read(&path).map_err(|e| ToolError::io(path.display(), e))?;
     let v: Value = serde_json::from_slice(&bytes).map_err(|e| ToolError::invalid(format!("not a bundle: {e}")))?;
     if v.get("format").and_then(Value::as_str) != Some(BUNDLE_FORMAT) {
-        return Err(ToolError::invalid("not a Craft Anything evidence bundle"));
+        return Err(ToolError::invalid("not a Most Anything evidence bundle"));
     }
     let mut imported = 0usize;
     let mut rejected = Vec::new();

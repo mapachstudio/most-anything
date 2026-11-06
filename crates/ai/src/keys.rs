@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! API keys: the OS keychain first, then a clearly labelled owner-only fallback file, then the
 //! usual environment variables. Keys are never logged or written to project files.
 
@@ -9,13 +10,13 @@ use std::path::PathBuf;
 use std::time::Duration;
 
 /// Service name in the OS keychain.
-pub const SERVICE: &str = "ai.storyteller.craft-anything";
+pub const SERVICE: &str = "com.grupomostmexico.mostanything";
 /// Set to `1` to skip the OS keychain (tests, headless servers).
-pub const NO_KEYCHAIN_ENV: &str = "CRAFT_ANYTHING_NO_KEYCHAIN";
+pub const NO_KEYCHAIN_ENV: &str = "MOST_ANYTHING_NO_KEYCHAIN";
 /// The keychain can block (a locked desktop keyring); never wait longer than this.
 const KEYCHAIN_TIMEOUT: Duration = Duration::from_secs(3);
 
-const FILE_HEADER: &str = "# Craft Anything AI keys: FALLBACK STORE.\n# These keys are here because no OS keychain was available when they were saved.\n# This file is readable only by you (0600). Delete a line to forget a key.\n";
+const FILE_HEADER: &str = "# Most Anything AI keys: FALLBACK STORE.\n# These keys are here because no OS keychain was available when they were saved.\n# This file is readable only by you (0600). Delete a line to forget a key.\n";
 
 /// Where the fal.ai key for generated game assets is stored.
 pub const FAL_KEY: &str = "assets:fal";
@@ -255,7 +256,7 @@ mod tests {
         assert_eq!(s.set("Claude", "sk-test").unwrap(), "file");
         assert_eq!(s.get("Claude").as_deref(), Some("sk-test"));
         let text = std::fs::read_to_string(dir.path().join("ai-keys.toml")).unwrap();
-        assert!(text.starts_with("# Craft Anything AI keys: FALLBACK STORE."));
+        assert!(text.starts_with("# Most Anything AI keys: FALLBACK STORE."));
         #[cfg(unix)]
         {
             use std::os::unix::fs::PermissionsExt as _;

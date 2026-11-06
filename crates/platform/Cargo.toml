@@ -1,6 +1,7 @@
+# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 [package]
 name = "craft-anything-platform"
-description = "Native platform services for Craft Anything: owned processes, capture, sandbox, engine store"
+description = "Native platform services for Most Anything: owned processes, capture, sandbox, engine store"
 version.workspace = true
 edition.workspace = true
 license.workspace = true

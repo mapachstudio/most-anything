@@ -1,3 +1,4 @@
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 <p align="center">
   <a href="https://getartcraft.com/">
     <picture>
@@ -8,10 +9,10 @@
 </p>
 
 <p align="center">
-  <img src="assets/app-icon/hicolor/256x256/apps/ai.storyteller.craft-anything.png" width="128" height="128" alt="Craft Anything のアイコン: 青いタイルに刻まれたワタリガラス">
+  <img src="assets/app-icon/hicolor/256x256/apps/com.grupomostmexico.mostanything.png" width="128" height="128" alt="Most Anything のアイコン: 青いタイルに刻まれたワタリガラス">
 </p>
 
-<h1 align="center">Craft Anything</h1>
+<h1 align="center">Most Anything</h1>
 
 <p align="center">
   <a href="README.md">English</a> · <b>日本語</b> · <a href="README.zh.md">简体中文</a> · <a href="README.ko.md">한국어</a>
@@ -35,7 +36,7 @@
 </p>
 
 <p align="center">
-  <a href="#downloads"><b>Craft Anything をダウンロード</b></a> ·
+  <a href="#downloads"><b>Most Anything をダウンロード</b></a> ·
   <a href="https://getartcraft.com/">ArtCraft</a> ·
   <a href="https://getartcraft.com/apps">すべての Crafting Apps</a>
 </p>
@@ -43,7 +44,7 @@
 <br>
 
 <p align="center">
-  <img src="docs/images/project-website.png" alt="Craft Anything の Web サイトプロジェクト: チェックがまだ一致していない点と各ページの類似度を示し、ビルダーはビルドした版の準備ができたと告げ、承認カードはコマンド実行の前に確認を求め、プランは 4 ステップのうち 2 つが完了していることを示している" width="100%">
+  <img src="docs/images/project-website.png" alt="Most Anything の Web サイトプロジェクト: チェックがまだ一致していない点と各ページの類似度を示し、ビルダーはビルドした版の準備ができたと告げ、承認カードはコマンド実行の前に確認を求め、プランは 4 ステップのうち 2 つが完了していることを示している" width="100%">
   <br>
   <sub>Web サイトプロジェクト: 各チェックは、ビルドが元のソフトにどれくらい似ているかを示し、ルールから外れるものはあなたが承認し、プランは残りの作業を示します。</sub>
 </p>
@@ -94,7 +95,7 @@
 
 ## 仕組み
 
-Craft Anything で対象を指定し、欲しいものを伝えて「Start」を押すだけ。4 つのステップで進み、判断が必要なときは、わかりやすい言葉であなたに尋ねます:
+Most Anything で対象を指定し、欲しいものを伝えて「Start」を押すだけ。4 つのステップで進み、判断が必要なときは、わかりやすい言葉であなたに尋ねます:
 
 1. **調べる (Study):** 元のソフトを調査します。あらゆる幅で表示したページ、コード、ファイル、動作のしかたを調べます。
 2. **作る (Build):** コーディングエージェントが新しいプロジェクトを作ります。言語、フレームワーク、エンジンはリクエストで指定したもの (指定がなければ妥当な既定値)を使います。
@@ -125,7 +126,7 @@ Craft Anything で対象を指定し、欲しいものを伝えて「Start」を
 
 ## クリーンルーム(Clean room)かディープモード(Deep)
 
-- **クリーンルーム(Clean room)** (既定): 元のソフトの中身は一切読みません。コードも、ファイルも、ページのソースも読みません。Craft Anything は、あなたに見えるものだけから作業します。追加した画像、訪問者から見た Web サイト (スクリーンショット、見えているテキスト、計測したレイアウト、色、フォント、余白、開いたメニュー)、そして許可した場合はアプリのウィンドウの画像です。中を覗こうとするツールは拒否され、ディープモードの有効化方法を案内します。
+- **クリーンルーム(Clean room)** (既定): 元のソフトの中身は一切読みません。コードも、ファイルも、ページのソースも読みません。Most Anything は、あなたに見えるものだけから作業します。追加した画像、訪問者から見た Web サイト (スクリーンショット、見えているテキスト、計測したレイアウト、色、フォント、余白、開いたメニュー)、そして許可した場合はアプリのウィンドウの画像です。中を覗こうとするツールは拒否され、ディープモードの有効化方法を案内します。
 - **ディープモード(Deep)**: すべてのツールを使います。私的利用のためのモードです。プログラムのコードとファイルは内蔵エンジン (インストールされていれば Ghidra も)で読み、Web サイトの JavaScript を読み、そのスタートページを観察します。ビルダーもそれらすべてを使えます。
 
 タイトルバーまたは Settings で切り替えられます。`settings_set deep_mode true` で設定するか、CLI の 1 回限りなら `--deep` (または `--clean-room`)を使ってください。
@@ -140,7 +141,7 @@ Craft Anything で対象を指定し、欲しいものを伝えて「Start」を
 
 ## AI
 
-ビルドには、お使いのコンピュータ上のコーディングエージェントが必要です。まず **Claude Code** に対応しています。Craft Anything は、あなた自身の改変されていない `claude` プログラムを実行します。これはあなた自身のサインイン情報を使います。Craft Anything がアカウントを見たり扱ったりすることはありません。利用は Anthropic とのあなた自身の契約に従います。方法と理由は [docs/claude-code.md](docs/claude-code.md) を参照してください。Codex アダプターもありますが、実際のインストール環境ではまだ検証されていません。質問と分析には、Anthropic、OpenAI、OpenRouter、ローカルの OpenAI 互換サーバーが使えます (Settings → AI)。
+ビルドには、お使いのコンピュータ上のコーディングエージェントが必要です。まず **Claude Code** に対応しています。Most Anything は、あなた自身の改変されていない `claude` プログラムを実行します。これはあなた自身のサインイン情報を使います。Most Anything がアカウントを見たり扱ったりすることはありません。利用は Anthropic とのあなた自身の契約に従います。方法と理由は [docs/claude-code.md](docs/claude-code.md) を参照してください。Codex アダプターもありますが、実際のインストール環境ではまだ検証されていません。質問と分析には、Anthropic、OpenAI、OpenRouter、ローカルの OpenAI 互換サーバーが使えます (Settings → AI)。
 
 <a name="built-for-agents"></a>
 
@@ -154,7 +155,7 @@ craft-anything-cli mcp                                        # serve them to an
 craft-anything-cli rebuild https://example.com "Recreate this website"
 ```
 
-結果は、信頼度・カバレッジ・制限事項を備えたエビデンス記録です。大きな結果はまず要約として返り、`core_evidence_browse` でページ送りできます。`craft-anything-cli setup` は Craft Anything をコーディングエージェントのアプリにつなぎます。
+結果は、信頼度・カバレッジ・制限事項を備えたエビデンス記録です。大きな結果はまず要約として返り、`core_evidence_browse` でページ送りできます。`craft-anything-cli setup` は Most Anything をコーディングエージェントのアプリにつなぎます。
 
 <a name="under-the-hood"></a>
 
@@ -190,7 +191,7 @@ craft-anything-cli rebuild https://example.com "Make the header blue" --continue
 craft-anything-cli rebuild - "Add a contact form" --project-folder "<your folder>" --existing edit
 ```
 
-新しいプロジェクトは `Documents/Craft Anything` に作られます (Settings → General で変更できます)。各プロジェクトフォルダには `craft.json` (リクエスト、対象、状態、履歴)、`capture/` (対象から記録したもの)、`app/` (生成されたプロジェクト)、`checks/` (元のソフトとの比較ごとの結果)、`investigation.cany/` (エビデンス)、`inbox/` (未回答の質問)が入ります。
+新しいプロジェクトは `Documents/Most Anything` に作られます (Settings → General で変更できます)。各プロジェクトフォルダには `craft.json` (リクエスト、対象、状態、履歴)、`capture/` (対象から記録したもの)、`app/` (生成されたプロジェクト)、`checks/` (元のソフトとの比較ごとの結果)、`investigation.cany/` (エビデンス)、`inbox/` (未回答の質問)が入ります。
 
 プロジェクトは、選んだフォルダから始めることもできます (Start の下にある「Choose a folder…」、または `--project-folder`)。すでにファイルがある場合は、それが何なのかを答えます。アプリ本体 (ビルダーがその場で編集します)か、そこから始める素材 (アプリはその隣の `app/` に作られます)のどちらかです (Settings → General で答えを記憶できます)。Settings → General では、ほかのフォルダにあるプロジェクトも一覧できます。一覧から外すと、その一覧から消えるだけです。
 
@@ -199,7 +200,7 @@ craft-anything-cli rebuild - "Add a contact form" --project-folder "<your folder
 ## ステータス
 
 > [!IMPORTANT]
-> **ステータス:** Craft Anything はアルファ版の初期段階です。いま動くもの、一部だけのもの、この先の予定:
+> **ステータス:** Most Anything はアルファ版の初期段階です。いま動くもの、一部だけのもの、この先の予定:
 >
 > - **いま動くもの:** デスクトップアプリ (Simple と Advanced)、CLI、MCP サーバー。Claude Code
 > をビルダーとして、Web サイト・アプリ・ゲームを「調べる → 作る → 確認する → 磨く」の順に進める
@@ -216,7 +217,7 @@ craft-anything-cli rebuild - "Add a contact form" --project-folder "<your folder
 > [docs/ROADMAP.md](docs/ROADMAP.md) に計画の項目別一覧があります。issue を立てるか、
 > [Discord](https://discord.gg/artcraft) で壊れたところを教えてください。
 
-**責任ある使い方。** Craft Anything は、所有しているか、調べる許可があるソフトにだけ使ってください。DRM、ログイン、
+**責任ある使い方。** Most Anything は、所有しているか、調べる許可があるソフトにだけ使ってください。DRM、ログイン、
 アンチチートを回避することは決してありません。再構築は、エビデンスに基づいてレイアウト・スタイル・挙動を再現します。エージェントには、ロゴ・写真・テキストを、あなたが権利を持つか使用許可があると確認できるまでコピーしないよう指示しています。
 
 <a name="downloads"></a>
@@ -308,7 +309,7 @@ RISC-V (riscv64): `craft-anything-<ver>-linux-riscv64.tar.gz`、tarball のみ�
   <a href="https://discord.gg/artcraft"><b>discord.gg/artcraft</b></a> ·
   <a href="https://getartcraft.com/">getartcraft.com</a> ·
   <a href="https://getartcraft.com/apps">すべての Crafting Apps</a> ·
-  <a href="https://github.com/storytold/craft-anything">Craft Anything</a>
+  <a href="https://github.com/storytold/craft-anything">Most Anything</a>
 </p>
 
 ---
@@ -331,18 +332,18 @@ RISC-V (riscv64): `craft-anything-<ver>-linux-riscv64.tar.gz`、tarball のみ�
 | <img src="https://raw.githubusercontent.com/storytold/cadcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.cadcraft.png" alt="" width="32" height="32"> | **CADCraft** | コンピューター支援設計 | [GitHub](https://github.com/storytold/cadcraft) | [ウェブサイト](https://getartcraft.com/apps/cadcraft) |
 | <img src="https://raw.githubusercontent.com/storytold/gridcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.gridcraft.png" alt="" width="32" height="32"> | **GridCraft** | 表計算とデータ | [GitHub](https://github.com/storytold/gridcraft) | [ウェブサイト](https://getartcraft.com/apps/gridcraft) |
 | <img src="https://raw.githubusercontent.com/storytold/texturecraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.texturecraft.png" alt="" width="32" height="32"> | **TextureCraft** | 3D テクスチャ描画 | [GitHub](https://github.com/storytold/texturecraft) | [ウェブサイト](https://getartcraft.com/apps/texturecraft) |
-| <img src="https://raw.githubusercontent.com/storytold/craft-anything/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.craft-anything.png" alt="" width="32" height="32"> | **Craft Anything** | あらゆるソフトの仕組みを知り、自分の版を作る | [GitHub](https://github.com/storytold/craft-anything) | [ウェブサイト](https://getartcraft.com/apps/craft-anything) |
+| <img src="https://raw.githubusercontent.com/storytold/craft-anything/main/assets/app-icon/hicolor/64x64/apps/com.grupomostmexico.mostanything.png" alt="" width="32" height="32"> | **Most Anything** | あらゆるソフトの仕組みを知り、自分の版を作る | [GitHub](https://github.com/storytold/craft-anything) | [ウェブサイト](https://getartcraft.com/apps/craft-anything) |
 | <img src="https://raw.githubusercontent.com/tangency-labs/solidcraft/main/assets/icons/app/linux/exports/hicolor/64x64/apps/io.tangencylabs.solidcraft.png" alt="" width="32" height="32"> | **SolidCraft** | Tangency Labs によるパラメトリック 3D CAD(コミュニティ製アプリ) | [GitHub](https://github.com/tangency-labs/solidcraft) | |
 
 ## ライセンスとクレジット
 
-Craft Anything は [MIT](LICENSE-MIT) または [Apache-2.0](LICENSE-APACHE) のデュアルライセンスです (どちらかお選びください)。Copyright (c) 2026 ArtCraft Team and the Craft Anything contributors. 必要な通知は [NOTICE](NOTICE) にあります。
+Craft Anything は [MIT](LICENSE-MIT) または [Apache-2.0](LICENSE-APACHE) のデュアルライセンスです (どちらかお選びください)。Copyright (c) 2026 ArtCraft Team and the Craft Anything contributors; modificaciones Copyright (c) 2026 Grupo MOST. 必要な通知は [NOTICE](NOTICE) にあります。
 
 同梱のフォント、アイコン、画像、その他のアセットは、それぞれ独自のオープンライセンスが適用されます。各アセットの作者、出典、ライセンスは [ATTRIBUTION.md](ATTRIBUTION.md) に記載しています。
 
 スクリーンショットに写っているのは、そのために作られたサンプルプロジェクトです: example.com、スネークゲーム、小さな電卓プログラム。
 
-[`docs/brand/`](docs/brand/) にある ArtCraft の名称、ワードマーク、ロゴは ArtCraft Team の商標で、このライセンスの対象外です。無改変のまま、このリポジトリと Craft Anything の一部としてのみ、[`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt) に従って使用できます。フォークや改変版では、これらを削除しなければなりません。
+[`docs/brand/`](docs/brand/) にある ArtCraft の名称、ワードマーク、ロゴは Grupo MOST の商標で、このライセンスの対象外です。無改変のまま、このリポジトリと Most Anything の一部としてのみ、[`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt) に従って使用できます。フォークや改変版では、これらを削除しなければなりません。
 
 <p align="center">
   <a href="https://getartcraft.com/"><img alt="ArtCraft" src="docs/brand/artcraft-mark.svg" width="28"></a><br>

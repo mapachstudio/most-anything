@@ -1,4 +1,5 @@
-//! Owned processes: the only way Craft Anything runs another program.
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+//! Owned processes: the only way Most Anything runs another program.
 //!
 //! ```no_run
 //! use craft_anything_platform::process::Process;
@@ -1275,9 +1276,9 @@ mod launch_tests {
 
     #[test]
     fn paths_for_explorer_use_backslashes_and_no_verbatim_prefix() {
-        // Project folders are kept as `D:/Projects/Craft Anything\name`; Explorer opened
+        // Project folders are kept as `D:/Projects/Most Anything\name`; Explorer opened
         // Documents for those instead of the folder.
-        assert_eq!(windows_form(r"D:/Projects/Craft Anything\notepad"), r"D:\Projects\Craft Anything\notepad");
+        assert_eq!(windows_form(r"D:/Projects/Most Anything\notepad"), r"D:\Projects\Most Anything\notepad");
         assert_eq!(windows_form(r"\\?\D:\Projects\x"), r"D:\Projects\x");
         assert_eq!(windows_form(r"\\?\UNC\server\share\x"), r"\\server\share\x");
         assert_eq!(windows_form(r"\\server/share"), r"\\server\share");

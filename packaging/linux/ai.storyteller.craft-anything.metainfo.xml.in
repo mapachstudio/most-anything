@@ -2,17 +2,17 @@
 <!-- AppStream metadata (software centres, Flathub). Template: package.sh and the Flatpak
      manifest substitute @VERSION@ and @DATE@ from Cargo.toml and the build date. -->
 <component type="desktop-application">
-  <id>ai.storyteller.craft-anything</id>
+  <id>com.grupomostmexico.mostanything</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>MIT OR Apache-2.0</project_license>
-  <name>Craft Anything</name>
+  <name>Most Anything</name>
   <summary>Find out how any software works, then craft your own</summary>
   <developer id="ai.storyteller">
-    <name>Learning Machines LLC</name>
+    <name>Grupo MOST</name>
   </developer>
   <description>
     <p>
-      Craft Anything shows anyone how a piece of software works, with answers backed by evidence,
+      Most Anything shows anyone how a piece of software works, with answers backed by evidence,
       then helps them rebuild it. Open a program, an app, a file or a website and get a plain
       explanation of what it is, what it does and how it is put together.
     </p>
@@ -24,8 +24,8 @@
       <li>Every action is a tool, scriptable from a CLI and an MCP server</li>
     </ul>
   </description>
-  <launchable type="desktop-id">ai.storyteller.craft-anything.desktop</launchable>
-  <icon type="stock">ai.storyteller.craft-anything</icon>
+  <launchable type="desktop-id">com.grupomostmexico.mostanything.desktop</launchable>
+  <icon type="stock">com.grupomostmexico.mostanything</icon>
   <!-- Only url types known to appstream 0.15 (Ubuntu 22.04, where CI validates): no vcs-browser. -->
   <url type="homepage">https://getartcraft.com/apps/craft-anything</url>
   <url type="bugtracker">https://github.com/storytold/craft-anything/issues</url>

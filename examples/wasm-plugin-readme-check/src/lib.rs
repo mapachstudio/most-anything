@@ -1,4 +1,5 @@
-//! An example Craft Anything check plugin: `readme_says_how_to_run` passes when the build has a
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+//! An example Most Anything check plugin: `readme_says_how_to_run` passes when the build has a
 //! README.md at its root that tells a person how to start it. It implements
 //! `craft-anything:plugin/checks` from `crates/engines/wit/plugin.wit`, imports nothing, and asks
 //! only for `.md` files' text.

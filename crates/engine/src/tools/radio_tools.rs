@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Radio signal recordings, decoded by rtl_433 run as an external program (never linked): it reads
 //! a saved recording (I/Q samples such as `.cu8`/`.cs16`/`.cf32`, or AM/FM `.s16`), recognises the
 //! devices it knows (weather stations, remotes, tyre sensors, meters…) and prints one JSON object
@@ -241,11 +242,11 @@ mod tests {
         }
     }
 
-    /// A real decode, only where `CRAFT_ANYTHING_TEST_RTL433` names rtl_433 and
-    /// `CRAFT_ANYTHING_TEST_RTL433_REC` a recording of an Acurite rain gauge (from rtl_433's tests).
+    /// A real decode, only where `MOST_ANYTHING_TEST_RTL433` names rtl_433 and
+    /// `MOST_ANYTHING_TEST_RTL433_REC` a recording of an Acurite rain gauge (from rtl_433's tests).
     #[test]
     fn live_decode_with_rtl_433() {
-        let (Some(exe), Some(rec)) = (std::env::var_os("CRAFT_ANYTHING_TEST_RTL433"), std::env::var("CRAFT_ANYTHING_TEST_RTL433_REC").ok()) else { return };
+        let (Some(exe), Some(rec)) = (std::env::var_os("MOST_ANYTHING_TEST_RTL433"), std::env::var("MOST_ANYTHING_TEST_RTL433_REC").ok()) else { return };
         let mut s = crate::testing::session();
         s.settings.engines.tools.rtl433 = Some(exe.into());
         let e = Engine::new(s);

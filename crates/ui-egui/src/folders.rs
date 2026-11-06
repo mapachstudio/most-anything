@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Where a new project goes: the projects folder from Settings, or a folder the person picks,
 //! which may already have their files. Then they're asked (unless they said not to) whether those
 //! files are the app to edit in place or material to start from.
@@ -119,7 +120,7 @@ fn open_project(app: &mut CraftApp, folder: &std::path::Path) {
     }
 }
 
-/// Use the picked folder's files this way, unless something there is named like Craft Anything's
+/// Use the picked folder's files this way, unless something there is named like Most Anything's
 /// own files: then the folder isn't used (nothing of theirs is ever replaced).
 fn choose(app: &mut CraftApp, choice: ExistingFiles) {
     let Some(folder) = app.state.make.folder.clone() else { return };
@@ -134,7 +135,7 @@ fn choose(app: &mut CraftApp, choice: ExistingFiles) {
         let names = clash.join(", ");
         app.toast(
             trf(
-                "That folder already has {names}, where Craft Anything keeps its own files. Pick another folder, or move those out first.",
+                "That folder already has {names}, where Most Anything keeps its own files. Pick another folder, or move those out first.",
                 &[("names", &names)],
             ),
             true,
@@ -168,7 +169,7 @@ pub fn existing_modal(app: &mut CraftApp, ui: &mut Ui, close: &mut bool) {
             size,
             "code",
             "They're my app: edit them in place",
-            "The builder works on these files directly and keeps what works. Craft Anything adds a few records of its own beside them.",
+            "The builder works on these files directly and keeps what works. Most Anything adds a few records of its own beside them.",
             current == Some(ExistingFiles::Edit),
         );
         if edit.clicked() {

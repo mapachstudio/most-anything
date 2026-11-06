@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! WASM component plugins (R1.8), with the `wasm-plugins` feature: a component that exports the
 //! `craft-anything:plugin/tools` interface (`wit/plugin.wit`) adds tools. It imports nothing, so
 //! it can't reach files, the network, the environment or other programs: its only way out is the
@@ -49,8 +50,8 @@ fn resolve<'a>(exports: impl Iterator<Item = &'a str>, base: &str) -> Result<Opt
         incompatible = Some(version.to_string());
     }
     match incompatible {
-        Some(v) => Err(ToolError::new(ErrorCode::NotSupported, format!("The plugin exports {base} for API {v}; this Craft Anything speaks {API_VERSION}."))
-            .with_remediation("Rebuild the plugin against this version's plugin.wit, or use a Craft Anything that matches it.")),
+        Some(v) => Err(ToolError::new(ErrorCode::NotSupported, format!("The plugin exports {base} for API {v}; this Most Anything speaks {API_VERSION}."))
+            .with_remediation("Rebuild the plugin against this version's plugin.wit, or use a Most Anything that matches it.")),
         None => Ok(None),
     }
 }
@@ -251,11 +252,11 @@ mod tests {
         assert_eq!(e.code, ErrorCode::OverLimit, "{e:?}");
     }
 
-    /// The example plugin built for real, only where `CRAFT_ANYTHING_TEST_WASM_PLUGIN` names its
+    /// The example plugin built for real, only where `MOST_ANYTHING_TEST_WASM_PLUGIN` names its
     /// component (see examples/wasm-plugin-wordcount/README.md).
     #[test]
     fn the_example_plugin_counts_words() {
-        let Some(path) = std::env::var_os("CRAFT_ANYTHING_TEST_WASM_PLUGIN") else { return };
+        let Some(path) = std::env::var_os("MOST_ANYTHING_TEST_WASM_PLUGIN") else { return };
         let p = WasmPlugin::load(Path::new(&path)).unwrap();
         assert_eq!(p.describe().unwrap()[0].name, "count_words");
         assert_eq!(p.call("count_words", &json!({"text": "one two\nthree"})).unwrap(), json!({"words": 3, "lines": 2, "characters": 13}));
@@ -263,11 +264,11 @@ mod tests {
         assert!(p.call("nope", &json!({})).is_err());
     }
 
-    /// The example check plugin built for real, only where `CRAFT_ANYTHING_TEST_WASM_CHECK` names
+    /// The example check plugin built for real, only where `MOST_ANYTHING_TEST_WASM_CHECK` names
     /// its component (see examples/wasm-plugin-readme-check/README.md).
     #[test]
     fn the_example_check_reads_the_readme() {
-        let Some(path) = std::env::var_os("CRAFT_ANYTHING_TEST_WASM_CHECK") else { return };
+        let Some(path) = std::env::var_os("MOST_ANYTHING_TEST_WASM_CHECK") else { return };
         let p = WasmPlugin::load(Path::new(&path)).unwrap();
         assert_eq!(p.exports().unwrap(), (false, true));
         let info = p.describe_checks().unwrap();

@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Logs of failed runs, one file each, to open and inspect when something goes wrong: what ran,
 //! what it printed, and what we made of it. They stay on this computer, readable only by its
 //! owner. The person's message is never written, and secret-looking flags are masked
@@ -51,7 +52,7 @@ fn stream(name: &str, bytes: &[u8]) -> String {
 }
 
 fn render(r: &Report, date: &str, time: &str) -> String {
-    let mut s = format!("Craft Anything {} failure log\nWhen: {date} {time} UTC\nWhat: {}\n", env!("CARGO_PKG_VERSION"), r.what);
+    let mut s = format!("Most Anything {} failure log\nWhen: {date} {time} UTC\nWhat: {}\n", env!("CARGO_PKG_VERSION"), r.what);
     if let Some(d) = &r.diagnosis {
         s.push_str(&format!("Diagnosis: {d}\n"));
     }

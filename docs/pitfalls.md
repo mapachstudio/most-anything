@@ -1,3 +1,4 @@
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # Pitfalls
 
 Mistakes made while building this project, what they cost, and the rule that prevents each one.
@@ -79,7 +80,7 @@ created folders in the real config directory (`Session::default()` uses it).
 - When you widen what a tool does (a new download, a launch), grep the tests that call it.
 - Tests build their session with `craft_anything_engine::testing::session()` (config, plugin
   caches, engine store and projects in a temp folder); `cargo xtask layers` rejects
-  `Session::default()`. CLI tests set `CRAFT_ANYTHING_CONFIG_DIR` to a temp folder.
+  `Session::default()`. CLI tests set `MOST_ANYTHING_CONFIG_DIR` to a temp folder.
 
 **A demo app wired to the person's settings.** The headless app the UI tests use built its AI hub
 with `AiHub::new`, which saves to the real `config.toml` and the system keychain; no test had
@@ -216,7 +217,7 @@ shaders, and on an RTX 5060 Ti the device was lost as the window opened ("Parent
 lost", #522). Where a library chooses a program or DLL by searching, name the one that ships
 with the system (FXC), and keep the environment variable (`WGPU_DX12_COMPILER`) as the way to
 another. A window that can't start now says how to draw without the graphics card
-(`CRAFT_ANYTHING_RENDERER=software`). Not run on the reporter's machine or on Windows here.
+(`MOST_ANYTHING_RENDERER=software`). Not run on the reporter's machine or on Windows here.
 
 **"Not installed" for a program that was there.** The system answers "not found" both for a missing
 program and for a file whose interpreter is missing (an npm script with no `node`), and we turned
@@ -280,7 +281,7 @@ when a window is slow to open, check which adapter `desktop.log` says it drew wi
 language from the macOS version alone; on a 2012 iMac under OpenCore Legacy Patcher, macOS 15 asked
 for `metal3.2`, the compiler stopped at 3.1, every shader failed and the window never opened (#742,
 upstream #10687). Our `[patch]` of wgpu-hal probes the compiler (`vendor/wgpu-hal/CRAFT_ANYTHING.md`).
-The advice on a lost device named `CRAFT_ANYTHING_RENDERER`, which only Windows reads: check that
+The advice on a lost device named `MOST_ANYTHING_RENDERER`, which only Windows reads: check that
 advice names only settings the platform actually reads. Not run on the reporter's Mac.
 
 **A Mac app that couldn't find Claude Code, and offered a GitHub key instead.** An app opened from

@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! How each agent CLI is driven: its arguments, the flags it must have, how its output stream
 //! reads, and anything it needs before a run (a sign-in check). Each is an [`AgentAdapter`]; an
 //! [`AgentAdapters`] registry maps agent ids to them, and an agent it doesn't know gets the plain
@@ -419,9 +420,9 @@ impl AgentAdapter for ClaudeCode {
                     p.failure = Some(TurnFailure::new(FailureKind::ToolsUnavailable));
                     let status = server.get("status").and_then(Value::as_str).unwrap_or_default();
                     out.push(AgentEvent::Error {
-                        message: format!("Craft Anything's tools did not start in Claude Code (server status: {status})."),
+                        message: format!("Most Anything's tools did not start in Claude Code (server status: {status})."),
                         remediation: Some(
-                            "Check the Craft Anything CLI and the agent failure log, then start a new build attempt after fixing the tool connection.".into(),
+                            "Check the Most Anything CLI and the agent failure log, then start a new build attempt after fixing the tool connection.".into(),
                         ),
                         log: None,
                     });
@@ -651,7 +652,7 @@ pub fn claude_names_account(file: &std::path::Path) -> bool {
 /// Longest single request or reply in a handoff; a first brief runs to many thousands.
 const HANDOFF_ENTRY: usize = 1500;
 
-/// A Claude Code session read back as a handoff: the messages Craft Anything sent and the text
+/// A Claude Code session read back as a handoff: the messages Most Anything sent and the text
 /// the builder answered with, oldest first, leaving out tool calls, their results, thinking and
 /// side tasks. The newest are kept when it's longer than `max` characters.
 pub fn claude_handoff(saved: &str, max: usize) -> Option<String> {
@@ -668,7 +669,7 @@ pub fn claude_handoff(saved: &str, max: usize) -> Option<String> {
         match v.get("type").and_then(Value::as_str) {
             Some("user") => {
                 if let Some(t) = content.and_then(Value::as_str).filter(|t| !t.trim().is_empty()) {
-                    entries.push(format!("Craft Anything asked you: {}", clip(t)));
+                    entries.push(format!("Most Anything asked you: {}", clip(t)));
                 }
             }
             Some("assistant") => {

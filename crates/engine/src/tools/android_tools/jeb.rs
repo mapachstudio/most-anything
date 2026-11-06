@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! JEB tools: a small MCP client (Streamable HTTP, JSON-RPC 2.0) for a JEB MCP server the user
 //! runs themselves on this machine. The server URL comes from Settings → Engines (`jeb_url`).
 //! We never start JEB, never retry, only talk plain HTTP to a loopback address, and bound every
@@ -27,7 +28,7 @@ pub fn specs() -> Vec<ToolSpec> {
             "engines_jeb_check",
             "Check the JEB connection",
             "Connect to the user-run JEB MCP server set in Settings → Engines (jeb_url, loopback only), report its server information, upstream tools and client information. Never starts JEB.",
-            "Check that Craft Anything can talk to your running JEB.",
+            "Check that Most Anything can talk to your running JEB.",
             Toolset::Android,
             Effects::NETWORK_EVIDENCE,
             Requires::Nothing,

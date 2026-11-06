@@ -1,13 +1,14 @@
+# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 [Desktop Entry]
 Type=Application
-Name=Craft Anything
+Name=Most Anything
 GenericName=Software Explorer
 Comment=Find out how any software works, then craft your own
 Exec=craft-anything %F
 TryExec=craft-anything
-Icon=ai.storyteller.craft-anything
+Icon=com.grupomostmexico.mostanything
 Terminal=false
 StartupNotify=true
-StartupWMClass=ai.storyteller.craft-anything
+StartupWMClass=com.grupomostmexico.mostanything
 Categories=Development;Debugger;
 Keywords=reverse engineering;disassembler;binary;analysis;executable;decompiler;inspect;

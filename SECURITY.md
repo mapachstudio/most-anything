@@ -1,6 +1,7 @@
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # Security
 
-Craft Anything reads hostile files and runs other programs, so we take reports seriously.
+Most Anything reads hostile files and runs other programs, so we take reports seriously.
 
 ## Reporting a vulnerability
 

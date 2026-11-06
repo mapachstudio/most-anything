@@ -1,4 +1,5 @@
-//! The Craft Anything engine: one session, one registry of tools, one way in.
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+//! The Most Anything engine: one session, one registry of tools, one way in.
 //!
 //! The desktop UI, the CLI, the MCP server and the built-in AI agent all call [`Engine::call`]
 //! with a tool id and JSON params. The engine checks availability and consent, runs the tool,

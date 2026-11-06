@@ -1,6 +1,7 @@
+# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 [package]
 name = "craft-anything-evidence"
-description = "Evidence records, canonical ids, confidence, unknowns and the error contract for Craft Anything"
+description = "Evidence records, canonical ids, confidence, unknowns and the error contract for Most Anything"
 version.workspace = true
 edition.workspace = true
 license.workspace = true

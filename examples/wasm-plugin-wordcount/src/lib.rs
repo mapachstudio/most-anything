@@ -1,4 +1,5 @@
-//! An example Craft Anything plugin: one tool, `count_words`, that counts the words, lines and
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+//! An example Most Anything plugin: one tool, `count_words`, that counts the words, lines and
 //! characters of a text. It implements `craft-anything:plugin/tools` from
 //! `crates/engines/wit/plugin.wit` and imports nothing.
 

@@ -1,6 +1,7 @@
+# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 [package]
 name = "craft-anything-disasm"
-description = "Craft Anything's own native engine: decoding, functions, control flow, references, pseudo-C"
+description = "Most Anything's own native engine: decoding, functions, control flow, references, pseudo-C"
 version.workspace = true
 edition.workspace = true
 license.workspace = true

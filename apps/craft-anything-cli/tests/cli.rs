@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! End-to-end tests of the built binary (run through the process runner).
 
 use craft_anything_platform::process::{Output, Process};
@@ -5,7 +6,7 @@ use serde_json::{Value, json};
 use std::time::Duration;
 
 fn cli(args: &[&str], config: &std::path::Path) -> Output {
-    Process::new(env!("CARGO_BIN_EXE_craft-anything-cli")).args(args).env("CRAFT_ANYTHING_CONFIG_DIR", config).timeout(Duration::from_secs(60)).run().unwrap()
+    Process::new(env!("CARGO_BIN_EXE_craft-anything-cli")).args(args).env("MOST_ANYTHING_CONFIG_DIR", config).timeout(Duration::from_secs(60)).run().unwrap()
 }
 
 /// The CLI lists installation-specific depths and refuses unsupported selections using an isolated agent fixture.
@@ -127,7 +128,7 @@ fn mcp_over_stdio() {
     .collect::<String>();
     let out = Process::new(env!("CARGO_BIN_EXE_craft-anything-cli"))
         .arg("mcp")
-        .env("CRAFT_ANYTHING_CONFIG_DIR", cfg.path())
+        .env("MOST_ANYTHING_CONFIG_DIR", cfg.path())
         .stdin_bytes(input)
         .timeout(Duration::from_secs(30))
         .run()
@@ -205,7 +206,7 @@ fn raw_binary_open_params_tool_format_and_project_evidence_across_processes() {
 fn cli_with_stdin(args: &[&str], config: &std::path::Path, input: &[u8]) -> Output {
     Process::new(env!("CARGO_BIN_EXE_craft-anything-cli"))
         .args(args)
-        .env("CRAFT_ANYTHING_CONFIG_DIR", config)
+        .env("MOST_ANYTHING_CONFIG_DIR", config)
         .stdin_bytes(input.to_vec())
         .timeout(Duration::from_secs(60))
         .run()

@@ -1,3 +1,4 @@
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # Roadmap history
 
 Finished work, moved out of [ROADMAP.md](ROADMAP.md) on 2026-11-02 so that file holds only what's
@@ -110,7 +111,7 @@ or download into them.
 
 ### R0.6 Tool naming
 Owner: maintainers · Status: done
-Craft Anything's own ids, grouped by what a person does (`native_functions_list`,
+Most Anything's own ids, grouped by what a person does (`native_functions_list`,
 `web_page_capture`…). Each tool answers to its id (and CLI spelling) only.
 - [x] Id scheme in `docs/tool-ids.md`: `<area>_<object>_<action>` (no dots: MCP and model APIs
       allow only letters, digits, `_` and `-` in tool names)
@@ -272,7 +273,7 @@ Pending changes:
       as the GitHub digests); macOS archives are stripped to `Contents/Home`, so Ghidra's setup
       (`ghidra::get::can_install`) now works there too
 - [x] Rizin 0.9.1 pinned for Windows x64 (the static zip; GitHub asset digest), installed for real
-      by the opt-in `a_pinned_engine_installs_for_real` (`CRAFT_ANYTHING_TEST_INSTALL`)
+      by the opt-in `a_pinned_engine_installs_for_real` (`MOST_ANYTHING_TEST_INSTALL`)
 
 ### R1.6 Headless first: the GUI stops being the glue
 Owner: maintainers · Status: done
@@ -374,12 +375,12 @@ Owner: maintainers · Status: done
       `cargo xtask ci` lints and tests the engine with `--features wasm-plugins`
 - [x] WASM plugins: `examples/wasm-plugin-wordcount` (Rust, wit-bindgen 0.63,
       `wasm32-unknown-unknown`, `wasm-tools component new`), built and loaded through the host
-      (opt-in test `CRAFT_ANYTHING_TEST_WASM_PLUGIN`)
+      (opt-in test `MOST_ANYTHING_TEST_WASM_PLUGIN`)
 - [x] Plugin API versions: semver for `package craft-anything:plugin@…`; the host finds a plugin's
       interfaces by name and accepts any compatible version (same major, and same minor while 0.x),
       refusing others by name; patch versions only add optional JSON fields (docs/extending.md)
 - [x] A check plugin in Rust: `examples/wasm-plugin-readme-check` (does the build's README say how
-      to run it), built and loaded for real (opt-in test `CRAFT_ANYTHING_TEST_WASM_CHECK`)
+      to run it), built and loaded for real (opt-in test `MOST_ANYTHING_TEST_WASM_CHECK`)
 - [x] `docs/extending.md`: how to add a tool, a target kind, a check, a builder or a plugin
 
 ### R1.9 Versioned files
@@ -929,7 +930,7 @@ should give away more of how it is set up.
       connection whose client is Claude Code (`clientInfo.name` = `claude-code`, checked against
       Claude Code 2.1.305) gets an 80 KB response budget instead of 8 MiB, so a bigger evidence
       record collapses to its summary with `core_evidence_browse` to page it;
-      `CRAFT_ANYTHING_MCP_MAX_RESPONSE_BYTES` still sets it explicitly
+      `MOST_ANYTHING_MCP_MAX_RESPONSE_BYTES` still sets it explicitly
 
 ### R3.11 Single-file apps, game files and stand-in backends
 Owner: open · Status: in progress

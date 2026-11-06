@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! `setup`, `doctor`, `uninstall`.
 
 use crate::output::Format;
@@ -131,7 +132,7 @@ pub fn setup(a: &SetupArgs, f: Format) -> u8 {
         }
         out(&format!("status: {}", report.status));
         if !report.restart.is_empty() {
-            out(&format!("Restart {} to load Craft Anything.", report.restart.join(", ")));
+            out(&format!("Restart {} to load Most Anything.", report.restart.join(", ")));
         }
     } else {
         emit(&serde_json::to_value(&report).unwrap_or(Value::Null), f);

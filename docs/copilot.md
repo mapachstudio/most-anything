@@ -1,6 +1,7 @@
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # GitHub Copilot
 
-Craft Anything can use the installed GitHub Copilot CLI for analysis and building through the
+Most Anything can use the installed GitHub Copilot CLI for analysis and building through the
 Agent Client Protocol (ACP).
 
 ## Setup
@@ -8,9 +9,9 @@ Agent Client Protocol (ACP).
 1. Install the standalone Copilot CLI using GitHub's
    [installation instructions](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli).
 2. In your own terminal, run `copilot login` and complete GitHub's sign-in flow. The CLI owns
-   authentication, credential storage and refresh. Craft Anything does not read its credential
+   authentication, credential storage and refresh. Most Anything does not read its credential
   store, collect a Copilot key or provide a login flow. Retry after login; if authentication
-  still fails, restart Craft Anything.
+  still fails, restart Most Anything.
 3. In Settings > AI, detect and add **GitHub Copilot**, then choose it for chat or **Build with this**.
    If it is installed outside the searched locations, use **Choose...** to select the executable.
 
@@ -90,9 +91,9 @@ CLI starts. Shared picker warnings name the configured agent rather than assumin
 
 ## Tools and Permissions
 
-Chat and builds use an explicit allowlist of Craft Anything's built-in engine and AI MCP tools.
+Chat and builds use an explicit allowlist of Most Anything's built-in engine and AI MCP tools.
 Copilot's native file, shell, web and delegation tools are not exposed. The MCP server enforces
-Clean room or Deep mode, and build tools retain Craft Anything's approval policy and inbox.
+Clean room or Deep mode, and build tools retain Most Anything's approval policy and inbox.
 Copilot's built-in MCP servers and custom-instruction loading are disabled for these runs;
 the person's own CLI configuration and credentials are not rewritten.
 

@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Managed engine installs: download a pinned archive, verify its SHA-256 **before** unpacking, and
 //! lay it out in the engine store so [`crate::locate`] finds it. The pins live in the engine table
 //! ([`crate::table`]); every pin carries the publisher's SHA-256.
@@ -72,7 +73,7 @@ pub fn install(
     }
     let engine = crate::engine(engine_id).ok_or_else(|| {
         ToolError::new(ErrorCode::NotSupported, format!("There is no engine called {engine_id:?}."))
-            .with_remediation("See Settings → Engines for the engines Craft Anything knows.")
+            .with_remediation("See Settings → Engines for the engines Most Anything knows.")
     })?;
     let pins = match engine.install {
         Install::Pinned(pins) => pins,
@@ -80,7 +81,7 @@ pub fn install(
             return Err(ToolError::new(ErrorCode::NotSupported, format!("{} is installed by its own setup, not here.", engine.name)).with_remediation(how));
         }
         Install::Manual => {
-            return Err(ToolError::new(ErrorCode::NotSupported, format!("Craft Anything doesn't install {} for you.", engine.name))
+            return Err(ToolError::new(ErrorCode::NotSupported, format!("Most Anything doesn't install {} for you.", engine.name))
                 .with_remediation("Install it by hand and set its path in Settings → Engines."));
         }
     };
@@ -443,12 +444,12 @@ fn set_executable(_path: &Path) {}
 mod tests {
     use super::*;
 
-    /// A real install, only where `CRAFT_ANYTHING_TEST_INSTALL` names an engine (it downloads)
-    /// and `CRAFT_ANYTHING_TEST_INSTALL_STORE` a folder to install into: the pin downloads,
+    /// A real install, only where `MOST_ANYTHING_TEST_INSTALL` names an engine (it downloads)
+    /// and `MOST_ANYTHING_TEST_INSTALL_STORE` a folder to install into: the pin downloads,
     /// verifies, unpacks, and `locate` finds the engine.
     #[test]
     fn a_pinned_engine_installs_for_real() {
-        let (Ok(id), Ok(store)) = (std::env::var("CRAFT_ANYTHING_TEST_INSTALL"), std::env::var("CRAFT_ANYTHING_TEST_INSTALL_STORE")) else { return };
+        let (Ok(id), Ok(store)) = (std::env::var("MOST_ANYTHING_TEST_INSTALL"), std::env::var("MOST_ANYTHING_TEST_INSTALL_STORE")) else { return };
         let r = install(&id, Path::new(&store), None, None, &|_| {}).unwrap();
         assert!(r.files_written > 0, "{r:?}");
         assert!(r.located.as_ref().is_some_and(|p| p.is_file()), "installed but not found: {r:?}");

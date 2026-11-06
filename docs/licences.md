@@ -1,6 +1,7 @@
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # Licences
 
-Craft Anything is MIT OR Apache-2.0. This page says what we may depend on, how it is checked,
+Most Anything is MIT OR Apache-2.0. This page says what we may depend on, how it is checked,
 and how the third-party licence bundle for a release is made.
 
 ## Policy

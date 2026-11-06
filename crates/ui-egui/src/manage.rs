@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Rename, duplicate and delete a project, from its row in the sidebar (right-click) or its page.
 //! Each goes through its tool (project_rename, project_duplicate, project_delete), as the CLI and
 //! MCP clients do; deleting asks first and says what stays.
@@ -144,7 +145,7 @@ pub fn delete_modal(app: &mut CraftApp, ui: &mut Ui, root: &Path, close: &mut bo
     // What goes and what stays, in so many words: it can't be undone.
     let m = &ws.manifest;
     let what = if m.app_in_root || !m.start_files.is_empty() {
-        tr("Craft Anything's records, checks and anything it built in app/ are deleted. Your own files in the folder stay as they are.")
+        tr("Most Anything's records, checks and anything it built in app/ are deleted. Your own files in the folder stay as they are.")
     } else {
         tr("Its folder is deleted with everything in it: what was built, the checks and the conversation.")
     };

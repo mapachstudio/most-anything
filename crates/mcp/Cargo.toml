@@ -1,6 +1,7 @@
+# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 [package]
 name = "craft-anything-mcp"
-description = "The Craft Anything MCP server"
+description = "The Most Anything MCP server"
 version.workspace = true
 edition.workspace = true
 license.workspace = true

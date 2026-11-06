@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Simple mode's front door, for people new to computers: two numbered questions in plain words
 //! ("What do you want to recreate?", "Say what you want"), big targets and one big Start button. Below it,
 //! the projects made so far.
@@ -398,7 +399,7 @@ fn look_inside(app: &mut CraftApp, ui: &mut Ui) {
     let t = Tokens::get(ui.ctx());
     // The app's one setting (the title bar's switch), not this project's: said where it's chosen.
     ui.horizontal_wrapped(|ui| {
-        ui.label(RichText::new(tr("How closely may Craft Anything look at it?")).size(theme::BODY).color(t.text_dim));
+        ui.label(RichText::new(tr("How closely may Most Anything look at it?")).size(theme::BODY).color(t.text_dim));
         ui.label(RichText::new(tr("For everything you make, like the switch in the title bar.")).size(theme::SMALL).color(t.text_faint));
     });
     ui.add_space(6.0);
@@ -409,8 +410,8 @@ fn look_inside(app: &mut CraftApp, ui: &mut Ui) {
     ui.horizontal(|ui| {
         ui.spacing_mut().item_spacing.x = gap;
         for (on, icon, label, blurb) in [
-            (false, "shield-check", "Clean room", "Nothing inside it is read; Craft Anything works from what you can see. Your version gets its own art."),
-            (true, "microscope", "Deep", "Craft Anything reads its code and files with every tool it has. For your private use."),
+            (false, "shield-check", "Clean room", "Nothing inside it is read; Most Anything works from what you can see. Your version gets its own art."),
+            (true, "microscope", "Deep", "Most Anything reads its code and files with every tool it has. For your private use."),
         ] {
             if widgets::choice_tile(ui, size, icon, label, blurb, deep == on).clicked() {
                 pick = Some(on);

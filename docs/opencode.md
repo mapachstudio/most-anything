@@ -1,11 +1,12 @@
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # OpenCode as an AI backend
 
-Craft Anything can run OpenCode V2 locally or on an SSH host. OpenCode owns its provider
+Most Anything can run OpenCode V2 locally or on an SSH host. OpenCode owns its provider
 connections and sign-in. Set these up in OpenCode on the computer where it will run.
 
 Model and thinking choices can be discovered, validated and saved. Running with an explicit
 selection is currently refused: our ACP transport cannot select it, and our native adapter
-does not yet supply the run's Craft Anything MCP server. For local runs, clear both choices
+does not yet supply the run's Most Anything MCP server. For local runs, clear both choices
 and enable ACP, or use another AI. Native MCP integration remains pending in roadmap R2.2.
 
 ## Desktop

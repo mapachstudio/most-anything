@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! User settings (`config.toml`). No environment variables are required for anything.
 
 use crate::versioned::{Step, upgrade};
@@ -118,7 +119,7 @@ pub struct Settings {
     pub runtime_study: bool,
     /// Recently opened projects and targets.
     pub recent: Vec<PathBuf>,
-    /// Where new projects are created; `None` = `Documents/Craft Anything`.
+    /// Where new projects are created; `None` = `Documents/Most Anything`.
     pub projects_dir: Option<PathBuf>,
     /// More places projects are listed from: folders of projects, or projects started in a folder
     /// the person picked (added when they start one there).
@@ -128,7 +129,7 @@ pub struct Settings {
     pub existing_files: Option<crate::workspace::ExistingFiles>,
     /// Generated game assets: the budget a new project starts with and the picture model.
     pub assets: AssetSettings,
-    /// External MCP servers whose tools are offered as Craft Anything tools (`[[plugins.mcp]]`).
+    /// External MCP servers whose tools are offered as Most Anything tools (`[[plugins.mcp]]`).
     pub plugins: crate::plugins::PluginSettings,
     /// How builds are checked and when refining stops (`[build]`).
     pub build: BuildSettings,
@@ -267,10 +268,10 @@ pub fn read_settings(text: &str) -> Result<Settings, String> {
     table.try_into::<Settings>().map_err(|e| e.to_string())
 }
 
-/// Where settings, logs and the engine store live: `CRAFT_ANYTHING_CONFIG_DIR`, then a portable
+/// Where settings, logs and the engine store live: `MOST_ANYTHING_CONFIG_DIR`, then a portable
 /// `portable.txt` marker next to the executable, then the platform config dir.
 pub fn config_dir() -> PathBuf {
-    if let Some(dir) = std::env::var_os("CRAFT_ANYTHING_CONFIG_DIR") {
+    if let Some(dir) = std::env::var_os("MOST_ANYTHING_CONFIG_DIR") {
         return PathBuf::from(dir);
     }
     if let Some(exe_dir) = std::env::current_exe().ok().and_then(|p| p.parent().map(Path::to_path_buf))
@@ -330,7 +331,7 @@ impl Settings {
             Ok(text) => match read_settings(&text) {
                 Ok(s) => {
                     if s.version > SETTINGS_VERSION {
-                        log::warn!("{} is from a newer Craft Anything (version {}); changes won't be saved over it", path.display(), s.version);
+                        log::warn!("{} is from a newer Most Anything (version {}); changes won't be saved over it", path.display(), s.version);
                     }
                     s
                 }
@@ -342,7 +343,7 @@ impl Settings {
                         .and_then(|n| u32::try_from(n).ok());
                     if let Some(version) = newer.filter(|v| *v > SETTINGS_VERSION) {
                         log::warn!(
-                            "{} is from a newer Craft Anything (version {version}) and unreadable here ({e}); using defaults without saving",
+                            "{} is from a newer Most Anything (version {version}) and unreadable here ({e}); using defaults without saving",
                             path.display()
                         );
                         return Settings { version, ..Settings::default() };
@@ -401,7 +402,7 @@ impl Settings {
             Err(e) => return Err(ToolError::io(path.display(), e)),
         };
         if current.version > SETTINGS_VERSION || pending.version > SETTINGS_VERSION {
-            return Err(ToolError::new(ErrorCode::BadSettings, "Update Craft Anything to recover settings saved by a newer version."));
+            return Err(ToolError::new(ErrorCode::BadSettings, "Update Most Anything to recover settings saved by a newer version."));
         }
         pending.ai = current.ai;
         pending.save_to(path)?;
@@ -412,9 +413,9 @@ impl Settings {
         if self.version > SETTINGS_VERSION {
             return Err(ToolError::new(
                 ErrorCode::BadSettings,
-                format!("{} was written by a newer Craft Anything (version {}), so this one doesn't change it.", path.display(), self.version),
+                format!("{} was written by a newer Most Anything (version {}), so this one doesn't change it.", path.display(), self.version),
             )
-            .with_remediation("Update Craft Anything to change settings, or move config.toml aside to start fresh. Nothing was written."));
+            .with_remediation("Update Most Anything to change settings, or move config.toml aside to start fresh. Nothing was written."));
         }
         let text = toml::to_string_pretty(self).map_err(|e| ToolError::new(ErrorCode::BadSettings, e.to_string()))?;
         crate::project::write_atomic(path, text.as_bytes())

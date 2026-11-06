@@ -1,3 +1,4 @@
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 <p align="center">
   <a href="https://getartcraft.com/">
     <picture>
@@ -8,10 +9,10 @@
 </p>
 
 <p align="center">
-  <img src="assets/app-icon/hicolor/256x256/apps/ai.storyteller.craft-anything.png" width="128" height="128" alt="Craft Anything icon: an engraved raven on a blue tile">
+  <img src="assets/app-icon/hicolor/256x256/apps/com.grupomostmexico.mostanything.png" width="128" height="128" alt="Most Anything icon: an engraved raven on a blue tile">
 </p>
 
-<h1 align="center">Craft Anything</h1>
+<h1 align="center">Most Anything</h1>
 
 <p align="center">
   <b>English</b> · <a href="README.ja.md">日本語</a> · <a href="README.zh.md">简体中文</a> · <a href="README.ko.md">한국어</a>
@@ -35,7 +36,7 @@
 </p>
 
 <p align="center">
-  <a href="#downloads"><b>Download Craft Anything</b></a> ·
+  <a href="#downloads"><b>Download Most Anything</b></a> ·
   <a href="https://getartcraft.com/">ArtCraft</a> ·
   <a href="https://getartcraft.com/apps">All Crafting Apps</a>
 </p>
@@ -43,7 +44,7 @@
 <br>
 
 <p align="center">
-  <img src="docs/images/project-website.png" alt="A website project in Craft Anything: the check lists what doesn't match yet and how alike each page is, the builder says its version is ready, an approval card asks before running a command, and the plan shows two of four steps done" width="100%">
+  <img src="docs/images/project-website.png" alt="A website project in Most Anything: the check lists what doesn't match yet and how alike each page is, the builder says its version is ready, an approval card asks before running a command, and the plan shows two of four steps done" width="100%">
   <br>
   <sub>A website project: each check says how alike the build is, you approve anything outside the rules, and the plan shows what's left.</sub>
 </p>
@@ -92,7 +93,7 @@
 
 ## How it works
 
-Point Craft Anything at a target, say what you want, and press Start. It works in four steps,
+Point Most Anything at a target, say what you want, and press Start. It works in four steps,
 asking you in plain words when a decision is yours:
 
 1. **Study:** inspect the original: its pages at every width, its code, its files, how it runs.
@@ -129,7 +130,7 @@ Both modes drive the same engine.
 ## Clean room or Deep
 
 - **Clean room** (the default): nothing inside the original is read, not its code, files or page
-  source. Craft Anything works from what you can see: pictures you add, the website as a visitor
+  source. Most Anything works from what you can see: pictures you add, the website as a visitor
   sees it (screenshots, visible text, measured layout, colours, fonts and spacing, menus opened)
   and, when you allow it, a picture of the app's window. Tools that would look inside are refused
   and say how to turn on Deep mode.
@@ -137,9 +138,9 @@ Both modes drive the same engine.
   built-in engines (and Ghidra when it's installed), a website's JavaScript is read and its start
   page watched, and the builder may use all of them.
 
-Clean room is a rule about what Craft Anything offers and refuses. It is not an operating-system
+Clean room is a rule about what Most Anything offers and refuses. It is not an operating-system
 sandbox: it doesn't isolate your computer. A coding agent you run still acts as you, and what it can
-read, write or run depends on its own permissions. Which of an agent's own tools Craft Anything can
+read, write or run depends on its own permissions. Which of an agent's own tools Most Anything can
 refuse differs by agent; for Claude Code's tools in chats and questions, see
 [`docs/claude-code.md`](docs/claude-code.md).
 
@@ -155,7 +156,7 @@ Switch in the title bar or Settings, with `settings_set deep_mode true`, or for 
 ## AI
 
 Building needs a coding agent on your computer. **Claude Code** is supported first: Craft
-Anything runs your own, unmodified `claude` program, which uses your own sign-in; Craft Anything
+Anything runs your own, unmodified `claude` program, which uses your own sign-in; Most Anything
 never sees or handles your account. Your use of it falls under your own agreement with
 Anthropic. See [docs/claude-code.md](docs/claude-code.md) for how and why. A Codex adapter
 exists but hasn't been verified on a real install yet. **GitHub Copilot** can use your installed
@@ -177,7 +178,7 @@ craft-anything-cli rebuild https://example.com "Recreate this website"
 
 Results are evidence records with their confidence, coverage and limitations; big ones come back
 as a summary first and are paged with `core_evidence_browse`. `craft-anything-cli setup`
-connects Craft Anything to coding-agent apps.
+connects Most Anything to coding-agent apps.
 
 ## Under the hood
 
@@ -216,7 +217,7 @@ craft-anything-cli rebuild https://example.com "Make the header blue" --continue
 craft-anything-cli rebuild - "Add a contact form" --project-folder "<your folder>" --existing edit
 ```
 
-New projects go in `Documents/Craft Anything` (change it in Settings → General). Each project
+New projects go in `Documents/Most Anything` (change it in Settings → General). Each project
 folder holds `craft.json` (the request, target, status and history), `capture/` (what was
 recorded from the target), `app/` (the generated project), `checks/` (each comparison against
 the original), `investigation.cany/` (evidence) and `inbox/` (open questions).
@@ -230,7 +231,7 @@ only takes it off the list.
 ## Status
 
 > [!IMPORTANT]
-> **Status:** Craft Anything is in early alpha. What works today, what is partial and what's next:
+> **Status:** Most Anything is in early alpha. What works today, what is partial and what's next:
 >
 > - **Works today:** the desktop app (Simple and Advanced), the CLI and the MCP server; the
 >   Study → Build → Check → Refine workflow for websites, apps and games with Claude Code as the
@@ -249,7 +250,7 @@ only takes it off the list.
 > [docs/ROADMAP.md](docs/ROADMAP.md) the plan, item by item. Please file issues, or tell us what
 > broke on [Discord](https://discord.gg/artcraft).
 
-**Responsible use.** Use Craft Anything on software you own or are allowed to examine. It never
+**Responsible use.** Use Most Anything on software you own or are allowed to examine. It never
 bypasses DRM, logins or anti-cheat. Rebuilds recreate layout, style and behaviour from evidence;
 the agent is told not to copy logos, photos or text unless you confirm you own them or have
 permission.
@@ -257,7 +258,7 @@ permission.
 **Installing dependencies runs code.** When a builder installs a project's dependencies, the commands
 run on your computer, and the packages can run code while they install. npm runs each package's
 install scripts by default, and Rust build scripts and Python source packages run their own setup
-code. Craft Anything asks before a command of a kind it hasn't seen in this project (`npm`, `cargo`…).
+code. Most Anything asks before a command of a kind it hasn't seen in this project (`npm`, `cargo`…).
 Choosing "always allow" for `npm` lets every later npm command run without asking, so only do that
 for a project whose dependencies you trust. To install npm packages without their install scripts,
 run `npm install --ignore-scripts`.
@@ -317,8 +318,8 @@ spctl --assess --type open --context context:primary-signature -v "craft-anythin
 xcrun stapler validate "craft-anything-<ver>-macos-universal.dmg"
 
 # The app, after you open the disk image: the signature must verify
-codesign --verify --deep --strict --verbose=2 "/Volumes/<disk image name>/Craft Anything.app"
-spctl --assess --type execute --verbose "/Volumes/<disk image name>/Craft Anything.app"
+codesign --verify --deep --strict --verbose=2 "/Volumes/<disk image name>/Most Anything.app"
+spctl --assess --type execute --verbose "/Volumes/<disk image name>/Most Anything.app"
 
 # The command-line tool: a bare program can't carry a ticket, so macOS checks it online
 codesign --verify --strict --verbose=2 ~/.local/bin/craft-anything-cli
@@ -375,7 +376,7 @@ The AppImage carries the CLI too: run `<AppImage> --cli <command>` (for example
   <a href="https://discord.gg/artcraft"><b>discord.gg/artcraft</b></a> ·
   <a href="https://getartcraft.com/">getartcraft.com</a> ·
   <a href="https://getartcraft.com/apps">The Crafting Apps</a> ·
-  <a href="https://github.com/storytold/craft-anything">Craft Anything</a>
+  <a href="https://github.com/storytold/craft-anything">Most Anything</a>
 </p>
 
 ---
@@ -398,14 +399,14 @@ The AppImage carries the CLI too: run `<AppImage> --cli <command>` (for example
 | <img src="https://raw.githubusercontent.com/storytold/cadcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.cadcraft.png" alt="" width="32" height="32"> | **CADCraft** | Computer-aided design | [GitHub](https://github.com/storytold/cadcraft) | [Website](https://getartcraft.com/apps/cadcraft) |
 | <img src="https://raw.githubusercontent.com/storytold/gridcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.gridcraft.png" alt="" width="32" height="32"> | **GridCraft** | Spreadsheets and data | [GitHub](https://github.com/storytold/gridcraft) | [Website](https://getartcraft.com/apps/gridcraft) |
 | <img src="https://raw.githubusercontent.com/storytold/texturecraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.texturecraft.png" alt="" width="32" height="32"> | **TextureCraft** | 3D texture painting | [GitHub](https://github.com/storytold/texturecraft) | [Website](https://getartcraft.com/apps/texturecraft) |
-| <img src="https://raw.githubusercontent.com/storytold/craft-anything/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.craft-anything.png" alt="" width="32" height="32"> | **Craft Anything** | See how any software works, then build your own | [GitHub](https://github.com/storytold/craft-anything) | [Website](https://getartcraft.com/apps/craft-anything) |
+| <img src="https://raw.githubusercontent.com/storytold/craft-anything/main/assets/app-icon/hicolor/64x64/apps/com.grupomostmexico.mostanything.png" alt="" width="32" height="32"> | **Most Anything** | See how any software works, then build your own | [GitHub](https://github.com/storytold/craft-anything) | [Website](https://getartcraft.com/apps/craft-anything) |
 | <img src="https://raw.githubusercontent.com/tangency-labs/solidcraft/main/assets/icons/app/linux/exports/hicolor/64x64/apps/io.tangencylabs.solidcraft.png" alt="" width="32" height="32"> | **SolidCraft** | Parametric 3D CAD by Tangency Labs (community app) | [GitHub](https://github.com/tangency-labs/solidcraft) | |
 
 
 ## License and credits
 
-Craft Anything is dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option.
-Copyright (c) 2026 ArtCraft Team and the Craft Anything contributors. Required notices are in [NOTICE](NOTICE).
+Most Anything is dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option.
+Copyright (c) 2026 ArtCraft Team and the Craft Anything contributors; modificaciones Copyright (c) 2026 Grupo MOST. Required notices are in [NOTICE](NOTICE).
 
 Bundled fonts, icons, images and other assets keep their own open licenses; each one is listed
 with its author, source and license in [ATTRIBUTION.md](ATTRIBUTION.md).
@@ -414,8 +415,8 @@ The screenshots show sample projects made for them: example.com, a snake game an
 calculator program.
 
 The ArtCraft name, wordmark and logos in [`docs/brand/`](docs/brand/) are trademarks of the
-ArtCraft Team and are not covered by this license. They may be used only unmodified, and only as
-part of this repository and Craft Anything, under [`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt).
+Grupo MOST and are not covered by this license. They may be used only unmodified, and only as
+part of this repository and Most Anything, under [`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt).
 Forks and modified versions must remove them.
 
 <p align="center">

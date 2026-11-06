@@ -1,4 +1,5 @@
-//! The Craft Anything MCP server: newline-delimited JSON-RPC 2.0 over stdio.
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+//! The Most Anything MCP server: newline-delimited JSON-RPC 2.0 over stdio.
 //!
 //! - `tools/list` shows the Core toolset plus any toolsets the client enabled with the
 //!   `enable_toolset` meta-tool (`--all-tools` shows everything); enabling sends
@@ -43,7 +44,7 @@ pub const CLAUDE_CODE_RESPONSE_BYTES: usize = 80 * 1024;
 /// Longest accepted request line.
 const MAX_REQUEST_BYTES: usize = 64 * 1024 * 1024;
 
-const INSTRUCTIONS: &str = "Craft Anything shows how software works, with evidence. Start with core_investigation_show and core_session_show. \
+const INSTRUCTIONS: &str = "Most Anything shows how software works, with evidence. Start with core_investigation_show and core_session_show. \
 Open a target with core_target_open (absolute path), then use focused tools; ask for summaries first and page for detail. \
 Only the Essentials toolset is listed at first: call list_toolsets and enable_toolset to add native, Android, web and other tools. \
 Keep the investigation memory current (core_brief_write, core_plan_update, core_hypothesis_record, core_finding_record with evidence ids, core_handoff_write at the end of each turn). \
@@ -71,13 +72,13 @@ impl Default for ServerOptions {
 }
 
 impl ServerOptions {
-    /// Defaults plus `CRAFT_ANYTHING_MCP_ALL_TOOLS=1` and `CRAFT_ANYTHING_MCP_MAX_RESPONSE_BYTES`.
+    /// Defaults plus `MOST_ANYTHING_MCP_ALL_TOOLS=1` and `MOST_ANYTHING_MCP_MAX_RESPONSE_BYTES`.
     pub fn from_env() -> Self {
         let mut o = ServerOptions::default();
-        if std::env::var("CRAFT_ANYTHING_MCP_ALL_TOOLS").is_ok_and(|v| v == "1" || v.eq_ignore_ascii_case("true")) {
+        if std::env::var("MOST_ANYTHING_MCP_ALL_TOOLS").is_ok_and(|v| v == "1" || v.eq_ignore_ascii_case("true")) {
             o.all_tools = true;
         }
-        if let Some(n) = std::env::var("CRAFT_ANYTHING_MCP_MAX_RESPONSE_BYTES").ok().and_then(|v| v.trim().parse::<usize>().ok()) {
+        if let Some(n) = std::env::var("MOST_ANYTHING_MCP_MAX_RESPONSE_BYTES").ok().and_then(|v| v.trim().parse::<usize>().ok()) {
             o.max_response_bytes = n.max(MIN_MAX_RESPONSE_BYTES);
             o.budget_for_client = false;
         }
@@ -304,7 +305,7 @@ impl Server {
                 "completions": {},
                 "logging": {},
             },
-            "serverInfo": {"name": SERVER_NAME, "title": "Craft Anything", "version": env!("CARGO_PKG_VERSION")},
+            "serverInfo": {"name": SERVER_NAME, "title": "Most Anything", "version": env!("CARGO_PKG_VERSION")},
             "instructions": INSTRUCTIONS,
         })
     }

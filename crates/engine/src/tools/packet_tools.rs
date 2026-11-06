@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Saved packet captures (pcap and pcapng). The built-in decoder (craft_anything_formats::pcap)
 //! needs nothing installed: an overview with paged conversations, and per-packet decoded fields
 //! with simple filters. When Wireshark's `tshark` is installed it can produce the address, DNS,
@@ -388,7 +389,7 @@ fn engines_tshark_check(ctx: &mut Ctx<'_>, params: Value) -> Result<ToolOutput, 
     let summary = match (&found, &version) {
         (Some(p), Some(v)) => format!("{v} is available at {}. packets_inventory_show will use it; the built-in decoder works without it.", p.display()),
         (Some(p), None) => format!("tshark was found at {} but did not report a version. The built-in decoder works without it.", p.display()),
-        (None, _) => "Wireshark's tshark is not installed. That's fine: the packet tools use Craft Anything's built-in decoder.".into(),
+        (None, _) => "Wireshark's tshark is not installed. That's fine: the packet tools use Most Anything's built-in decoder.".into(),
     };
     let mut lims = Vec::new();
     if let Some(e) = &error {

@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Simple-mode Home: "What do you want to make?" and your projects, with one quiet link to look
 //! inside something instead. Plus the friendly modals.
 
@@ -177,7 +178,7 @@ pub fn modals(app: &mut CraftApp, ctx: &egui::Context) {
                 Modal::PinRename(root, id) => crate::pins::rename_modal(app, ui, root, *id, &mut close),
                 Modal::PinDelete(root, id) => crate::pins::delete_modal(app, ui, root, *id, &mut close),
                 Modal::About => {
-                    ui.label(theme::heading("Craft Anything", theme::SECTION));
+                    ui.label(theme::heading("Most Anything", theme::SECTION));
                     ui.label(RichText::new(format!("{} {}", tr("Version"), env!("CARGO_PKG_VERSION"))).color(t.text_dim));
                     ui.add_space(12.0);
                     if widgets::primary(ui, "Close").clicked() {

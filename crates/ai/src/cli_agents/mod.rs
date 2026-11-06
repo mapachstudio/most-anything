@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Agent CLIs (Claude Code, Codex, Gemini CLI, OpenCode, Hermes…) run as owned subprocesses with
 //! our MCP server, optionally on another machine over ssh. Their JSON event streams become
 //! [`AgentEvent`]s.
@@ -137,13 +138,13 @@ impl McpCommand {
 /// that ran out of time says nothing about the program, so the build goes ahead. Stopping the
 /// build ends the check, as `ErrorCode::Cancelled`.
 pub fn cli_can_start(cli: Option<&Path>, stop: &CancelToken) -> Result<(), ToolError> {
-    const REINSTALL: &str = "Install the latest Craft Anything again: it keeps this helper next to the app. If you built the app yourself, run `cargo build -p craft-anything-cli` too.";
+    const REINSTALL: &str = "Install the latest Most Anything again: it keeps this helper next to the app. If you built the app yourself, run `cargo build -p craft-anything-cli` too.";
     let Some(cli) = cli else {
-        return Err(ToolError::new(ErrorCode::EngineMissing, "Craft Anything's helper program (craft-anything-cli) is missing, so the builder can't start.")
+        return Err(ToolError::new(ErrorCode::EngineMissing, "Most Anything's helper program (craft-anything-cli) is missing, so the builder can't start.")
             .with_remediation(REINSTALL));
     };
     let failed = |why: String| {
-        ToolError::new(ErrorCode::EngineMissing, format!("Craft Anything's helper program at {} wouldn't start: {why}", cli.display()))
+        ToolError::new(ErrorCode::EngineMissing, format!("Most Anything's helper program at {} wouldn't start: {why}", cli.display()))
             .with_remediation(REINSTALL)
     };
     let stop = stop.clone();
@@ -284,12 +285,12 @@ pub(crate) fn sign_in_hint_in(message: &str, flatpak: bool, folder: Option<&Path
 }
 
 /// Signing in for the Claude Code that a Flatpak build starts: the same folder it will use.
-const FLATPAK_SIGN_IN: &str = "flatpak run --command=sh ai.storyteller.craft-anything -c 'CLAUDE_CONFIG_DIR=\"$XDG_DATA_HOME/craft-anything/claude\" \"$HOME/.local/bin/claude\" auth login'";
+const FLATPAK_SIGN_IN: &str = "flatpak run --command=sh com.grupomostmexico.mostanything -c 'CLAUDE_CONFIG_DIR=\"$XDG_DATA_HOME/craft-anything/claude\" \"$HOME/.local/bin/claude\" auth login'";
 
 /// [`FLATPAK_SIGN_IN`] for a chosen folder, already quoted for the sandbox's shell.
 fn flatpak_sign_in(quoted: &str) -> String {
     let inner = format!("CLAUDE_CONFIG_DIR={quoted} \"$HOME/.local/bin/claude\" auth login");
-    format!("flatpak run --command=sh ai.storyteller.craft-anything -c {}", crate::ssh::shell_quote(&inner))
+    format!("flatpak run --command=sh com.grupomostmexico.mostanything -c {}", crate::ssh::shell_quote(&inner))
 }
 
 /// Words in an API's answer when the installed Claude Code is older than the model it was asked
@@ -317,7 +318,7 @@ pub(crate) fn claude_code_failure_in(why: &str, folder: Option<&Path>) -> (Strin
     (format!("Claude Code stopped: {why}"), sign_in_hint_in(why, adapters::in_flatpak(), folder))
 }
 
-/// Variables a Claude Code session sets for its own child processes. When Craft Anything itself
+/// Variables a Claude Code session sets for its own child processes. When Most Anything itself
 /// runs inside such a session, they'd make the person's `claude` act as part of that session
 /// instead of as their own install, so they're removed. The person's own settings (provider
 /// choice `CLAUDE_CODE_USE_*`, `CLAUDE_CONFIG_DIR`, `ANTHROPIC_*`) are kept.
@@ -905,7 +906,7 @@ fn run_cli(spec: &CliSpec, text: &str, retry: bool, tx: &Sender<AgentEvent>, sto
                 Ok(out) => (Some(out), None),
                 Err(e) => (None, Some(e.message.as_str())),
             };
-            if let Some(path) = shown.save_with(&agent, out, Some("Craft Anything's tools did not start."), error).0 {
+            if let Some(path) = shown.save_with(&agent, out, Some("Most Anything's tools did not start."), error).0 {
                 let _ = tx.send(AgentEvent::Status { text: format!("The details are in {}", path.display()) });
             }
         }
@@ -1179,9 +1180,9 @@ mod tests {
     /// normal install are left as they are, and the sign-in hint says how to sign in there.
     #[test]
     fn under_a_flatpak_claude_code_keeps_its_conversations_in_a_folder_it_can_write() {
-        let data = || Some(std::path::PathBuf::from("/home/u/.var/app/ai.storyteller.craft-anything/data"));
+        let data = || Some(std::path::PathBuf::from("/home/u/.var/app/com.grupomostmexico.mostanything/data"));
         let dir = adapters::flatpak_claude_dir_in(true, false, data()).unwrap();
-        assert!(dir.ends_with("craft-anything/claude") && dir.starts_with("/home/u/.var/app/ai.storyteller.craft-anything/data"), "{dir:?}");
+        assert!(dir.ends_with("craft-anything/claude") && dir.starts_with("/home/u/.var/app/com.grupomostmexico.mostanything/data"), "{dir:?}");
         assert_eq!(adapters::flatpak_claude_dir_in(true, true, data()), None, "their own choice stays");
         assert_eq!(adapters::flatpak_claude_dir_in(false, false, data()), None, "a normal install keeps ~/.claude");
         assert_eq!(adapters::flatpak_claude_dir_in(true, false, None), None);
@@ -1813,7 +1814,7 @@ mod tests {
         let config = tempfile::tempdir().unwrap();
         let id = "0e4a6b1c-1111-4222-8333-944455556666";
         let saved = format!("{{\"type\":\"user\",\"sessionId\":\"{id}\",\"message\":{{\"content\":\"Make a notes app.\"}}}}\n");
-        let cwd = Path::new("/home/someone/Craft Anything/notes.app");
+        let cwd = Path::new("/home/someone/Most Anything/notes.app");
         assert!(adapters::claude_restore(config.path(), id, saved.as_bytes(), cwd).unwrap());
         let put = config.path().join("projects").join("-home-someone-Craft-Anything-notes-app").join(format!("{id}.jsonl"));
         assert_eq!(std::fs::read_to_string(&put).unwrap(), saved);
@@ -1850,7 +1851,7 @@ mod tests {
         let all = adapters::claude_handoff(&saved, 10_000).unwrap();
         assert_eq!(
             all,
-            "Craft Anything asked you: Make a notes app.\n\nYou answered: Built a notes app with a sidebar.\n\nCraft Anything asked you: The person asks: \"make it blue\"\n\nYou answered: Made it blue."
+            "Most Anything asked you: Make a notes app.\n\nYou answered: Built a notes app with a sidebar.\n\nMost Anything asked you: The person asks: \"make it blue\"\n\nYou answered: Made it blue."
         );
         // Short of room, the newest is kept.
         let short = adapters::claude_handoff(&saved, 80).unwrap();
@@ -2111,7 +2112,7 @@ echo '{"type":"turn.completed","usage":{"input_tokens":1,"output_tokens":1}}'
         }
     }
 
-    const STDIN_ECHO_ENV: &str = "CRAFT_ANYTHING_TEST_STDIN_ECHO";
+    const STDIN_ECHO_ENV: &str = "MOST_ANYTHING_TEST_STDIN_ECHO";
 
     /// Not a test on its own: when run as the child of the test above, writes its stdin to the
     /// file it's told to.

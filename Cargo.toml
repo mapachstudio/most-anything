@@ -1,3 +1,4 @@
+# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 [workspace]
 resolver = "3"
 members = ["crates/*", "apps/*", "xtask"]
@@ -93,7 +94,7 @@ debug = false
 strip = true
 panic = "abort"
 
-# wgpu-hal with a Metal shader-language probe (Craft Anything #742; upstream wgpu #10687).
+# wgpu-hal with a Metal shader-language probe (Most Anything #742; upstream wgpu #10687).
 # Remove this once the upstream wgpu release picks a Metal version the compiler accepts. See vendor/wgpu-hal/CRAFT_ANYTHING.md.
 [patch.crates-io]
 wgpu-hal = { path = "vendor/wgpu-hal" }

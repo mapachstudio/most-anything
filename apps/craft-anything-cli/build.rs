@@ -1,7 +1,8 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Windows only: mark `craft-anything-cli.exe` DPI-aware (an application manifest), so window
 //! pictures (`native_window_capture`) and screen coordinates are in real pixels at any display
 //! scaling. On every other target this does nothing. A missing resource compiler is a warning,
-//! unless `CRAFT_ANYTHING_REQUIRE_WINRES=1` (the release workflow) makes it an error.
+//! unless `MOST_ANYTHING_REQUIRE_WINRES=1` (the release workflow) makes it an error.
 
 const MANIFEST: &str = r#"<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
   <application xmlns="urn:schemas-microsoft-com:asm.v3">
@@ -14,14 +15,14 @@ const MANIFEST: &str = r#"<assembly xmlns="urn:schemas-microsoft-com:asm.v1" man
 
 fn main() {
     println!("cargo:rerun-if-changed=build.rs");
-    println!("cargo:rerun-if-env-changed=CRAFT_ANYTHING_REQUIRE_WINRES");
+    println!("cargo:rerun-if-env-changed=MOST_ANYTHING_REQUIRE_WINRES");
     if std::env::var("CARGO_CFG_TARGET_OS").as_deref() != Ok("windows") {
         return;
     }
     let mut res = winresource::WindowsResource::new();
     res.set_manifest(MANIFEST).set("OriginalFilename", "craft-anything-cli.exe").set("InternalName", "craft-anything-cli");
     if let Err(e) = res.compile() {
-        if std::env::var_os("CRAFT_ANYTHING_REQUIRE_WINRES").is_some() {
+        if std::env::var_os("MOST_ANYTHING_REQUIRE_WINRES").is_some() {
             println!("cargo::error=embedding Windows resources failed: {e}");
             return;
         }

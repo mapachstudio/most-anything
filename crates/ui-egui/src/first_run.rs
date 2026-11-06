@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! First run: Welcome → Who builds (and answers) → Purpose → Done. Four short screens, all
 //! skippable. Making something needs a builder, so that's what the AI step sets up first.
 
@@ -58,7 +59,7 @@ fn welcome(app: &mut CraftApp, ui: &mut Ui) {
     let t = Tokens::get(ui.ctx());
     ui.add(crate::app_icon(132.0));
     ui.add_space(20.0);
-    ui.label(theme::heading(tr("Craft Anything"), theme::TITLE));
+    ui.label(theme::heading(tr("Most Anything"), theme::TITLE));
     ui.add_space(6.0);
     ui.label(RichText::new(tr("Find out how any software works, then craft your own.")).size(theme::LEAD).color(t.text_dim));
     ui.add_space(36.0);

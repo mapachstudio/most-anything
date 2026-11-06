@@ -1,3 +1,4 @@
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 <!-- 本文件是 README.md 的简体中文翻译；英文版有改动时请一并更新本文件。 -->
 
 <p align="center">
@@ -10,10 +11,10 @@
 </p>
 
 <p align="center">
-  <img src="assets/app-icon/hicolor/256x256/apps/ai.storyteller.craft-anything.png" width="128" height="128" alt="Craft Anything 图标：蓝色底块上雕刻的乌鸦">
+  <img src="assets/app-icon/hicolor/256x256/apps/com.grupomostmexico.mostanything.png" width="128" height="128" alt="Most Anything 图标：蓝色底块上雕刻的乌鸦">
 </p>
 
-<h1 align="center">Craft Anything</h1>
+<h1 align="center">Most Anything</h1>
 
 <p align="center">
   <a href="README.md">English</a> · <a href="README.ja.md">日本語</a> · <b>简体中文</b> · <a href="README.ko.md">한국어</a>
@@ -37,7 +38,7 @@
 </p>
 
 <p align="center">
-  <a href="#downloads"><b>下载 Craft Anything</b></a> ·
+  <a href="#downloads"><b>下载 Most Anything</b></a> ·
   <a href="https://getartcraft.com/">ArtCraft</a> ·
   <a href="https://getartcraft.com/apps">全部 Crafting 应用</a>
 </p>
@@ -45,7 +46,7 @@
 <br>
 
 <p align="center">
-  <img src="docs/images/project-website.png" alt="Craft Anything 里的一个网站项目：检查清单列出还不一致的地方和每页的相似度，构建方说它的版本已就绪，一张审批卡在跑命令前先征求同意，计划显示四步里已完成两步" width="100%">
+  <img src="docs/images/project-website.png" alt="Most Anything 里的一个网站项目：检查清单列出还不一致的地方和每页的相似度，构建方说它的版本已就绪，一张审批卡在跑命令前先征求同意，计划显示四步里已完成两步" width="100%">
   <br>
   <sub>一个网站项目：每项检查都说明构建成果有多像，规则之外的任何动作都要你批准，计划显示还剩什么没做。</sub>
 </p>
@@ -95,7 +96,7 @@
 
 ## 工作原理
 
-把 Craft Anything 指向一个目标，说清你要什么，按下 Start。它分四步走，遇到该你拍板的地方就用大白话问你：
+把 Most Anything 指向一个目标，说清你要什么，按下 Start。它分四步走，遇到该你拍板的地方就用大白话问你：
 
 1. **研究：** 检查原件：它在各种宽度下的页面、它的代码、它的文件、它怎么运行。
 2. **构建：** 编码 agent 建一个新项目，用你的请求指定的语言、框架或引擎（没指定就用合理默认）。
@@ -128,7 +129,7 @@
 
 ## 净室还是深度
 
-- **净室**（默认）：绝不读取原件内部的任何东西——不读它的代码、文件或页面源码。Craft Anything 只依据你所能看到的来工作：你添加的图片、网站以访客身份呈现的样子（截图、可见文本、测量出的布局、颜色、字体与间距、展开的菜单），以及在你允许时截取的应用窗口画面。所有会往内部看的工具都会被拒绝，并告诉你如何开启深度模式。
+- **净室**（默认）：绝不读取原件内部的任何东西——不读它的代码、文件或页面源码。Most Anything 只依据你所能看到的来工作：你添加的图片、网站以访客身份呈现的样子（截图、可见文本、测量出的布局、颜色、字体与间距、展开的菜单），以及在你允许时截取的应用窗口画面。所有会往内部看的工具都会被拒绝，并告诉你如何开启深度模式。
 - **深度**：使用全部工具，供你自己私下使用。程序的代码和文件由内置引擎读取（装了 Ghidra 时也会用它），网站的 JavaScript 会被读取、起始页面会被持续观察，构建方也可以使用全部这些能力。
 
 在标题栏或设置里切换，或执行 `settings_set deep_mode true`，或单次 CLI 运行时加 `--deep`（或 `--clean-room`）。
@@ -143,7 +144,7 @@
 
 ## AI
 
-构建需要你电脑上有一个已登录的编码 agent。**Claude Code** 是首选支持对象：Craft Anything 运行你自己那份未经改动的 `claude` 程序，它用你自己的登录；Craft Anything 从不查看也不接触你的账号，你对它的使用适用你与 Anthropic 自己的协议。原因与做法见 [docs/claude-code.md](docs/claude-code.md)。Codex 适配器已存在，但还没在真实安装上验证过。提问和分析可选用 Anthropic、OpenAI、OpenRouter 以及本地 OpenAI 兼容服务（设置 → AI）。
+构建需要你电脑上有一个已登录的编码 agent。**Claude Code** 是首选支持对象：Most Anything 运行你自己那份未经改动的 `claude` 程序，它用你自己的登录；Most Anything 从不查看也不接触你的账号，你对它的使用适用你与 Anthropic 自己的协议。原因与做法见 [docs/claude-code.md](docs/claude-code.md)。Codex 适配器已存在，但还没在真实安装上验证过。提问和分析可选用 Anthropic、OpenAI、OpenRouter 以及本地 OpenAI 兼容服务（设置 → AI）。
 
 <a id="built-for-agents"></a>
 
@@ -157,7 +158,7 @@ craft-anything-cli mcp                                        # serve them to an
 craft-anything-cli rebuild https://example.com "Recreate this website"
 ```
 
-结果是带置信度、覆盖范围和局限性的证据记录；大结果先给摘要，再用 `core_evidence_browse` 分页读取。`craft-anything-cli setup` 把 Craft Anything 接到编码 agent 应用上。
+结果是带置信度、覆盖范围和局限性的证据记录；大结果先给摘要，再用 `core_evidence_browse` 分页读取。`craft-anything-cli setup` 把 Most Anything 接到编码 agent 应用上。
 
 <a id="under-the-hood"></a>
 
@@ -193,7 +194,7 @@ craft-anything-cli rebuild https://example.com "Make the header blue" --continue
 craft-anything-cli rebuild - "Add a contact form" --project-folder "<your folder>" --existing edit
 ```
 
-新项目放在 `Documents/Craft Anything`（可在设置 → 通用里改）。每个项目文件夹里有 `craft.json`（请求、目标、状态和历史）、`capture/`（从目标录到的内容）、`app/`（生成的项目）、`checks/`（每次与原件比对的结果）、`investigation.cany/`（证据）和 `inbox/`（待回答问题）。
+新项目放在 `Documents/Most Anything`（可在设置 → 通用里改）。每个项目文件夹里有 `craft.json`（请求、目标、状态和历史）、`capture/`（从目标录到的内容）、`app/`（生成的项目）、`checks/`（每次与原件比对的结果）、`investigation.cany/`（证据）和 `inbox/`（待回答问题）。
 
 项目也可以从你指定的文件夹开始（Start 下的“选择文件夹…”，或 `--project-folder`）。如果那里已经有文件，你要说明它们是什么：就是应用本身（构建方会就地修改），还是作为起点用的素材（应用会建在它们旁边的 `app/` 里）；设置 → 通用可以记住你的选择。设置 → 通用还会列出其他文件夹里的项目；移除一个只是把它从列表里拿掉。
 
@@ -202,7 +203,7 @@ craft-anything-cli rebuild - "Add a contact form" --project-folder "<your folder
 ## 状态
 
 > [!IMPORTANT]
-> **状态：** Craft Anything 处于早期 alpha。今天能用的、部分可用的，以及接下来要做的：
+> **状态：** Most Anything 处于早期 alpha。今天能用的、部分可用的，以及接下来要做的：
 >
 > - **今天可用：** 桌面应用（简单与进阶模式）、CLI 和 MCP 服务器；以 Claude Code 作为构建方、面向网站/应用/游戏的
 >   研究 → 构建 → 检查 → 收敛 流程；三种屏宽下的网站检查；Unity、Unreal 或 Godot 的游戏重建；带 Ghidra 的深度
@@ -214,7 +215,7 @@ craft-anything-cli rebuild - "Add a contact form" --project-folder "<your folder
 > [docs/STATUS.md](docs/STATUS.md) 有细节和每部分的验证方式，[docs/tool-status.md](docs/tool-status.md) 是逐个工具的清单，
 > [docs/ROADMAP.md](docs/ROADMAP.md) 是逐项的计划。欢迎提 issue，或者到 [Discord](https://discord.gg/artcraft) 说哪里坏了。
 
-**负责地使用。** 请在你拥有或获准检查的软件上使用 Craft Anything。它绝不绕过 DRM、登录或反作弊。重建是依据证据复现布局、风格与行为；agent 被要求不得复制 logo、照片或文本，除非你确认你拥有它们或已获授权。
+**负责地使用。** 请在你拥有或获准检查的软件上使用 Most Anything。它绝不绕过 DRM、登录或反作弊。重建是依据证据复现布局、风格与行为；agent 被要求不得复制 logo、照片或文本，除非你确认你拥有它们或已获授权。
 
 <a id="downloads"></a>
 
@@ -281,7 +282,7 @@ RISC-V（riscv64）：`craft-anything-<ver>-linux-riscv64.tar.gz`，只有 tarba
   <a href="https://discord.gg/artcraft"><b>discord.gg/artcraft</b></a> ·
   <a href="https://getartcraft.com/">getartcraft.com</a> ·
   <a href="https://getartcraft.com/apps">The Crafting Apps</a> ·
-  <a href="https://github.com/storytold/craft-anything">Craft Anything</a>
+  <a href="https://github.com/storytold/craft-anything">Most Anything</a>
 </p>
 
 ---
@@ -304,7 +305,7 @@ RISC-V（riscv64）：`craft-anything-<ver>-linux-riscv64.tar.gz`，只有 tarba
 | <img src="https://raw.githubusercontent.com/storytold/cadcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.cadcraft.png" alt="" width="32" height="32"> | **CADCraft** | 计算机辅助设计 | [GitHub](https://github.com/storytold/cadcraft) | [网站](https://getartcraft.com/apps/cadcraft) |
 | <img src="https://raw.githubusercontent.com/storytold/gridcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.gridcraft.png" alt="" width="32" height="32"> | **GridCraft** | 电子表格与数据 | [GitHub](https://github.com/storytold/gridcraft) | [网站](https://getartcraft.com/apps/gridcraft) |
 | <img src="https://raw.githubusercontent.com/storytold/texturecraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.texturecraft.png" alt="" width="32" height="32"> | **TextureCraft** | 3D 贴图绘制 | [GitHub](https://github.com/storytold/texturecraft) | [网站](https://getartcraft.com/apps/texturecraft) |
-| <img src="https://raw.githubusercontent.com/storytold/craft-anything/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.craft-anything.png" alt="" width="32" height="32"> | **Craft Anything** | 看清任意软件是怎么做的，然后造一个自己的 | [GitHub](https://github.com/storytold/craft-anything) | [网站](https://getartcraft.com/apps/craft-anything) |
+| <img src="https://raw.githubusercontent.com/storytold/craft-anything/main/assets/app-icon/hicolor/64x64/apps/com.grupomostmexico.mostanything.png" alt="" width="32" height="32"> | **Most Anything** | 看清任意软件是怎么做的，然后造一个自己的 | [GitHub](https://github.com/storytold/craft-anything) | [网站](https://getartcraft.com/apps/craft-anything) |
 | <img src="https://raw.githubusercontent.com/tangency-labs/solidcraft/main/assets/icons/app/linux/exports/hicolor/64x64/apps/io.tangencylabs.solidcraft.png" alt="" width="32" height="32"> | **SolidCraft** | Tangency Labs 的参数化 3D CAD（社区应用） | [GitHub](https://github.com/tangency-labs/solidcraft) | |
 
 
@@ -312,15 +313,15 @@ RISC-V（riscv64）：`craft-anything-<ver>-linux-riscv64.tar.gz`，只有 tarba
 
 ## 许可与致谢
 
-Craft Anything 采用 [MIT](LICENSE-MIT) 或 [Apache-2.0](LICENSE-APACHE) 双许可，任你选择。
-Copyright (c) 2026 ArtCraft Team and the Craft Anything contributors。必需的声明在 [NOTICE](NOTICE)。
+Most Anything 采用 [MIT](LICENSE-MIT) 或 [Apache-2.0](LICENSE-APACHE) 双许可，任你选择。
+Copyright (c) 2026 ArtCraft Team and the Craft Anything contributors; modificaciones Copyright (c) 2026 Grupo MOST。必需的声明在 [NOTICE](NOTICE)。
 
 随附的字体、图标、图片和其他资源各自保留其开源许可；每一项都在 [ATTRIBUTION.md](ATTRIBUTION.md) 里列出了作者、来源和许可。
 
 截图里展示的是为它们制作的示例项目：example.com、一个贪吃蛇游戏和一个小计算器程序。
 
-[`docs/brand/`](docs/brand/) 里的 ArtCraft 名称、标志图形和 logo 是 ArtCraft Team 的商标，不在本许可范围内。
-它们只能在未作修改的前提下，作为本仓库和 Craft Anything 的一部分使用，并须遵守
+[`docs/brand/`](docs/brand/) 里的 ArtCraft 名称、标志图形和 logo 是 Grupo MOST 的商标，不在本许可范围内。
+它们只能在未作修改的前提下，作为本仓库和 Most Anything 的一部分使用，并须遵守
 [`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt)。分支和修改版必须移除它们。
 
 <p align="center">

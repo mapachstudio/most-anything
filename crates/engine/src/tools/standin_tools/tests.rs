@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 use super::*;
 use crate::{CallOptions, Caller, Engine};
 use std::io::{Read, Write};
@@ -333,7 +334,7 @@ fn file_versions() {
     }
     let newer = parse_standin(br#"{"version": 2, "routes": [], "from_the_future": true}"#).unwrap_err();
     assert_eq!(newer.code, ErrorCode::NotSupported);
-    assert!(newer.remediation.as_deref().unwrap_or_default().contains("Update Craft Anything"), "{newer:?}");
+    assert!(newer.remediation.as_deref().unwrap_or_default().contains("Update Most Anything"), "{newer:?}");
 }
 
 #[test]

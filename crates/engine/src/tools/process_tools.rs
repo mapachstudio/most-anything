@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Running programs: capture a program under a pseudo-terminal with a scripted timeline, and
 //! compare two captures. Capture executes foreign code, so it is consent-gated.
 
@@ -714,7 +715,7 @@ mod tests {
     fn reserved_env_is_rejected() {
         let e = Engine::new(crate::testing::session());
         let err =
-            call_consent(&e, "runtime_walkthrough_record", json!({"executable": "/bin/echo", "environment": {"CRAFT_ANYTHING_RUN_ID": "x"}})).unwrap_err();
+            call_consent(&e, "runtime_walkthrough_record", json!({"executable": "/bin/echo", "environment": {"MOST_ANYTHING_RUN_ID": "x"}})).unwrap_err();
         assert_eq!(err.code, craft_anything_evidence::ErrorCode::BadInput);
     }
 }

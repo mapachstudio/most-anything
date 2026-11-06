@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Artifacts: content-addressed inventories of archives and app bundles, safe extraction, and
 //! comparison. Also hosts the filesystem and evidence-input helpers the JavaScript, web and
 //! application tool modules share.
@@ -30,7 +31,7 @@ pub fn specs() -> Vec<ToolSpec> {
         ToolSpec {
             id: "core_archive_extract",
             title: "Extract an archive",
-            summary: "Extract every regular file of a ZIP/APK/IPA/JAR or ASAR (plus its .asar.unpacked files) into a fresh private temporary folder chosen by Craft Anything, and return its path. Bounded size and count; entries that would escape the folder are refused.",
+            summary: "Extract every regular file of a ZIP/APK/IPA/JAR or ASAR (plus its .asar.unpacked files) into a fresh private temporary folder chosen by Most Anything, and return its path. Bounded size and count; entries that would escape the folder are refused.",
             beginner: "Unpack an app or archive into a new folder so you can look at the files.",
             toolset: Toolset::Core,
             effects: Effects::MUTATES_SESSION.union(Effects::WRITES_FILESYSTEM),

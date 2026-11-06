@@ -1,4 +1,5 @@
-# Extending Craft Anything
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
+# Extending Most Anything
 
 Every part people tend to change sits behind a seam: a trait or a table with built-in entries and one
 place to add yours. Follow `AGENTS.md` (never crash, layers, external programs through
@@ -92,10 +93,10 @@ a plugin exports the interfaces at the version it was built against
 (`craft-anything:plugin/tools@0.1.0`).
 
 - **Compatible means the same major version, and while it's 0.x the same minor too** (0.1.0 and
-  0.1.7 work together; 0.2.0 doesn't). Craft Anything loads a compatible plugin whatever its patch
-  version, and refuses an incompatible one by name ("exports … for API 0.2.0; this Craft Anything
+  0.1.7 work together; 0.2.0 doesn't). Most Anything loads a compatible plugin whatever its patch
+  version, and refuses an incompatible one by name ("exports … for API 0.2.0; this Most Anything
   speaks 0.1.0") instead of silently skipping it.
-- **A patch version only adds optional JSON fields**: in what a plugin returns (Craft Anything
+- **A patch version only adds optional JSON fields**: in what a plugin returns (Most Anything
   ignores fields it doesn't know) and in what it's given (plugins must ignore unknown fields too).
 - **A minor version (while 0.x) or a major one** is anything else: a new or changed function, a
   field that becomes required, a changed meaning. The host's `API_VERSION`

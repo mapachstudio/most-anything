@@ -1,3 +1,4 @@
+# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 name: Release
 
 on:
@@ -24,7 +25,7 @@ jobs:
     uses: storytold/craft-common-actions/.github/workflows/release.yml@main
     with:
       app-name: craft-anything
-      app-title: "Craft Anything"
+      app-title: "Most Anything"
       craft-fonts-ref: b076417b5880bd4154bd22f00695b1d28c6bea83
       version: ${{ inputs.version }}
     secrets:

@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! The conversation: turning agent events into chat items, and drawing them (Beginner Ask screen
 //! and the Experienced agent console share the renderer).
 
@@ -114,7 +115,7 @@ pub fn describe_value(v: &Value) -> String {
 pub fn suggestions(kind: Option<TargetKind>) -> Vec<&'static str> {
     use TargetKind::*;
     match kind {
-        None => vec!["What can Craft Anything do?", "How do I open an app?", "Is it safe to look inside programs?"],
+        None => vec!["What can Most Anything do?", "How do I open an app?", "Is it safe to look inside programs?"],
         Some(Elf | Pe | MachO | MachOFat | DosCom | RawBinary) => {
             vec!["What does this program do?", "What does it send over the internet?", "Is it safe to run?", "Which files does it read or write?"]
         }

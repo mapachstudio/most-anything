@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! A game that draws isn't yet a game that plays: a first slice can draw a level with no player
 //! in it. The brief asks every game for a `--self-test <file.json>` option (play the core loop
 //! with scripted input, measure it from the game's own state, save the results, exit), and
@@ -10,7 +11,7 @@ use craft_anything_engine::self_test::{SELF_TEST_VERSION as VERSION, SelfTestRep
 use craft_anything_engine::workspace::Claim;
 
 /// What every game brief asks for, so the check can see the core loop played.
-pub const SELF_TEST_CONTRACT: &str = "Give the game a `--self-test <file.json>` option too: start a game the way a player would, drive the player with scripted input for a few seconds, measure from the game's own state whether each step of the core loop works, save the results to that file and exit: {\"version\": 1, \"steps\": [{\"step\": \"move\", \"passed\": true, \"detail\": \"walked 3.1 m forward\"}, {\"step\": \"act\", \"passed\": true, \"detail\": \"fired 5 shots, 2 hit\"}, {\"step\": \"hud\", \"passed\": true, \"detail\": \"health, ammo and the objective are drawn\"}]}. \"move\": the player (or what they steer) moves; \"act\": their main action works (firing, mining, jumping, eating…); \"hud\": the on-screen information the original shows (score, health, ammo…) is drawn. Craft Anything runs it after each build, and the game isn't ready until every step passes.";
+pub const SELF_TEST_CONTRACT: &str = "Give the game a `--self-test <file.json>` option too: start a game the way a player would, drive the player with scripted input for a few seconds, measure from the game's own state whether each step of the core loop works, save the results to that file and exit: {\"version\": 1, \"steps\": [{\"step\": \"move\", \"passed\": true, \"detail\": \"walked 3.1 m forward\"}, {\"step\": \"act\", \"passed\": true, \"detail\": \"fired 5 shots, 2 hit\"}, {\"step\": \"hud\", \"passed\": true, \"detail\": \"health, ammo and the objective are drawn\"}]}. \"move\": the player (or what they steer) moves; \"act\": their main action works (firing, mining, jumping, eating…); \"hud\": the on-screen information the original shows (score, health, ammo…) is drawn. Most Anything runs it after each build, and the game isn't ready until every step passes.";
 
 /// The core loop, as the steps a self-test must pass: (step, what it shows).
 const CORE_LOOP: [(&str, &str); 3] = [("move", "the player moves"), ("act", "the player's main action works"), ("hud", "the on-screen information is drawn")];
@@ -73,7 +74,7 @@ pub fn verdict(bytes: &[u8]) -> (bool, String) {
         Err(e) => return (false, format!("The --self-test file can't be read: {e}. {SELF_TEST_CONTRACT}")),
     };
     if report.version > VERSION {
-        return (false, format!("The --self-test file says version {}; this Craft Anything reads version {VERSION}.", report.version));
+        return (false, format!("The --self-test file says version {}; this Most Anything reads version {VERSION}.", report.version));
     }
     let (mut played, mut not) = (Vec::new(), Vec::new());
     for (step, shows) in CORE_LOOP {

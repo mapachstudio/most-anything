@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Build and package Craft Anything for Linux (<arch> is x86_64 or aarch64, or riscv64 when cross-compiling):
+# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+# Build and package Most Anything for Linux (<arch> is x86_64 or aarch64, or riscv64 when cross-compiling):
 #
 #   $DIST/craft-anything-<version>-linux-<arch>.AppImage  any distro with glibc >= the build host's
 #   $DIST/craft-anything-<version>-linux-<arch>.AppImage.zsync  delta updates (needs zsyncmake)
@@ -23,7 +24,7 @@ set -euo pipefail
 # shellcheck source=../env.sh
 . "$(dirname "${BASH_SOURCE[0]}")/../env.sh"
 HERE="$ROOT/packaging/linux"
-APP_ID=ai.storyteller.craft-anything
+APP_ID=com.grupomostmexico.mostanything
 
 SKIP_BUILD=0
 FORMATS="appimage deb rpm tar"
@@ -43,10 +44,10 @@ case "$ARCH" in
   aarch64 | arm64) ARCH=aarch64; DEB_ARCH=arm64 ;;
   *) echo "unsupported architecture $ARCH" >&2; exit 2 ;;
 esac
-export CRAFT_ANYTHING_MAINTAINER="${CRAFT_ANYTHING_MAINTAINER:-Craft Anything maintainers <craft-anything@storyteller.ai>}"
+export MOST_ANYTHING_MAINTAINER="${MOST_ANYTHING_MAINTAINER:-Most Anything maintainers <craft-anything@storyteller.ai>}"
 BASENAME="craft-anything-$VERSION-linux-$ARCH"
 
-echo "==> Craft Anything $VERSION for Linux $ARCH ($FORMATS; ${BINS[*]})"
+echo "==> Most Anything $VERSION for Linux $ARCH ($FORMATS; ${BINS[*]})"
 
 if [ "$SKIP_BUILD" = 0 ]; then
   (cd "$ROOT" && cargo build --release --locked "${CARGO_PKGS[@]}" ${CROSS_TARGET:+--target "$CROSS_TARGET"})
@@ -63,7 +64,7 @@ for bin in "${BINS[@]}"; do
 done
 install -Dm644 "$HERE/$APP_ID.desktop" "$STAGE/usr/share/applications/$APP_ID.desktop"
 mkdir -p "$STAGE/usr/share/metainfo"
-sed -e "s/@VERSION@/$VERSION/g" -e "s/@DATE@/$CRAFT_ANYTHING_BUILD_DATE/g" \
+sed -e "s/@VERSION@/$VERSION/g" -e "s/@DATE@/$MOST_ANYTHING_BUILD_DATE/g" \
   "$HERE/$APP_ID.metainfo.xml.in" >"$STAGE/usr/share/metainfo/$APP_ID.metainfo.xml"
 mkdir -p "$STAGE/usr/share/icons"
 cp -R "$ROOT/assets/app-icon/hicolor" "$STAGE/usr/share/icons/"
@@ -104,7 +105,7 @@ fi
 
 # ---- AppImage -----------------------------------------------------------------------------------
 if has appimage; then
-  APPDIR="$WORK/Craft Anything.AppDir"
+  APPDIR="$WORK/Most Anything.AppDir"
   cp -R "$STAGE" "$APPDIR"
   mv "$APPDIR/usr/share/doc" "$WORK/doc-unused"
   # AppRun is a script, not a symlink: it installs the .desktop entry and icons into

@@ -1,9 +1,10 @@
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # AGENTS.md: guide for AI agents and contributors
 
-Craft Anything is a native, pure-Rust app that shows anyone how a piece of software works (programs, apps, files,
+Most Anything is a native, pure-Rust app that shows anyone how a piece of software works (programs, apps, files,
 websites, phones) with evidence-backed answers, then helps them rebuild it. It ships a desktop app (egui), a CLI and
-an MCP server, all driven by one engine. Display name **Craft Anything**; machine names `craft-anything-*`; bundle id
-`ai.storyteller.craft-anything`. Standards shared across the Crafting Apps live in `../craftrules` (read its
+an MCP server, all driven by one engine. Display name **Most Anything**; machine names `craft-anything-*`; bundle id
+`com.grupomostmexico.mostanything`. Standards shared across the Crafting Apps live in `../craftrules` (read its
 `AGENTS.md`); follow them. Repos never share code.
 
 **Original work only:** never copy code, scripts, schemas, names, assets or wording from another project, and

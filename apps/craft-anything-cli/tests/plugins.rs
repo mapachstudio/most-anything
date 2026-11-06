@@ -1,4 +1,5 @@
-//! Plugins end to end: Craft Anything's own MCP server (`craft-anything-cli mcp`) configured as a
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+//! Plugins end to end: Most Anything's own MCP server (`craft-anything-cli mcp`) configured as a
 //! plugin, refreshed, listed and called through the CLI. Everything stays in temp folders.
 
 use craft_anything_platform::process::{Output, Process};
@@ -6,7 +7,7 @@ use serde_json::Value;
 use std::time::Duration;
 
 fn cli(args: &[&str], config: &std::path::Path) -> Output {
-    Process::new(env!("CARGO_BIN_EXE_craft-anything-cli")).args(args).env("CRAFT_ANYTHING_CONFIG_DIR", config).timeout(Duration::from_secs(120)).run().unwrap()
+    Process::new(env!("CARGO_BIN_EXE_craft-anything-cli")).args(args).env("MOST_ANYTHING_CONFIG_DIR", config).timeout(Duration::from_secs(120)).run().unwrap()
 }
 
 #[test]

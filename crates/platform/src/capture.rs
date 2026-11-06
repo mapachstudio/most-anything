@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Process capture under a pseudo-terminal.
 //!
 //! [`capture`] runs one program inside a PTY with a scripted timeline of input, resize and signal
@@ -39,7 +40,7 @@ use std::sync::{Arc, PoisonError};
 use std::time::{Instant, SystemTime};
 
 /// Reserved environment variable that carries the per-run ownership token.
-pub const RUN_ID_ENV: &str = "CRAFT_ANYTHING_RUN_ID";
+pub const RUN_ID_ENV: &str = "MOST_ANYTHING_RUN_ID";
 
 /// A scripted terminal event, dispatched when the capture clock reaches `at_ms`.
 #[derive(Debug, Clone)]

@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! What a run is doing, in more detail than the feed keeps: the action under way in words, the
 //! last lines in memory for the screen, and every line in the project's `build-activity.log`.
 //!
@@ -344,7 +345,7 @@ impl ActivityFile {
             let mut file = options.open(&path)?;
             self.written = file.metadata()?.len();
             let (_, date, time) = journal::now_utc();
-            let head = format!("--- Craft Anything {}: a run started {date} {time} UTC ---\n", env!("CARGO_PKG_VERSION"));
+            let head = format!("--- Most Anything {}: a run started {date} {time} UTC ---\n", env!("CARGO_PKG_VERSION"));
             file.write_all(head.as_bytes())?;
             self.file = Some(file);
         }

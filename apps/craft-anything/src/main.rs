@@ -1,4 +1,5 @@
-//! The Craft Anything desktop app.
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+//! The Most Anything desktop app.
 #![deny(clippy::unwrap_used, clippy::expect_used, clippy::panic, clippy::unimplemented, clippy::todo, clippy::unreachable)]
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
@@ -11,7 +12,7 @@ use std::sync::Arc;
 mod start_guard;
 
 /// Set when the last start never opened its window (see [`start_guard`]): the software renderer
-/// (WARP) is asked for, as with `CRAFT_ANYTHING_RENDERER=software`, for this start only.
+/// (WARP) is asked for, as with `MOST_ANYTHING_RENDERER=software`, for this start only.
 #[cfg(windows)]
 static RETRY_IN_SOFTWARE: std::sync::atomic::AtomicBool = std::sync::atomic::AtomicBool::new(false);
 
@@ -52,8 +53,8 @@ fn main() -> eframe::Result {
     log::info!("engine and AI ready; opening the window");
 
     let viewport = eframe::egui::ViewportBuilder::default()
-        .with_title("Craft Anything")
-        .with_app_id("ai.storyteller.craft-anything")
+        .with_title("Most Anything")
+        .with_app_id("com.grupomostmexico.mostanything")
         .with_inner_size([1360.0, 860.0])
         .with_min_inner_size([760.0, 520.0])
         // Our own title bar draws the window controls, moves and resizes the window.
@@ -93,7 +94,7 @@ fn main() -> eframe::Result {
     // loop isn't retried; the app only reports the failure (below) and exits.
     let run = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
         eframe::run_native(
-            "Craft Anything",
+            "Most Anything",
             options,
             Box::new(move |cc| {
                 log::info!("window open");
@@ -123,7 +124,7 @@ fn main() -> eframe::Result {
             let log = craft_anything_engine::settings::config_dir().join("desktop.log");
             let _ = rfd::MessageDialog::new()
                 .set_level(rfd::MessageLevel::Error)
-                .set_title("Craft Anything couldn't open its window")
+                .set_title("Most Anything couldn't open its window")
                 .set_description(format!(
                     "{e}\n\n{} What happened is written to {}; please attach it if you report this.",
                     graphics_advice(&e.to_string()),
@@ -145,7 +146,7 @@ fn dx12_compiler(from_env: Option<eframe::wgpu::Dx12Compiler>) -> eframe::wgpu::
     from_env.unwrap_or(eframe::wgpu::Dx12Compiler::Fxc)
 }
 
-/// Whether the software renderer (WARP) is asked for: `CRAFT_ANYTHING_RENDERER=software`.
+/// Whether the software renderer (WARP) is asked for: `MOST_ANYTHING_RENDERER=software`.
 #[cfg_attr(all(not(windows), not(test)), expect(dead_code, reason = "only Windows picks its own graphics adapter"))]
 fn wants_software(setting: Option<&str>) -> bool {
     setting.is_some_and(|s| s.trim().eq_ignore_ascii_case("software"))
@@ -181,9 +182,9 @@ fn panic_text(payload: &(dyn std::any::Any + Send)) -> String {
 fn graphics_advice(error: &str) -> &'static str {
     if error.to_lowercase().contains("device is lost") {
         if cfg!(target_os = "macos") {
-            "The Mac's graphics stopped while the window opened. Install the latest macOS update, then try again. If it keeps happening, please report it with the log file (Craft Anything issue #742 covers the Metal shader case)."
+            "The Mac's graphics stopped while the window opened. Install the latest macOS update, then try again. If it keeps happening, please report it with the log file (Most Anything issue #742 covers the Metal shader case)."
         } else {
-            "The graphics driver stopped while the window opened. Update it, then try again. If it keeps happening, set the environment variable CRAFT_ANYTHING_RENDERER=software to draw without the graphics card (slower), and start the app again."
+            "The graphics driver stopped while the window opened. Update it, then try again. If it keeps happening, set the environment variable MOST_ANYTHING_RENDERER=software to draw without the graphics card (slower), and start the app again."
         }
     } else {
         "Updating your graphics driver often fixes this."
@@ -196,7 +197,7 @@ fn graphics_advice(error: &str) -> &'static str {
 /// (#33). `WGPU_BACKEND` still narrows the choice.
 #[cfg(windows)]
 fn pick_adapter(adapters: &[eframe::wgpu::Adapter], surface: Option<&eframe::wgpu::Surface<'_>>) -> Result<eframe::wgpu::Adapter, String> {
-    let software = wants_software(std::env::var("CRAFT_ANYTHING_RENDERER").ok().as_deref()) || RETRY_IN_SOFTWARE.load(std::sync::atomic::Ordering::Relaxed);
+    let software = wants_software(std::env::var("MOST_ANYTHING_RENDERER").ok().as_deref()) || RETRY_IN_SOFTWARE.load(std::sync::atomic::Ordering::Relaxed);
     let picked = adapters.iter().filter(|a| surface.is_none_or(|s| a.is_surface_supported(s))).min_by_key(|a| {
         let info = a.get_info();
         // Asked for software: WARP first, and the usual order among the rest.
@@ -373,19 +374,19 @@ mod graphics_tests {
     #[cfg(windows)]
     #[test]
     fn a_lost_device_says_how_to_draw_without_the_graphics_card() {
-        assert!(graphics_advice("WGPU error: Parent device is lost").contains("CRAFT_ANYTHING_RENDERER=software"));
+        assert!(graphics_advice("WGPU error: Parent device is lost").contains("MOST_ANYTHING_RENDERER=software"));
         assert!(!graphics_advice("No adapter").contains("software"));
         assert!(wants_software(Some(" Software ")) && !wants_software(Some("gpu")) && !wants_software(None));
     }
 
-    /// #742: on macOS `CRAFT_ANYTHING_RENDERER` does nothing, so the advice must not name it.
+    /// #742: on macOS `MOST_ANYTHING_RENDERER` does nothing, so the advice must not name it.
     #[cfg(target_os = "macos")]
     #[test]
     fn a_lost_device_on_a_mac_does_not_point_at_the_windows_only_setting() {
         let advice = graphics_advice("WGPU error: Parent device is lost");
-        assert!(!advice.contains("CRAFT_ANYTHING_RENDERER"), "{advice}");
+        assert!(!advice.contains("MOST_ANYTHING_RENDERER"), "{advice}");
         assert!(advice.contains("#742"));
-        assert!(!graphics_advice("No adapter").contains("CRAFT_ANYTHING_RENDERER"));
+        assert!(!graphics_advice("No adapter").contains("MOST_ANYTHING_RENDERER"));
     }
 
     #[cfg(not(windows))]

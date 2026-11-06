@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 # Smoke test for packaging/linux/AppRun: the AppImage's desktop integration writes
 # and refreshes the host .desktop entry and icons, is idempotent, honours the opt-out
 # and an unwritable HOME, and always launches the app.
@@ -8,13 +9,13 @@ set -euo pipefail
 
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT="$(cd "$HERE/../.." && pwd)"
-APP_ID=ai.storyteller.craft-anything
+APP_ID=com.grupomostmexico.mostanything
 
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
 # Fake AppDir with the real AppRun, .desktop template, icons, and a stub binary.
-APPDIR="$TMP/Craft Anything.AppDir"
+APPDIR="$TMP/Most Anything.AppDir"
 mkdir -p "$APPDIR/usr/bin"
 install -Dm755 "$HERE/AppRun" "$APPDIR/AppRun"
 install -Dm644 "$HERE/$APP_ID.desktop" "$APPDIR/usr/share/applications/$APP_ID.desktop"
@@ -75,7 +76,7 @@ grep -Fxq "Exec=\"$(readlink -f "$APPIMAGE")\" %F" "$DESKTOP" || fail "Exec not 
 
 # 6. Opt-out installs nothing.
 rm -rf "$XDG_DATA_HOME"
-CRAFT_ANYTHING_NO_DESKTOP_INTEGRATION=1 "$APPDIR/AppRun" >/dev/null || fail "opt-out launch exited non-zero"
+MOST_ANYTHING_NO_DESKTOP_INTEGRATION=1 "$APPDIR/AppRun" >/dev/null || fail "opt-out launch exited non-zero"
 [ ! -e "$XDG_DATA_HOME" ] || fail "opt-out still integrated"
 
 # 7. An unwritable data dir never blocks the launch.

@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Plan what setup would change, apply it transactionally, and uninstall what we own.
 
 use crate::clients::{Client, Format, Host, SERVER_NAME, clients, is_owned_entry};
@@ -89,7 +90,7 @@ pub fn backup_path(p: &Path) -> PathBuf {
 pub fn default_command() -> Result<Vec<String>, ToolError> {
     let p = craft_anything_platform::self_cli_path().ok_or_else(|| {
         ToolError::new(ErrorCode::EngineMissing, "Couldn't find craft-anything-cli.")
-            .with_remediation("Install Craft Anything (the CLI ships next to the app), or pass its path explicitly.")
+            .with_remediation("Install Most Anything (the CLI ships next to the app), or pass its path explicitly.")
     })?;
     Ok(vec![p.display().to_string(), "mcp".into()])
 }

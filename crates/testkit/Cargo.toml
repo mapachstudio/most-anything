@@ -1,6 +1,7 @@
+# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 [package]
 name = "craft-anything-testkit"
-description = "Test helpers and synthetic sample builders for Craft Anything"
+description = "Test helpers and synthetic sample builders for Most Anything"
 version.workspace = true
 edition.workspace = true
 license.workspace = true

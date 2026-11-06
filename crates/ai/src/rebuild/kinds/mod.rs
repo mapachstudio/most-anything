@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! What is being made. Each kind of target (website, app, game) is a [`TargetKind`]: how a
 //! request is recognised as one, its default stack, what the builder is told, and the
 //! [`Check`]s that judge a build. A [`KindRegistry`] holds them; add a kind by implementing the
@@ -75,7 +76,7 @@ pub struct KindWords {
     pub change_hint: &'static str,
 }
 
-/// A kind of thing Craft Anything can make.
+/// A kind of thing Most Anything can make.
 pub trait TargetKind: Send + Sync {
     /// Stable id, stored with the project: `"website"`, `"app"`, `"game"`.
     fn id(&self) -> &'static str;

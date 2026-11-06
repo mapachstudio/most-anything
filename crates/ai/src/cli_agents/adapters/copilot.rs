@@ -1,10 +1,11 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! The person's installed Copilot CLI, driven over ACP with our MCP tools rather than its
 //! native file and shell tools. Sign-in, credential storage and refresh stay in Copilot CLI.
 
 use super::*;
 
 /// Copilot's ACP-only adapter. Unsupported connection modes fail instead of falling back to
-/// a CLI invocation that has no way to ask Craft Anything for approval.
+/// a CLI invocation that has no way to ask Most Anything for approval.
 pub struct Copilot;
 
 impl AgentAdapter for Copilot {
@@ -114,7 +115,7 @@ impl AgentAdapter for Copilot {
         if options.args.is_empty() {
             Ok(())
         } else {
-            Err(ToolError::invalid("Extra Copilot CLI arguments could bypass Craft Anything's tool restrictions.")
+            Err(ToolError::invalid("Extra Copilot CLI arguments could bypass Most Anything's tool restrictions.")
                 .with_remediation("Remove this backend's extra arguments. Set its program, cli_model and effort through the backend options instead."))
         }
     }
@@ -133,7 +134,7 @@ impl AgentAdapter for Copilot {
     }
 
     fn sign_in_fix(&self) -> Option<String> {
-        Some("Sign in separately in a terminal with `copilot login`, then try again. If authentication still fails, restart Craft Anything. Copilot CLI manages your credentials.".into())
+        Some("Sign in separately in a terminal with `copilot login`, then try again. If authentication still fails, restart Most Anything. Copilot CLI manages your credentials.".into())
     }
 }
 
@@ -223,7 +224,7 @@ mod tests {
         assert!(args.contains(&"--secret-env-vars=GH_TOKEN".to_string()));
         assert!(!args.iter().any(|arg| arg.starts_with("--allow-all")));
         let fix = Copilot.sign_in_fix().unwrap();
-        assert!(fix.contains("copilot login") && fix.contains("restart Craft Anything"));
+        assert!(fix.contains("copilot login") && fix.contains("restart Most Anything"));
     }
 
     #[test]

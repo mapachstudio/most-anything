@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! File progress kept between builder turns and runs. File contents, rather than timestamps,
 //! decide whether the app changed; a successful write of identical bytes is not progress.
 
@@ -71,8 +72,8 @@ impl BuildProgress {
             }
         };
         if found > BUILD_PROGRESS_VERSION {
-            return Err(ToolError::unsupported(format!("{BUILD_PROGRESS_FILE} was written by a newer Craft Anything, so this build is left alone."))
-                .with_remediation("Update Craft Anything to continue this build."));
+            return Err(ToolError::unsupported(format!("{BUILD_PROGRESS_FILE} was written by a newer Most Anything, so this build is left alone."))
+                .with_remediation("Update Most Anything to continue this build."));
         }
         let version = crate::versioned::upgrade(&mut doc, found, 0, STEPS)
             .map_err(|e| ToolError::invalid(format!("Couldn't bring {BUILD_PROGRESS_FILE} up to date: {e}")))?;

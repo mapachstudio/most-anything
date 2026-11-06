@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Game archives: what's inside a game's packed files, and taking one out. Only the parts of the
 //! file that describe its contents are read (an Unreal pak's footer and index), and a file taken
 //! out is streamed, so a pak of many gigabytes is fine.
@@ -1195,7 +1196,7 @@ fn readable(e: &Entry) -> Result<bool, ToolError> {
     }
     let method = e.compression.to_lowercase();
     if method != "none" && method != "zlib" {
-        let oodle = if method.contains("oodle") { " Oodle is a commercial library the game ships; Craft Anything doesn't run it." } else { "" };
+        let oodle = if method.contains("oodle") { " Oodle is a commercial library the game ships; Most Anything doesn't run it." } else { "" };
         return Err(ToolError::unsupported(format!("{file} is compressed with {}, which isn't supported here.{oodle}", e.compression)));
     }
     Ok(method == "zlib")

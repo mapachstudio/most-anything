@@ -1,16 +1,17 @@
-# Flatpak manifest for Craft Anything, ready for a Flathub submission.
+# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+# Flatpak manifest for Most Anything, ready for a Flathub submission.
 #
 # Flatpak builds run offline, so the crate sources must be vendored first. From the repo root:
 #
 #   curl -fsSLO https://raw.githubusercontent.com/flatpak/flatpak-builder-tools/master/cargo/flatpak-cargo-generator.py
 #   python3 flatpak-cargo-generator.py Cargo.lock -o packaging/linux/flatpak/cargo-sources.json
-#   flatpak-builder --user --install --force-clean build-flatpak packaging/linux/flatpak/ai.storyteller.craft-anything.yml
-#   flatpak run ai.storyteller.craft-anything
+#   flatpak-builder --user --install --force-clean build-flatpak packaging/linux/flatpak/com.grupomostmexico.mostanything.yml
+#   flatpak run com.grupomostmexico.mostanything
 #
 # For Flathub, replace the `dir` source with a `git` source pinned to a release tag and commit.
-# The single-file .flatpak attached to each release comes from ai.storyteller.craft-anything.bundle.yml,
+# The single-file .flatpak attached to each release comes from com.grupomostmexico.mostanything.bundle.yml,
 # which repackages the prebuilt release binaries. Keep runtime-version and finish-args identical.
-id: ai.storyteller.craft-anything
+id: com.grupomostmexico.mostanything
 runtime: org.freedesktop.Platform
 runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
@@ -31,7 +32,7 @@ finish-args:
   - --filesystem=home:ro
   # The default folder for new projects (`default_projects_dir`), writable and made if missing;
   # the rest of home stays read-only (#505).
-  - --filesystem=xdg-documents/Craft Anything:create
+  - --filesystem=xdg-documents/Most Anything:create
   # AI backends (Anthropic, OpenAI, OpenRouter, local servers) and optional engine downloads.
   - --share=network
 build-options:
@@ -47,13 +48,13 @@ modules:
       - cargo --offline build --release --locked -p craft-anything -p craft-anything-cli
       - install -Dm755 target/release/craft-anything /app/bin/craft-anything
       - install -Dm755 target/release/craft-anything-cli /app/bin/craft-anything-cli
-      - install -Dm644 packaging/linux/ai.storyteller.craft-anything.desktop /app/share/applications/ai.storyteller.craft-anything.desktop
+      - install -Dm644 packaging/linux/com.grupomostmexico.mostanything.desktop /app/share/applications/com.grupomostmexico.mostanything.desktop
       - mkdir -p /app/share/icons && cp -R assets/app-icon/hicolor /app/share/icons/
       - >-
         version=$(awk '/^\[/{p=($0=="[workspace.package]");next} p&&$1=="version"{gsub(/[" ]/,"",$3);print $3;exit}' Cargo.toml);
         install -d /app/share/metainfo;
         sed -e "s/@VERSION@/$version/" -e "s/@DATE@/$(date -u +%Y-%m-%d)/"
-        packaging/linux/ai.storyteller.craft-anything.metainfo.xml.in > /app/share/metainfo/ai.storyteller.craft-anything.metainfo.xml
+        packaging/linux/com.grupomostmexico.mostanything.metainfo.xml.in > /app/share/metainfo/com.grupomostmexico.mostanything.metainfo.xml
     sources:
       - type: dir
         path: ../../..

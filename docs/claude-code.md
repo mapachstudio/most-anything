@@ -1,14 +1,15 @@
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # Using Claude Code as the builder
 
-Craft Anything can build with the person's own local Claude Code. This page records what the
+Most Anything can build with the person's own local Claude Code. This page records what the
 integration does, why it is shaped this way, and what remains to confirm.
 
 ## How it works
 
-- Craft Anything finds the `claude` program on the computer (PATH or `~/.local/bin`) and runs it
+- Most Anything finds the `claude` program on the computer (PATH or `~/.local/bin`) and runs it
   as a child process in headless mode, as documented by Anthropic: `claude -p <task>
   --output-format stream-json --verbose`, with `--resume <session>` to continue a project.
-- The working folder is the project folder. Craft Anything's own tools are offered through
+- The working folder is the project folder. Most Anything's own tools are offered through
   `--mcp-config` (our MCP server, `craft-anything-cli mcp --project … --inbox …`) with
   `--strict-mcp-config`. A build checks that `craft-anything-cli` starts before doing anything
   else, and says so plainly if not. Without the server Claude Code stops at its first approval
@@ -56,12 +57,12 @@ The Flatpak build can read the home folder but not write to it, so Claude Code c
 conversations in `~/.claude`: the first turn ran, and `--resume` then said "No conversation found
 with session ID" (#506). When the app runs in a Flatpak and `CLAUDE_CONFIG_DIR` isn't set, it starts
 Claude Code with `CLAUDE_CONFIG_DIR` pointing at `craft-anything/claude` in the app's own data
-folder (`~/.var/app/ai.storyteller.craft-anything/data/`), which is writable. Two consequences:
+folder (`~/.var/app/com.grupomostmexico.mostanything/data/`), which is writable. Two consequences:
 
 - Claude Code there is signed in separately from the one on the host. The sign-in message gives the
   command that does it through the sandbox:
-  `flatpak run --command=sh ai.storyteller.craft-anything -c 'CLAUDE_CONFIG_DIR="$XDG_DATA_HOME/craft-anything/claude" "$HOME/.local/bin/claude" auth login'`
-  (Craft Anything never reads Claude Code's credentials, so they aren't copied over.)
+  `flatpak run --command=sh com.grupomostmexico.mostanything -c 'CLAUDE_CONFIG_DIR="$XDG_DATA_HOME/craft-anything/claude" "$HOME/.local/bin/claude" auth login'`
+  (Most Anything never reads Claude Code's credentials, so they aren't copied over.)
 - Setting `CLAUDE_CONFIG_DIR` yourself, for example with `flatpak override --user --env=…`, wins.
   Builds on another computer over SSH are not changed.
 
@@ -79,7 +80,7 @@ From Claude Code's *Legal and compliance* page:
 - Products that run Claude Code must not modify the binary or disable its authentication
   methods, and may not pay for, resell or intermediate Claude usage.
 
-Craft Anything:
+Most Anything:
 
 - runs the unmodified `claude` binary that the person installed;
 - never reads, stores or forwards credentials or tokens, and offers no Claude login of its own
@@ -92,7 +93,7 @@ Craft Anything:
 
 ## Whose account and terms
 
-Craft Anything is open source and runs on the person's own computer. Whoever runs it runs their
+Most Anything is open source and runs on the person's own computer. Whoever runs it runs their
 own Claude Code, signed in to their own account, so their use falls under their agreement with
 Anthropic, as with any other script that calls `claude -p`. The free release ships on that basis.
 The questions below matter for a paid offering, where we would be the party.
@@ -101,7 +102,7 @@ The questions below matter for a paid offering, where we would be the party.
 
 1. The Agent SDK overview says third-party developers may not "offer claude.ai login or rate
    limits for their products, including agents built on the Claude Agent SDK" without approval.
-   Craft Anything doesn't offer a login, but it does let a person's subscription do work that
+   Most Anything doesn't offer a login, but it does let a person's subscription do work that
    our app orchestrates. The legal page explicitly allows end users to use their own
    subscription with the unmodified binary, which is what we do. Still, **confirm with Anthropic
    (sales/partnerships) that orchestrating the user's own CLI this way is acceptable at scale**,

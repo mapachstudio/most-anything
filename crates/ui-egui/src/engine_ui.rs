@@ -1,8 +1,9 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Game engines in the UI: the "Build with" choice on Make, the step-by-step "Get Unity / Unreal /
 //! Godot" dialog, the engines list in Settings, and the download progress shown everywhere. Also a
 //! game's generated-assets switch and the fal.ai key it needs.
 //!
-//! Craft Anything downloads only what it can check (Godot against its official checksums; Unity
+//! Most Anything downloads only what it can check (Godot against its official checksums; Unity
 //! Hub and the Epic Games Launcher against their vendors' signatures). Sign-in, licences and the
 //! engines themselves stay in the vendors' own apps, with the person.
 
@@ -178,7 +179,7 @@ pub fn deep_needed(app: &mut CraftApp, ui: &mut Ui) {
         ui,
         "shield-check",
         "Looking inside needs Deep mode",
-        "Clean room never reads the original's code, files or page source. Deep mode reads them with every tool Craft Anything has.",
+        "Clean room never reads the original's code, files or page source. Deep mode reads them with every tool Most Anything has.",
     );
     ui.vertical_centered(|ui| {
         if widgets::primary_icon(ui, Some("microscope"), "Turn on Deep mode", true).clicked() {
@@ -240,7 +241,7 @@ pub fn ghidra_modal(app: &mut CraftApp, ui: &mut Ui, close: &mut bool) {
         body(
             ui,
             trf(
-                "It isn't on this computer yet. Craft Anything can download Ghidra {version} and the Java runtime it needs (about {mb} MB), check both against their publishers' checksums, and set them up in its own folder. Nothing else on your computer changes.",
+                "It isn't on this computer yet. Most Anything can download Ghidra {version} and the Java runtime it needs (about {mb} MB), check both against their publishers' checksums, and set them up in its own folder. Nothing else on your computer changes.",
                 &[("version", get::VERSION), ("mb", &get::DOWNLOAD_MB.to_string())],
             ),
         );
@@ -251,7 +252,7 @@ pub fn ghidra_modal(app: &mut CraftApp, ui: &mut Ui, close: &mut bool) {
         }
     }
     if !ready && downloading.is_none() {
-        body(ui, tr("Without it, Deep mode uses Craft Anything's own decompiler, which is rougher."));
+        body(ui, tr("Without it, Deep mode uses Most Anything's own decompiler, which is rougher."));
     }
     ui.add_space(14.0);
     ui.horizontal(|ui| {
@@ -621,7 +622,7 @@ pub fn build_with(app: &mut CraftApp, ui: &mut Ui) {
         });
         if !matches!(f.engine, game::Made::Unity | game::Made::Unreal | game::Made::Godot) {
             ui.label(
-                RichText::new(trf("Craft Anything can't build with {engine}, so Unity is the closest match.", &[("engine", f.engine.name())]))
+                RichText::new(trf("Most Anything can't build with {engine}, so Unity is the closest match.", &[("engine", f.engine.name())]))
                     .color(t.text_dim)
                     .size(theme::SMALL),
             );

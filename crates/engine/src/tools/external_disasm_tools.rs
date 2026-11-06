@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Thin, read-only wrappers over optional external disassemblers and decompilers: `objdump` (GNU
 //! binutils or LLVM) for one fixed operation at a time, `rizin` for one allow-listed read-only
 //! command, and ILSpy's command line (`ilspycmd`) for .NET assemblies. All run through the
@@ -206,7 +207,7 @@ fn text_evidence(
     let stderr = out.stderr_text();
     let mut lims = vec![Limitation::new(
         "raw_tool_output",
-        "This is the external tool's own text; its format can change between versions and is not checked by Craft Anything.",
+        "This is the external tool's own text; its format can change between versions and is not checked by Most Anything.",
     )];
     if out.stdout_truncated {
         lims.push(Limitation::new(

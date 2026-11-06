@@ -1,4 +1,5 @@
-# wgpu-hal 30.0.1, patched for Craft Anything
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
+# wgpu-hal 30.0.1, patched for Most Anything
 
 This is a copy of `wgpu-hal` 30.0.1 (MIT OR Apache-2.0, see `LICENSE.*`) with one change, used through
 `[patch.crates-io]` in the workspace `Cargo.toml`.
@@ -16,7 +17,7 @@ On some Macs the OS expects a Metal language version its compiler does not accep
 (GT 640M, macOS 15 under OpenCore Legacy Patcher) macOS 15 selects `metal3.2` and the compiler stops at
 `metal3.1`. Every shader fails, the device is lost and the app's window never opens.
 
-- Craft Anything issue #742.
+- Most Anything issue #742.
 - Upstream: gfx-rs/wgpu #10687 (closed as a duplicate, no fix on trunk), #10592 (open).
 
 ## Removing it

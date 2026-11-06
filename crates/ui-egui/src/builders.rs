@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Who builds: the AIs that can build, the one that builds by default, the choice on Make
 //! ("Built by"), and the dialog when nothing can build yet. One rule decides "can it build?"
 //! ([`craft_anything_ai::default_builder`]), so the Make screen's warning and Start agree.
@@ -387,7 +388,7 @@ pub fn need_builder_modal(app: &mut CraftApp, ui: &mut Ui, start: bool, close: &
             ui.add(
                 egui::Label::new(
                     RichText::new(tr(
-                        "Building needs a coding agent on this computer (Claude Code, Codex or Gemini CLI: install one and sign in to it once in its own window), or an AI with an API key. Craft Anything never sees your account.",
+                        "Building needs a coding agent on this computer (Claude Code, Codex or Gemini CLI: install one and sign in to it once in its own window), or an AI with an API key. Most Anything never sees your account.",
                     ))
                     .color(t.text_dim),
                 )

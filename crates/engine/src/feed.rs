@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! A project's conversation, as data: what the person asked, what the builder did and said, its
 //! checklist, questions and checks. It's kept in the project folder (`feed.json`); a rebuild run
 //! appends to it as it goes (`ai::rebuild::feed`), and every client reads the same file.
@@ -14,7 +15,7 @@ use std::path::{Path, PathBuf};
 pub const FEED_FILE: &str = "feed.json";
 
 /// The format written today (4 saves a dismissed plan card with it; 3 saved a prompt's pictures);
-/// files without a version are the earlier bare list. An older Craft Anything won't rewrite a file
+/// files without a version are the earlier bare list. An older Most Anything won't rewrite a file
 /// it can't read (`save` refuses a newer version).
 pub const FEED_VERSION: u32 = 4;
 
@@ -201,7 +202,7 @@ pub fn history(ws: &Workspace) -> Vec<FeedItem> {
 }
 
 /// Write the feed into the project folder (only one that exists; never creates one). A feed
-/// saved by a newer Craft Anything is never written over (docs/file-formats.md).
+/// saved by a newer Most Anything is never written over (docs/file-formats.md).
 pub fn save(root: &Path, feed: &[FeedItem]) -> Result<(), ToolError> {
     if !root.is_dir() {
         return Ok(());
@@ -212,8 +213,8 @@ pub fn save(root: &Path, feed: &[FeedItem]) -> Result<(), ToolError> {
         .and_then(|v| v.get("version").and_then(Value::as_u64))
         .is_some_and(|v| v > u64::from(FEED_VERSION));
     if newer {
-        return Err(ToolError::new(ErrorCode::NotSupported, "This project's conversation was saved by a newer Craft Anything, so it isn't changed.")
-            .with_remediation("Update Craft Anything to keep its conversation up to date."));
+        return Err(ToolError::new(ErrorCode::NotSupported, "This project's conversation was saved by a newer Most Anything, so it isn't changed.")
+            .with_remediation("Update Most Anything to keep its conversation up to date."));
     }
     let json = serde_json::to_vec(&Saved { version: FEED_VERSION, items: feed.to_vec() }).map_err(|e| ToolError::internal(e.to_string()))?;
     crate::project::write_atomic(&root.join(FEED_FILE), &json)
@@ -326,7 +327,7 @@ mod tests {
         assert_eq!(asks(&load(&ws)), 1, "kept with its answer");
         record_answer(&ws, &question, "Minimal").unwrap();
         assert_eq!(asks(&load(&ws)), 1, "not twice");
-        // One from a newer Craft Anything is shown as far as we can, never written over.
+        // One from a newer Most Anything is shown as far as we can, never written over.
         let newer = br#"{"version":99,"items":[{"User":"From the future"}],"extra":1}"#;
         std::fs::write(ws.root.join(FEED_FILE), newer).unwrap();
         assert!(save(&ws.root, &[FeedItem::User(UserItem::Text("x".into()))]).is_err());

@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! `rebuild` picks the AI it was told to use: a run on an API backend must not add a coding agent.
 //! Each test gives the binary its own config, home and `PATH`, so the person's settings and the
 //! agents installed on the machine don't decide the result.
@@ -17,7 +18,7 @@ fn cli(args: &[&str], config: &Path, home: &Path, bin: &Path) -> Output {
     Process::new(env!("CARGO_BIN_EXE_craft-anything-cli"))
         .args(args)
         .env_clear()
-        .env("CRAFT_ANYTHING_CONFIG_DIR", config)
+        .env("MOST_ANYTHING_CONFIG_DIR", config)
         .env("HOME", home)
         .env("PATH", path)
         .timeout(Duration::from_secs(90))

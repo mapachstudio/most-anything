@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Game assets the builder generates with fal.ai: `assets_image_generate` (a picture: a texture, a sky,
 //! concept art) and `assets_model_generate` (a low-poly GLB model, from a description or a picture). Each one
 //! is paid for, so a project has a budget: the builder spends freely under it, and the person is
@@ -133,7 +134,7 @@ fn job(ctx: &Ctx<'_>) -> Result<Job, ToolError> {
     if !providers.ids().iter().any(|id| keys.get(id).is_some()) {
         return Err(no_key("fal.ai"));
     }
-    let not_project = || ToolError::new(ErrorCode::FeatureMissing, "Assets can only be generated inside a Craft Anything project.");
+    let not_project = || ToolError::new(ErrorCode::FeatureMissing, "Assets can only be generated inside a Most Anything project.");
     let inbox = inbox(ctx).ok_or_else(not_project)?;
     let ws = workspace_of(&inbox).ok_or_else(not_project)?;
     if !ws.manifest.generate_assets {

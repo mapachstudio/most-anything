@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Talking to the person while an agent works: `core_person_ask` (a question with suggested answers)
 //! and `core_action_approve` (the permission check a coding agent calls before an action, e.g.
 //! Claude Code's `--permission-prompt-tool`). Both go through the session's [`Inbox`]; the app
@@ -326,7 +327,7 @@ fn decide_command(cmd: &str, app: &Path) -> Decision {
     let parts: Vec<&str> = c.split("&&").map(str::trim).collect();
     if parts.iter().any(|p| never_exits(p)) {
         return Decision::Deny(
-            "Don't start dev servers or watchers: they never exit. Run `npm run build` (or `cargo build`) instead; Craft Anything serves and checks the build itself.".into(),
+            "Don't start dev servers or watchers: they never exit. Run `npm run build` (or `cargo build`) instead; Most Anything serves and checks the build itself.".into(),
         );
     }
     if c.contains(['|', ';', '<', '>', '`', '$', '\n']) || c.replace("&&", "").contains('&') {
@@ -524,7 +525,7 @@ pub fn never_unasked(ws: Option<&Workspace>, tool: &str, input: &Value) -> Optio
             let system = SYSTEM_DIRS.iter().any(|d| may_reach(Path::new(d), &p));
             // The inbox (where answers are written), the manifest and the other records stay out of reach.
             let ours = ws.is_some_and(|w| w.is_own_record(&p));
-            (system || ours).then(|| refuse("changes system files or Craft Anything's own records")).flatten()
+            (system || ours).then(|| refuse("changes system files or Most Anything's own records")).flatten()
         }
         "Bash" | "PowerShell" => {
             let command = s("command");

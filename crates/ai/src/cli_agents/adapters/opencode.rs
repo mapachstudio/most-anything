@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! OpenCode (`opencode run`). Without `run` its first argument names the folder to open, so a
 //! prompt given on its own was read as a folder and every run stopped at once (#32).
 
@@ -15,12 +16,12 @@ impl AgentAdapter for OpenCode {
         true
     }
 
-    /// Native model selection cannot yet carry this run's Craft Anything MCP server.
+    /// Native model selection cannot yet carry this run's Most Anything MCP server.
     fn check_native_options(&self, options: &BackendOptions) -> Result<(), ToolError> {
         if options.cli_model.is_some() || options.cli_thinking.is_some() {
             return Err(ToolError::new(
                 ErrorCode::BadSettings,
-                "OpenCode's native model/thinking selection cannot yet connect this run's Craft Anything tools.",
+                "OpenCode's native model/thinking selection cannot yet connect this run's Most Anything tools.",
             )
             .with_remediation("For a local OpenCode run, clear the model and thinking selection and enable ACP, or choose another AI. Native MCP configuration is not implemented yet."));
         }

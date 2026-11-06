@@ -1,4 +1,5 @@
-# Hosting Craft Anything for the web
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
+# Hosting Most Anything for the web
 
 `craft-anything-web-<version>.zip` (from the GitHub release, or `packaging/web/package.sh`) holds a
 static site in `craft-anything-web-<version>/`:
@@ -37,7 +38,7 @@ refuses.
   `.js` files, and `no-cache` on `index.html`.
 - **HTTPS:** WebGPU (and the clipboard) only work in a secure context, which means `https://`
   or `http://localhost`. Over plain HTTP elsewhere, the app falls back to WebGL2.
-- **No special isolation headers:** Craft Anything doesn't use `SharedArrayBuffer`, so it doesn't
+- **No special isolation headers:** Most Anything doesn't use `SharedArrayBuffer`, so it doesn't
   need `Cross-Origin-Opener-Policy` or `Cross-Origin-Embedder-Policy`. If your site already sends
   COEP `require-corp`, also send `Cross-Origin-Resource-Policy: same-origin` (or `cross-origin`
   when the files live on a CDN) on the app's files.
@@ -61,7 +62,7 @@ Local test: `python3 -m http.server 8767` inside the folder, then open http://lo
 ```html
 <iframe
   src="https://example.com/craft-anything/"
-  title="Craft Anything"
+  title="Most Anything"
   style="width: 100%; height: 720px; border: 0;"
   allow="fullscreen; clipboard-read; clipboard-write"
   allowfullscreen>
@@ -76,7 +77,7 @@ Local test: `python3 -m http.server 8767` inside the folder, then open http://lo
 
 ## Renderer
 
-Craft Anything renders with wgpu: **WebGPU** when the browser has it, otherwise **WebGL2**.
+Most Anything renders with wgpu: **WebGPU** when the browser has it, otherwise **WebGL2**.
 
 ## Smoke test (headless Chrome)
 

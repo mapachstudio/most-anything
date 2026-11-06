@@ -1,4 +1,5 @@
-//! JavaScript, Electron and web-bundle analysis for Craft Anything.
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+//! JavaScript, Electron and web-bundle analysis for Most Anything.
 //!
 //! Everything here is static and runs nothing: sources are parsed (with oxc, a pure-Rust
 //! parser) or, when parsing is refused or fails, tokenized; facts are read from the result.

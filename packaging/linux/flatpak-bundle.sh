@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Repackage a Craft Anything Linux tarball as a single-file Flatpak bundle:
+# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+# Repackage a Most Anything Linux tarball as a single-file Flatpak bundle:
 #
 #   $DIST/craft-anything-<version>-linux-<arch>.flatpak
 #
@@ -12,12 +13,12 @@
 # installed per-user from Flathub. Unless --no-test, the bundle is then installed per-user and
 # `craft-anything-cli --version` (or `craft-anything --version` without the CLI) is run inside the sandbox
 # as a smoke test.
-# Manifest: packaging/linux/flatpak/ai.storyteller.craft-anything.bundle.yml.
+# Manifest: packaging/linux/flatpak/com.grupomostmexico.mostanything.bundle.yml.
 set -euo pipefail
 # shellcheck source=../env.sh
 . "$(dirname "${BASH_SOURCE[0]}")/../env.sh"
 HERE="$ROOT/packaging/linux"
-APP_ID=ai.storyteller.craft-anything
+APP_ID=com.grupomostmexico.mostanything
 FLATHUB=https://dl.flathub.org/repo/flathub.flatpakrepo
 
 TEST=1
@@ -46,7 +47,7 @@ for tool in flatpak flatpak-builder; do
   command -v "$tool" >/dev/null || { echo "error: $tool not found (apt install flatpak flatpak-builder librsvg2-common)" >&2; exit 1; }
 done
 
-echo "==> Craft Anything $VERSION Flatpak bundle for $ARCH from $(basename "$TARBALL")"
+echo "==> Most Anything $VERSION Flatpak bundle for $ARCH from $(basename "$TARBALL")"
 
 WORK="$CARGO_TARGET_DIR/flatpak-bundle"
 rm -rf "$WORK"

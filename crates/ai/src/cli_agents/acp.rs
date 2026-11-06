@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Agents that speak the Agent Client Protocol (ACP: JSON-RPC 2.0, one message per line on the
 //! agent's stdin/stdout) as one more [`Conversation`]. One agent process serves the whole chat:
 //! `initialize`, then `session/new` (or `session/load` to continue) with our MCP server, then one
@@ -843,7 +844,7 @@ mod tests {
         core.start();
         let output = events(core.line(r#"{"jsonrpc":"2.0","id":1,"error":{"code":-32000,"message":"Authentication required"}}"#));
         assert!(
-            matches!(&output[0], AgentEvent::Error { remediation: Some(fix), .. } if fix.contains("copilot login") && fix.contains("restart Craft Anything"))
+            matches!(&output[0], AgentEvent::Error { remediation: Some(fix), .. } if fix.contains("copilot login") && fix.contains("restart Most Anything"))
         );
     }
 

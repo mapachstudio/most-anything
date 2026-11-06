@@ -1,6 +1,7 @@
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # Example check plugin: does the build say how to run it?
 
-A Craft Anything check plugin written in Rust. Its one check, `readme_says_how_to_run`, passes when
+A Most Anything check plugin written in Rust. Its one check, `readme_says_how_to_run`, passes when
 the build has a `README.md` at its top that tells a person how to start it, and otherwise says what
 to add. It implements `craft-anything:plugin/checks` from
 [`crates/engines/wit/plugin.wit`](../../crates/engines/wit/plugin.wit), imports nothing, and asks
@@ -19,7 +20,7 @@ wasm-tools component new target/wasm32-unknown-unknown/release/wasm_plugin_readm
 
 ## Use
 
-Craft Anything built with `--features wasm-plugins`, and in `config.toml` (or Settings → Plugins):
+Most Anything built with `--features wasm-plugins`, and in `config.toml` (or Settings → Plugins):
 
 ```toml
 [[plugins.wasm]]
@@ -32,6 +33,6 @@ Its check is then `readme_readme_says_how_to_run` in each build's check results.
 ## Check it
 
 ```sh
-CRAFT_ANYTHING_TEST_WASM_CHECK=/full/path/to/readme-check.wasm \
+MOST_ANYTHING_TEST_WASM_CHECK=/full/path/to/readme-check.wasm \
   cargo test -p craft-anything-engines --features wasm-plugins the_example_check
 ```

@@ -1,3 +1,4 @@
+// Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Protocol tests against a fake bridge server (a thread that speaks our NDJSON protocol). No
 //! Ghidra is involved: these prove framing, token auth, request timeouts, cancellation and that
 //! dropping the client cleans up the connection.
@@ -508,11 +509,11 @@ fn pointer_table_elf_at(base: u64, e_type: u8) -> (Vec<u8>, u64, u64, u64) {
     (b, triple, negate, table)
 }
 
-/// Real Ghidra, only where `CRAFT_ANYTHING_TEST_GHIDRA` names the engine store holding `ghidra/`
+/// Real Ghidra, only where `MOST_ANYTHING_TEST_GHIDRA` names the engine store holding `ghidra/`
 /// and `jdk/` (the app's is `%APPDATA%/craft-anything/engines`). Its analysis goes to a temp folder.
 #[test]
 fn live_ghidra_makes_and_decompiles_code_reached_only_through_a_pointer_table() {
-    let Some(store) = std::env::var_os("CRAFT_ANYTHING_TEST_GHIDRA").map(PathBuf::from) else { return };
+    let Some(store) = std::env::var_os("MOST_ANYTHING_TEST_GHIDRA").map(PathBuf::from) else { return };
     // Ghidra rejects project paths with a folder that starts with a dot, as tempdir()'s do.
     let temp = tempfile::Builder::new().prefix("ghidra-live").tempdir().unwrap();
     let cfg = Config {
@@ -562,7 +563,7 @@ fn addresses_move_between_our_image_base_and_the_engines() {
 /// where, and our addresses reach the right code once moved there.
 #[test]
 fn live_ghidra_reports_where_it_loaded_a_position_independent_elf() {
-    let Some(store) = std::env::var_os("CRAFT_ANYTHING_TEST_GHIDRA").map(PathBuf::from) else { return };
+    let Some(store) = std::env::var_os("MOST_ANYTHING_TEST_GHIDRA").map(PathBuf::from) else { return };
     let temp = tempfile::Builder::new().prefix("ghidra-live").tempdir().unwrap();
     let cfg = Config {
         analyze_headless: get::headless(None, &store).expect("Ghidra in the engine store"),
