@@ -81,16 +81,16 @@
   <Fragment>
     <ComponentGroup Id="CraftAnythingFiles" Directory="INSTALLFOLDER">
       <Component Id="CraftAnythingApp" Guid="60FCAC4D-3674-43B5-824E-D73D95F95627">
-        <File Id="CraftAnythingExe" Source="$(var.BinDir)\craft-anything.exe" KeyPath="yes">
+        <File Id="CraftAnythingExe" Source="$(var.BinDir)\most-anything.exe" KeyPath="yes">
           <Shortcut Id="StartMenuShortcut" Directory="ProgramMenuFolder" Name="Most Anything"
               Description="Find out how any software works, then craft your own" WorkingDirectory="INSTALLFOLDER" Advertise="yes"
               Icon="CraftAnythingIcon.exe" IconIndex="0" />
         </File>
 
         <!-- The "Open with" app list (any file) and the Run dialog (Win+R "craft-anything"). -->
-        <RegistryValue Root="HKLM" Key="Software\Classes\Applications\craft-anything.exe" Name="FriendlyAppName" Value="Most Anything" Type="string" />
-        <RegistryValue Root="HKLM" Key="Software\Classes\Applications\craft-anything.exe\shell\open\command" Value="&quot;[#CraftAnythingExe]&quot; &quot;%1&quot;" Type="string" />
-        <RegistryValue Root="HKLM" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\craft-anything.exe" Value="[#CraftAnythingExe]" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Classes\Applications\most-anything.exe" Name="FriendlyAppName" Value="Most Anything" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Classes\Applications\most-anything.exe\shell\open\command" Value="&quot;[#CraftAnythingExe]&quot; &quot;%1&quot;" Type="string" />
+        <RegistryValue Root="HKLM" Key="Software\Microsoft\Windows\CurrentVersion\App Paths\most-anything.exe" Value="[#CraftAnythingExe]" Type="string" />
         <RegistryValue Root="HKLM" Key="Software\Most Anything" Name="InstallDir" Value="[INSTALLFOLDER]" Type="string" />
       </Component>
 

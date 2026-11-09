@@ -27,7 +27,7 @@ rfd = { workspace = true }
 wasm-plugins = ["craft-anything-engine/wasm-plugins"]
 
 [build-dependencies]
-# Icon + VERSIONINFO for craft-anything.exe; build.rs only uses it when targeting Windows.
+# Icon + VERSIONINFO for most-anything.exe; build.rs only uses it when targeting Windows.
 winresource = "0.1"
 
 [dev-dependencies]

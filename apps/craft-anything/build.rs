@@ -1,5 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-//! Windows only: embed the app icon and version info (VERSIONINFO) into `craft-anything.exe`.
+//! Windows only: embed the app icon and version info (VERSIONINFO) into `most-anything.exe`.
 //!
 //! On every other target this does nothing. A missing resource compiler is a warning, so a
 //! cross-compile from macOS or Linux still links, unless `MOST_ANYTHING_REQUIRE_WINRES=1` (set by
@@ -17,13 +17,13 @@ fn main() {
         .set("ProductName", "Most Anything")
         .set("FileDescription", "Most Anything: find out how any software works")
         .set("LegalCopyright", "Copyright (c) the ArtCraft Team and the Craft Anything contributors; modificaciones Copyright (c) 2026 Grupo MOST. MIT OR Apache-2.0.")
-        .set("OriginalFilename", "craft-anything.exe")
+        .set("OriginalFilename", "most-anything.exe")
         .set("InternalName", "craft-anything");
     if let Err(e) = res.compile() {
         if std::env::var_os("MOST_ANYTHING_REQUIRE_WINRES").is_some() {
             println!("cargo::error=embedding Windows resources failed: {e}");
             return;
         }
-        println!("cargo:warning=craft-anything.exe built without icon/version resources: {e}");
+        println!("cargo:warning=most-anything.exe built without icon/version resources: {e}");
     }
 }

@@ -44,7 +44,7 @@ case "$ARCH" in
   aarch64 | arm64) ARCH=aarch64; DEB_ARCH=arm64 ;;
   *) echo "unsupported architecture $ARCH" >&2; exit 2 ;;
 esac
-export MOST_ANYTHING_MAINTAINER="${MOST_ANYTHING_MAINTAINER:-Most Anything maintainers <craft-anything@storyteller.ai>}"
+export MOST_ANYTHING_MAINTAINER="${MOST_ANYTHING_MAINTAINER:-Most Anything maintainers <soporte@grupomostmexico.com>}"
 BASENAME="most-anything-$VERSION-linux-$ARCH"
 
 echo "==> Most Anything $VERSION for Linux $ARCH ($FORMATS; ${BINS[*]})"

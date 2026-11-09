@@ -1,6 +1,6 @@
 Most Anything portable mode
 
-While this file sits next to craft-anything.exe, Most Anything keeps its settings, logs, projects
+While this file sits next to most-anything.exe, Most Anything keeps its settings, logs, projects
 index and engine store in the CraftAnythingData folder beside it, and writes nothing to %APPDATA%.
 Copy the whole folder to move Most Anything with its settings.
 

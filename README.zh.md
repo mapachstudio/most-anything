@@ -35,7 +35,6 @@
 </p>
 
 > [!NOTE]
-> **ArtCraft 是一个来自各行各业的创作者社区。** 画家、摄影师、导演、插画师、设计师、动画师、
 
 
 <br>
@@ -257,7 +256,7 @@ Copyright (c) 2026 ArtCraft Team and the Craft Anything contributors; modificaci
 
 截图里展示的是为它们制作的示例项目：example.com、一个贪吃蛇游戏和一个小计算器程序。
 
-[`docs/brand/`](docs/brand/) 里的 ArtCraft 名称、标志图形和 logo 是 Grupo MOST 的商标，不在本许可范围内。
+ArtCraft 名称、文字商标和 logo 是 ArtCraft Team 的商标，不属于我们。按照其品牌许可的要求，本仓库已将其移除。Most Anything 的名称和图标归 Grupo MOST 所有。
 它们只能在未作修改的前提下，作为本仓库和 Most Anything 的一部分使用，并须遵守
 [`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt)。分支和修改版必须移除它们。
 

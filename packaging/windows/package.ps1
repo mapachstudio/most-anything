@@ -5,7 +5,7 @@
 .DESCRIPTION
   Produces, in $env:DIST (default: dist/release):
     craft-anything-<version>-windows-<arch>.msi            per-machine installer (WiX v5)
-    craft-anything-<version>-windows-<arch>-portable.zip   craft-anything.exe (+ craft-anything-cli.exe), portable.txt and the licences
+    craft-anything-<version>-windows-<arch>-portable.zip   most-anything.exe (+ craft-anything-cli.exe), portable.txt and the licences
 
   craft-anything-cli.exe is built and shipped once apps/craft-anything-cli exists in the workspace.
 
@@ -83,7 +83,7 @@ function Get-PeHeader([string] $Path) {
   return @{ Machine = [BitConverter]::ToUInt16($bytes, $pe + 4); Subsystem = [BitConverter]::ToUInt16($bytes, $pe + 0x5C) }
 }
 $Machine = switch ($Arch) { 'x64' { 0x8664 } 'x86' { 0x14C } 'arm64' { 0xAA64 } }
-$checks = @(, @('craft-anything.exe', 2)); if ($HasCli) { $checks += , @('craft-anything-cli.exe', 3) }
+$checks = @(, @('most-anything.exe', 2)); if ($HasCli) { $checks += , @('craft-anything-cli.exe', 3) }
 foreach ($check in $checks) {
   $h = Get-PeHeader (Join-Path $Bin $check[0])
   if ($h.Machine -ne $Machine) { throw "$($check[0]) is for machine 0x$('{0:X}' -f $h.Machine), expected 0x$('{0:X}' -f $Machine) ($Arch)" }
@@ -168,7 +168,7 @@ Get-ChildItem -Path (Join-Path $Root 'assets\fonts') -Filter 'OFL-*.txt' -ErrorA
 if ($env:CRAFT_FONTS_DIR) {
   Get-ChildItem -Path (Join-Path $env:CRAFT_FONTS_DIR 'fonts\*\OFL.txt') -ErrorAction SilentlyContinue | ForEach-Object { Copy-Item $_.FullName (Join-Path $Portable "OFL-$($_.Directory.Name).txt") }
 }
-# portable.txt beside craft-anything.exe switches on portable mode: settings, logs and the engine
+# portable.txt beside most-anything.exe switches on portable mode: settings, logs and the engine
 # store go to CraftAnythingData\ next to the exe instead of %APPDATA% (crates/engine/src/settings.rs).
 Copy-Item (Join-Path $PSScriptRoot 'portable.txt') $Portable
 $Zip = Join-Path $Dist "most-anything-$Version-windows-$Arch-portable.zip"
@@ -178,9 +178,9 @@ Compress-Archive -Path $Portable -DestinationPath $Zip
 # Smoke-test the CLI when this machine can run it. An ARM64 build made on an x64 runner can't run
 # here; .github/workflows/windows-arm64.yml installs and runs it on ARM64 instead.
 $HostArch = [System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture.ToString().ToLowerInvariant()
-$Smoke = if ($HasCli) { 'craft-anything-cli.exe' } else { 'craft-anything.exe' }
+$Smoke = if ($HasCli) { 'craft-anything-cli.exe' } else { 'most-anything.exe' }
 if ($Arch -ne 'arm64' -or $HostArch -eq 'arm64') {
-  # craft-anything.exe is a GUI-subsystem exe: pipe it so PowerShell waits and shows its --version output.
+  # most-anything.exe is a GUI-subsystem exe: pipe it so PowerShell waits and shows its --version output.
   Invoke-Native "$Smoke --version" { & (Join-Path $Stage $Smoke) --version | Out-Host }
 } else {
   Write-Output "skipping $Smoke --version: an $Arch build doesn't run on this $HostArch machine"

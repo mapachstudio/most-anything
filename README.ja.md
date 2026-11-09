@@ -33,8 +33,6 @@
 </p>
 
 > [!NOTE]
-> **ArtCraft は、あらゆる分野の作り手が集まるコミュニティです。** 画家、写真家、映像作家、
-> イラストレーター、デザイナー、アニメーター、趣味で作っている人、先週ペンを持ったばかりの人。
 
 
 <br>
@@ -283,7 +281,7 @@ Craft Anything は [MIT](LICENSE-MIT) または [Apache-2.0](LICENSE-APACHE) の
 
 スクリーンショットに写っているのは、そのために作られたサンプルプロジェクトです: example.com、スネークゲーム、小さな電卓プログラム。
 
-[`docs/brand/`](docs/brand/) にある ArtCraft の名称、ワードマーク、ロゴは Grupo MOST の商標で、このライセンスの対象外です。無改変のまま、このリポジトリと Most Anything の一部としてのみ、[`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt) に従って使用できます。フォークや改変版では、これらを削除しなければなりません。
+ArtCraft の名称、ワードマーク、ロゴは ArtCraft Team の商標であり、当社のものではありません。そのブランドライセンスの要求どおり、本リポジトリからは削除済みです。Most Anything の名称とアイコンは Grupo MOST に帰属します。
 
 
 ---

@@ -33,8 +33,6 @@
 </p>
 
 > [!NOTE]
-> **ArtCraft는 다양한 분야의 예술가들이 모인 커뮤니티입니다.** 화가, 사진가,
-> 영화 제작자, 일러스트레이터, 디자이너, 애니메이터, 취미 창작자, 그리고 지난주에
 
 
 <br>
@@ -262,7 +260,7 @@ Copyright (c) 2026 ArtCraft Team and the Craft Anything contributors; modificaci
 
 스크린샷에 보이는 것은 그 용도로 만든 예시 프로젝트입니다: example.com, 뱀 게임, 작은 계산기 프로그램.
 
-[`docs/brand/`](docs/brand/)에 있는 ArtCraft 이름, 워드마크, 로고는 Grupo MOST의 상표이며 이 라이선스의 적용을 받지 않습니다. 수정하지 않은 상태에서만, 이 저장소와 Most Anything의 일부로서만 사용할 수 있으며, 이때 [`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt)를 따라야 합니다. 포크와 수정본은 이를 제거해야 합니다.
+ArtCraft 이름, 워드마크, 로고는 ArtCraft Team의 상표이며 당사의 것이 아닙니다. 해당 브랜드 라이선스가 요구하는 대로 이 저장소에서는 제거했습니다. Most Anything의 이름과 아이콘은 Grupo MOST에 귀속됩니다.
 
 
 ---
