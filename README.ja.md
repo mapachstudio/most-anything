@@ -1,12 +1,4 @@
 <!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
-<p align="center">
-  <a href="https://getartcraft.com/">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="docs/brand/artcraft-logo-white.svg">
-      <img alt="ArtCraft" src="docs/brand/artcraft-logo.svg" width="200">
-    </picture>
-  </a>
-</p>
 
 <p align="center">
   <img src="assets/app-icon/hicolor/256x256/apps/com.grupomostmexico.mostanything.png" width="128" height="128" alt="Most Anything のアイコン: 青いタイルに刻まれたワタリガラス">
@@ -31,15 +23,6 @@
   <img alt="ステータス: アルファ版の初期段階" src="https://img.shields.io/badge/status-early%20alpha-d69e2e?style=flat-square">
 </p>
 
-<p align="center">
-  <a href="https://discord.gg/artcraft"><img alt="ArtCraft コミュニティの Discord に参加する" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
-</p>
-
-<p align="center">
-  <a href="#downloads"><b>Most Anything をダウンロード</b></a> ·
-  <a href="https://getartcraft.com/">ArtCraft</a> ·
-  <a href="https://getartcraft.com/apps">すべての Crafting Apps</a>
-</p>
 
 <br>
 
@@ -52,19 +35,7 @@
 > [!NOTE]
 > **ArtCraft は、あらゆる分野の作り手が集まるコミュニティです。** 画家、写真家、映像作家、
 > イラストレーター、デザイナー、アニメーター、趣味で作っている人、先週ペンを持ったばかりの人。
-> 何かを作っているなら、あなたも仲間です。**[Discord で気軽に声をかけてください](https://discord.gg/artcraft)。**
 
-<p align="center">
-  <a href="#how-it-works">仕組み</a> ·
-  <a href="#two-ways-to-use-it">2 つの使い方</a> ·
-  <a href="#ai">AI</a> ·
-  <a href="#built-for-agents">エージェント向け</a> ·
-  <a href="#under-the-hood">内部の仕組み</a> ·
-  <a href="#get-started">はじめかた</a> ·
-  <a href="#status">ステータス</a> ·
-  <a href="#downloads">ダウンロード</a> ·
-  <a href="https://discord.gg/artcraft">Discord</a>
-</p>
 
 <br>
 
@@ -176,7 +147,7 @@ sudo apt-get install libxkbcommon-dev libwayland-dev libx11-dev libxrandr-dev li
 続いて:
 
 ```sh
-git clone https://github.com/storytold/craft-anything && cd craft-anything
+git clone https://github.com/mapachstudio/most-anything && cd craft-anything
 cargo run --release -p craft-anything                # the desktop app
 cargo install --path apps/craft-anything-cli         # the CLI, as `craft-anything-cli`
 craft-anything-cli doctor                            # checks the install, coding agents and engines
@@ -215,7 +186,6 @@ craft-anything-cli rebuild - "Add a contact form" --project-folder "<your folder
 > [docs/STATUS.md](docs/STATUS.md) に詳細と、各部分をどう確かめたか、
 > [docs/tool-status.md](docs/tool-status.md) にツールごとのチェックリスト、
 > [docs/ROADMAP.md](docs/ROADMAP.md) に計画の項目別一覧があります。issue を立てるか、
-> [Discord](https://discord.gg/artcraft) で壊れたところを教えてください。
 
 **責任ある使い方。** Most Anything は、所有しているか、調べる許可があるソフトにだけ使ってください。DRM、ログイン、
 アンチチートを回避することは決してありません。再構築は、エビデンスに基づいてレイアウト・スタイル・挙動を再現します。エージェントには、ロゴ・写真・テキストを、あなたが権利を持つか使用許可があると確認できるまでコピーしないよう指示しています。
@@ -224,7 +194,7 @@ craft-anything-cli rebuild - "Add a contact form" --project-folder "<your folder
 
 ## ダウンロード
 
-GitHub の [最新リリース](https://github.com/storytold/craft-anything/releases/latest) には以下に挙げるすべてのビルドがあり、[すべてのリリース](https://github.com/storytold/craft-anything/releases) には過去のバージョンとそのリリースノートがあります。ファイル名の `<ver>` はバージョン番号で、`SHA256SUMS.txt` に各ファイルのチェックサムが載っています。
+GitHub の [最新リリース](https://github.com/mapachstudio/most-anything/releases/latest) には以下に挙げるすべてのビルドがあり、[すべてのリリース](https://github.com/mapachstudio/most-anything/releases) には過去のバージョンとそのリリースノートがあります。ファイル名の `<ver>` はバージョン番号で、`SHA256SUMS.txt` に各ファイルのチェックサムが載っています。
 
 ### Windows
 
@@ -252,7 +222,7 @@ GitHub の [最新リリース](https://github.com/storytold/craft-anything/rele
 
 ```sh
 ver=0.2.0   # change this to the version you want
-curl -fLO "https://github.com/storytold/craft-anything/releases/download/v$ver/craft-anything-cli-$ver-macos-universal.zip"
+curl -fLO "https://github.com/mapachstudio/most-anything/releases/download/v$ver/craft-anything-cli-$ver-macos-universal.zip"
 ditto -x -k "craft-anything-cli-$ver-macos-universal.zip" .
 mkdir -p ~/.local/bin
 mv "craft-anything-cli-$ver-macos-universal/craft-anything-cli" ~/.local/bin/
@@ -291,9 +261,6 @@ RISC-V (riscv64): `craft-anything-<ver>-linux-riscv64.tar.gz`、tarball のみ�
 
 <br>
 
-<p align="center">
-  <a href="https://discord.gg/artcraft"><img alt="ArtCraft コミュニティの Discord に参加する" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
-</p>
 
 <h3 align="center">一緒にものづくりを</h3>
 
@@ -305,35 +272,8 @@ RISC-V (riscv64): `craft-anything-<ver>-linux-riscv64.tar.gz`、tarball のみ�
   どんな表現手段を使っていても、経験の長さにかかわらず、ここでは誰でも歓迎します。
 </p>
 
-<p align="center">
-  <a href="https://discord.gg/artcraft"><b>discord.gg/artcraft</b></a> ·
-  <a href="https://getartcraft.com/">getartcraft.com</a> ·
-  <a href="https://getartcraft.com/apps">すべての Crafting Apps</a> ·
-  <a href="https://github.com/storytold/craft-anything">Most Anything</a>
-</p>
 
 ---
-
-## The Craft App Suite
-
-| | アプリ | 用途 | コード | 詳細 |
-|:-:|---|---|---|---|
-| <img src="https://raw.githubusercontent.com/storytold/photocraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.photocraft.png" alt="" width="32" height="32"> | **PhotoCraft** | 画像編集:レイヤー、マスク、文字、本物の PSD ファイル | [GitHub](https://github.com/storytold/photocraft) | [ウェブサイト](https://getartcraft.com/apps/photocraft) |
-| <img src="https://raw.githubusercontent.com/storytold/vectorcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.vectorcraft.png" alt="" width="32" height="32"> | **VectorCraft** | ベクターイラスト | [GitHub](https://github.com/storytold/vectorcraft) | [ウェブサイト](https://getartcraft.com/apps/vectorcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/filmcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.filmcraft.png" alt="" width="32" height="32"> | **FilmCraft** | 動画編集、カラー、サウンド | [GitHub](https://github.com/storytold/filmcraft) | [ウェブサイト](https://getartcraft.com/apps/filmcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/lightcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.lightcraft.png" alt="" width="32" height="32"> | **LightCraft** | 写真ライブラリと RAW 現像 | [GitHub](https://github.com/storytold/lightcraft) | [ウェブサイト](https://getartcraft.com/apps/lightcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/pdfcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.pdfcraft.png" alt="" width="32" height="32"> | **PdfCraft** | PDF の閲覧、整理、保護 | [GitHub](https://github.com/storytold/pdfcraft) | [ウェブサイト](https://getartcraft.com/apps/pdfcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/effectcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.effectcraft.png" alt="" width="32" height="32"> | **EffectCraft** | モーショングラフィックスと視覚効果 | [GitHub](https://github.com/storytold/effectcraft) | [ウェブサイト](https://getartcraft.com/apps/effectcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/designcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.designcraft.png" alt="" width="32" height="32"> | **DesignCraft** | ページレイアウトと出版 | [GitHub](https://github.com/storytold/designcraft) | [ウェブサイト](https://getartcraft.com/apps/designcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/figcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.figcraft.png" alt="" width="32" height="32"> | **FigCraft** | インターフェースデザインとプロトタイピング | [GitHub](https://github.com/storytold/figcraft) | [ウェブサイト](https://getartcraft.com/apps/figcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/wordcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.wordcraft.png" alt="" width="32" height="32"> | **WordCraft** | ワープロと文書 | [GitHub](https://github.com/storytold/wordcraft) | [ウェブサイト](https://getartcraft.com/apps/wordcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/soundcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.soundcraft.png" alt="" width="32" height="32"> | **SoundCraft** | 音声の録音と編集 | [GitHub](https://github.com/storytold/soundcraft) | [ウェブサイト](https://getartcraft.com/apps/soundcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/deckcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.deckcraft.png" alt="" width="32" height="32"> | **DeckCraft** | プレゼンテーションとスライド | [GitHub](https://github.com/storytold/deckcraft) | [ウェブサイト](https://getartcraft.com/apps/deckcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/cadcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.cadcraft.png" alt="" width="32" height="32"> | **CADCraft** | コンピューター支援設計 | [GitHub](https://github.com/storytold/cadcraft) | [ウェブサイト](https://getartcraft.com/apps/cadcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/gridcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.gridcraft.png" alt="" width="32" height="32"> | **GridCraft** | 表計算とデータ | [GitHub](https://github.com/storytold/gridcraft) | [ウェブサイト](https://getartcraft.com/apps/gridcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/texturecraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.texturecraft.png" alt="" width="32" height="32"> | **TextureCraft** | 3D テクスチャ描画 | [GitHub](https://github.com/storytold/texturecraft) | [ウェブサイト](https://getartcraft.com/apps/texturecraft) |
-| <img src="https://raw.githubusercontent.com/storytold/craft-anything/main/assets/app-icon/hicolor/64x64/apps/com.grupomostmexico.mostanything.png" alt="" width="32" height="32"> | **Most Anything** | あらゆるソフトの仕組みを知り、自分の版を作る | [GitHub](https://github.com/storytold/craft-anything) | [ウェブサイト](https://getartcraft.com/apps/craft-anything) |
-| <img src="https://raw.githubusercontent.com/tangency-labs/solidcraft/main/assets/icons/app/linux/exports/hicolor/64x64/apps/io.tangencylabs.solidcraft.png" alt="" width="32" height="32"> | **SolidCraft** | Tangency Labs によるパラメトリック 3D CAD(コミュニティ製アプリ) | [GitHub](https://github.com/tangency-labs/solidcraft) | |
 
 ## ライセンスとクレジット
 
@@ -345,10 +285,6 @@ Craft Anything は [MIT](LICENSE-MIT) または [Apache-2.0](LICENSE-APACHE) の
 
 [`docs/brand/`](docs/brand/) にある ArtCraft の名称、ワードマーク、ロゴは Grupo MOST の商標で、このライセンスの対象外です。無改変のまま、このリポジトリと Most Anything の一部としてのみ、[`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt) に従って使用できます。フォークや改変版では、これらを削除しなければなりません。
 
-<p align="center">
-  <a href="https://getartcraft.com/"><img alt="ArtCraft" src="docs/brand/artcraft-mark.svg" width="28"></a><br>
-  <sub><a href="https://getartcraft.com/">ArtCraft</a> チームとコミュニティによる制作。</sub>
-</p>
 
 ---
 

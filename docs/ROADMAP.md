@@ -430,7 +430,7 @@ Owner: maintainers · Status: in progress
       requirements summary now name Xcode, matching the guided step.
 - [x] Find Visual Studio's C++ tools on Windows when Visual Studio is installed outside Program
       Files (through the Visual Studio Installer's `ProgramData` instance state or developer
-      environment variables, #669, [PR #726](https://github.com/storytold/craft-anything/pull/726))
+      environment variables, #669, [PR #726](https://github.com/mapachstudio/most-anything/pull/726))
       — claimed: riyaz, branch `bugfix/r1.6-windows-vs-cpp-tools`
 
 ---
@@ -813,7 +813,7 @@ Owner: open · Status: in progress
 - [x] Enforce stand-in per-body and total byte budgets on the text that is actually retained after redaction;
       deduplicate consecutive samples before charging the capture budget.
       — claimed: Afloat16, branch bugfix/r3.11-standin-redacted-budget-20261103b
-      Revision `d601bc4e` passed [full Linux CI](https://github.com/storytold/craft-anything/actions/runs/41788735130):
+      Revision `d601bc4e` passed [full Linux CI](https://github.com/mapachstudio/most-anything/actions/runs/41788735130):
       all four retained-budget regressions and six deduplication regressions passed.
 
 ### R3.12 Format parser correctness
@@ -841,7 +841,7 @@ Owner: open · Status: in progress
       their pool with a shared recovery probe limit, and distinguish missing ext indirect
       metadata from sparse holes.
       — claimed: Afloat16, branch bugfix/r3.12-parser-review-followups-main-20261104
-      Shared-budget revision `29c48e03` passed [full Linux CI](https://github.com/storytold/craft-anything/actions/runs/41762780268).
+      Shared-budget revision `29c48e03` passed [full Linux CI](https://github.com/mapachstudio/most-anything/actions/runs/41762780268).
       The merge with main `41d2175e` awaits a new CI run.
 
 ### R3.13 Web inspection correctness

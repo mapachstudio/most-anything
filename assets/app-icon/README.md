@@ -1,38 +1,31 @@
-<!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
-# Most Anything app icon
+# Icono de Most Anything
 
-The **raven**: the Crafting Apps' shared icon, made by the ArtCraft team. An engraved raven head
-in getartcraft.com's ink `#101014` with paper `#f2f1ee` highlights, on a rounded tile in
-ArtCraft's mark blue `#4e7bfb`. It is not open source: see `LICENSE.txt`.
+Dibujo propio de Grupo MOST. No queda nada del icono de la obra original:
+su licencia de marca obliga a retirarlo en toda versión modificada, y en el
+caso de Most Anything además no era código abierto.
 
-The interface follows getartcraft.com too (`theme.rs`): its warm near-black and paper
-backgrounds and ink, its deep accent `#1659c4` (`theme::BRAND`) for filled controls so white text
-on them passes WCAG AA, its bright accent `#2d81ff` for hover and its light accent `#74aaff` for
-blue text on dark surfaces. Headings and text are DM Sans.
+**El dibujo.** Un azulejo de 512 a sangre con esquinas redondeadas (112 de
+radio), degradado de `#10B981` a `#047857` en diagonal, y encima el motivo en
+blanco: 3 trazo(s).
+Dice de un vistazo qué hace el programa.
 
-## Geometry
+**Cómo se generan.** `tools/iconos.mjs` de la suite, que rasteriza con el
+motor de Most Studio: el mismo barrido de líneas que usa el texto de área,
+así que el icono es literalmente lo que Most Studio dibujaría. De ahí salen:
 
-A 512-unit tile with 110-unit corners (the source's 21.5 %), the raven clipped to it. The macOS
-icons pad the tile onto Apple's 824/1024 icon grid; every other render uses the full tile.
+| Archivo | Para qué |
+|---|---|
+| `most-anything.svg` | La pieza canónica, 512 a sangre |
+| `most-anything-small.svg` | La misma, para tamaños pequeños |
+| `hicolor/<n>x<n>/apps/com.grupomostmexico.mostanything.png` | Tema de iconos de Linux |
+| `most-anything-1024.png`, `-512`, `-256`, `-64` | Los que el código incrusta por nombre |
+| `most-anything-macos-512.png` | Icono de ventana y Dock en macOS |
+| `most-anything.icns` | Paquete de macOS |
+| `most-anything.ico` | Ejecutable e instalador de Windows |
 
-## Files
+Si cambia el dibujo, se regenera todo de una vez. No se editan a mano: el
+código los incrusta por nombre con `include_bytes!` y un archivo que falte
+no es un aviso, es un error de compilación.
 
-- `most-anything.svg`: the master SVG (also the hicolor scalable icon), about 100 KB.
-- `most-anything-1024.png`: 1024 px render of the tile.
-- `most-anything.icns`: macOS bundle icon.
-- `most-anything.ico`: Windows icon (16, 20, 24, 32, 40, 48, 64, 128, 256).
-- `hicolor/<size>/apps/com.grupomostmexico.mostanything.png` (16–512) and
-  `hicolor/scalable/apps/com.grupomostmexico.mostanything.svg`: Linux icon theme.
-- `trace.py`: traces the raven artwork (a 2000 px raster) into the SVG with vtracer.
-- `packaging/icons.sh`: makes every other file above from the SVG. The app draws the SVG itself
-  at the exact pixel size (title bar, welcome screen); the window icon is the 256 px PNG.
-
-## Regenerate
-
-```sh
-# From the 2000 px raven artwork (needs numpy, Pillow and vtracer; svgo 3.3.2 shrinks the paths):
-python trace.py raven.webp master.svg 1000 6 0
-npx svgo@3.3.2 -p 1 master.svg -o most-anything.svg
-# Every render (needs resvg on PATH; the .icns needs macOS's iconutil):
-packaging/icons.sh
-```
+**Licencia.** Los dibujos son propiedad de Grupo MOST. `LICENSE.txt` es el
+de la obra original y se conserva por lo que cubre de ella.

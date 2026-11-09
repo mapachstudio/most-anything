@@ -1,14 +1,6 @@
 <!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 <!-- 本文件是 README.md 的简体中文翻译；英文版有改动时请一并更新本文件。 -->
 
-<p align="center">
-  <a href="https://getartcraft.com/">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="docs/brand/artcraft-logo-white.svg">
-      <img alt="ArtCraft" src="docs/brand/artcraft-logo.svg" width="200">
-    </picture>
-  </a>
-</p>
 
 <p align="center">
   <img src="assets/app-icon/hicolor/256x256/apps/com.grupomostmexico.mostanything.png" width="128" height="128" alt="Most Anything 图标：蓝色底块上雕刻的乌鸦">
@@ -33,15 +25,6 @@
   <img alt="Status: early alpha" src="https://img.shields.io/badge/status-early%20alpha-d69e2e?style=flat-square">
 </p>
 
-<p align="center">
-  <a href="https://discord.gg/artcraft"><img alt="加入 ArtCraft 的 Discord 社区" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
-</p>
-
-<p align="center">
-  <a href="#downloads"><b>下载 Most Anything</b></a> ·
-  <a href="https://getartcraft.com/">ArtCraft</a> ·
-  <a href="https://getartcraft.com/apps">全部 Crafting 应用</a>
-</p>
 
 <br>
 
@@ -53,19 +36,7 @@
 
 > [!NOTE]
 > **ArtCraft 是一个来自各行各业的创作者社区。** 画家、摄影师、导演、插画师、设计师、动画师、
-> 爱好者，以及上周才拿起笔的人。只要你动手做东西，你就是我们的一员。**[来 Discord 打个招呼](https://discord.gg/artcraft)。**
 
-<p align="center">
-  <a href="#how-it-works">工作原理</a> ·
-  <a href="#two-ways-to-use-it">两种用法</a> ·
-  <a href="#ai">AI</a> ·
-  <a href="#built-for-agents">面向 agent</a> ·
-  <a href="#under-the-hood">内部实现</a> ·
-  <a href="#get-started">开始使用</a> ·
-  <a href="#status">状态</a> ·
-  <a href="#downloads">下载</a> ·
-  <a href="https://discord.gg/artcraft">Discord</a>
-</p>
 
 <br>
 
@@ -179,7 +150,7 @@ sudo apt-get install libxkbcommon-dev libwayland-dev libx11-dev libxrandr-dev li
 然后：
 
 ```sh
-git clone https://github.com/storytold/craft-anything && cd craft-anything
+git clone https://github.com/mapachstudio/most-anything && cd craft-anything
 cargo run --release -p craft-anything                # the desktop app
 cargo install --path apps/craft-anything-cli         # the CLI, as `craft-anything-cli`
 craft-anything-cli doctor                            # checks the install, coding agents and engines
@@ -213,7 +184,6 @@ craft-anything-cli rebuild - "Add a contact form" --project-folder "<your folder
 > - **接下来：** 第一次公开发布（Windows、macOS、Linux 和 FreeBSD 的安装包，以及浏览器查看器都已在 CI 里配好），然后是托管版。
 >
 > [docs/STATUS.md](docs/STATUS.md) 有细节和每部分的验证方式，[docs/tool-status.md](docs/tool-status.md) 是逐个工具的清单，
-> [docs/ROADMAP.md](docs/ROADMAP.md) 是逐项的计划。欢迎提 issue，或者到 [Discord](https://discord.gg/artcraft) 说哪里坏了。
 
 **负责地使用。** 请在你拥有或获准检查的软件上使用 Most Anything。它绝不绕过 DRM、登录或反作弊。重建是依据证据复现布局、风格与行为；agent 被要求不得复制 logo、照片或文本，除非你确认你拥有它们或已获授权。
 
@@ -221,7 +191,7 @@ craft-anything-cli rebuild - "Add a contact form" --project-folder "<your folder
 
 ## 下载
 
-在 GitHub 上，[最新发布](https://github.com/storytold/craft-anything/releases/latest) 列出了下面所有构建，[全部发布](https://github.com/storytold/craft-anything/releases) 有更早的版本和它们的说明。文件名里的 `<ver>` 是版本号，`SHA256SUMS.txt` 列出每个文件的校验和。
+在 GitHub 上，[最新发布](https://github.com/mapachstudio/most-anything/releases/latest) 列出了下面所有构建，[全部发布](https://github.com/mapachstudio/most-anything/releases) 有更早的版本和它们的说明。文件名里的 `<ver>` 是版本号，`SHA256SUMS.txt` 列出每个文件的校验和。
 
 ### Windows
 
@@ -266,9 +236,6 @@ RISC-V（riscv64）：`craft-anything-<ver>-linux-riscv64.tar.gz`，只有 tarba
 
 <br>
 
-<p align="center">
-  <a href="https://discord.gg/artcraft"><img alt="加入 ArtCraft 的 Discord 社区" src="https://img.shields.io/badge/Join%20us%20on%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" height="40"></a>
-</p>
 
 <h3 align="center">来和我们一起做东西</h3>
 
@@ -278,38 +245,8 @@ RISC-V（riscv64）：`craft-anything-<ver>-linux-riscv64.tar.gz`，只有 tarba
   这些工具能做什么。不论你用什么媒介、入行多久，这里都欢迎你。
 </p>
 
-<p align="center">
-  <a href="https://discord.gg/artcraft"><b>discord.gg/artcraft</b></a> ·
-  <a href="https://getartcraft.com/">getartcraft.com</a> ·
-  <a href="https://getartcraft.com/apps">The Crafting Apps</a> ·
-  <a href="https://github.com/storytold/craft-anything">Most Anything</a>
-</p>
 
 ---
-
-## The Craft App Suite
-
-| | 应用 | 用来做什么 | 代码 | 了解更多 |
-|:-:|---|---|---|---|
-| <img src="https://raw.githubusercontent.com/storytold/photocraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.photocraft.png" alt="" width="32" height="32"> | **PhotoCraft** | 图像编辑：图层、蒙版、文字，以及真正的 PSD 文件 | [GitHub](https://github.com/storytold/photocraft) | [网站](https://getartcraft.com/apps/photocraft) |
-| <img src="https://raw.githubusercontent.com/storytold/vectorcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.vectorcraft.png" alt="" width="32" height="32"> | **VectorCraft** | 矢量插画 | [GitHub](https://github.com/storytold/vectorcraft) | [网站](https://getartcraft.com/apps/vectorcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/filmcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.filmcraft.png" alt="" width="32" height="32"> | **FilmCraft** | 视频剪辑、调色与声音 | [GitHub](https://github.com/storytold/filmcraft) | [网站](https://getartcraft.com/apps/filmcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/lightcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.lightcraft.png" alt="" width="32" height="32"> | **LightCraft** | 照片库与 raw 冲图 | [GitHub](https://github.com/storytold/lightcraft) | [网站](https://getartcraft.com/apps/lightcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/pdfcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.pdfcraft.png" alt="" width="32" height="32"> | **PdfCraft** | 阅读、整理与保护 PDF | [GitHub](https://github.com/storytold/pdfcraft) | [网站](https://getartcraft.com/apps/pdfcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/effectcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.effectcraft.png" alt="" width="32" height="32"> | **EffectCraft** | 动态图形与视觉特效 | [GitHub](https://github.com/storytold/effectcraft) | [网站](https://getartcraft.com/apps/effectcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/designcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.designcraft.png" alt="" width="32" height="32"> | **DesignCraft** | 页面排版与出版 | [GitHub](https://github.com/storytold/designcraft) | [网站](https://getartcraft.com/apps/designcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/figcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.figcraft.png" alt="" width="32" height="32"> | **FigCraft** | 界面设计与原型 | [GitHub](https://github.com/storytold/figcraft) | [网站](https://getartcraft.com/apps/figcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/wordcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.wordcraft.png" alt="" width="32" height="32"> | **WordCraft** | 文字处理与文档 | [GitHub](https://github.com/storytold/wordcraft) | [网站](https://getartcraft.com/apps/wordcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/soundcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.soundcraft.png" alt="" width="32" height="32"> | **SoundCraft** | 音频录制与编辑 | [GitHub](https://github.com/storytold/soundcraft) | [网站](https://getartcraft.com/apps/soundcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/deckcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.deckcraft.png" alt="" width="32" height="32"> | **DeckCraft** | 演示文稿与幻灯片 | [GitHub](https://github.com/storytold/deckcraft) | [网站](https://getartcraft.com/apps/deckcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/cadcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.cadcraft.png" alt="" width="32" height="32"> | **CADCraft** | 计算机辅助设计 | [GitHub](https://github.com/storytold/cadcraft) | [网站](https://getartcraft.com/apps/cadcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/gridcraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.gridcraft.png" alt="" width="32" height="32"> | **GridCraft** | 电子表格与数据 | [GitHub](https://github.com/storytold/gridcraft) | [网站](https://getartcraft.com/apps/gridcraft) |
-| <img src="https://raw.githubusercontent.com/storytold/texturecraft/main/assets/app-icon/hicolor/64x64/apps/ai.storyteller.texturecraft.png" alt="" width="32" height="32"> | **TextureCraft** | 3D 贴图绘制 | [GitHub](https://github.com/storytold/texturecraft) | [网站](https://getartcraft.com/apps/texturecraft) |
-| <img src="https://raw.githubusercontent.com/storytold/craft-anything/main/assets/app-icon/hicolor/64x64/apps/com.grupomostmexico.mostanything.png" alt="" width="32" height="32"> | **Most Anything** | 看清任意软件是怎么做的，然后造一个自己的 | [GitHub](https://github.com/storytold/craft-anything) | [网站](https://getartcraft.com/apps/craft-anything) |
-| <img src="https://raw.githubusercontent.com/tangency-labs/solidcraft/main/assets/icons/app/linux/exports/hicolor/64x64/apps/io.tangencylabs.solidcraft.png" alt="" width="32" height="32"> | **SolidCraft** | Tangency Labs 的参数化 3D CAD（社区应用） | [GitHub](https://github.com/tangency-labs/solidcraft) | |
-
-
-<a id="license-and-credits"></a>
 
 ## 许可与致谢
 
@@ -324,10 +261,6 @@ Copyright (c) 2026 ArtCraft Team and the Craft Anything contributors; modificaci
 它们只能在未作修改的前提下，作为本仓库和 Most Anything 的一部分使用，并须遵守
 [`docs/brand/LICENSE-brand.txt`](docs/brand/LICENSE-brand.txt)。分支和修改版必须移除它们。
 
-<p align="center">
-  <a href="https://getartcraft.com/"><img alt="ArtCraft" src="docs/brand/artcraft-mark.svg" width="28"></a><br>
-  <sub>由 <a href="https://getartcraft.com/">ArtCraft</a> 团队与社区制作。</sub>
-</p>
 
 ---
 

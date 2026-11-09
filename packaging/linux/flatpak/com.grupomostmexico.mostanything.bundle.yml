@@ -1,4 +1,4 @@
-# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+# Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/mapachstudio/most-anything), Apache-2.0.
 # Flatpak manifest for the single-file bundle attached to every GitHub release
 # (craft-anything-<version>-linux-<arch>.flatpak). Build it with packaging/linux/flatpak-bundle.sh.
 #
