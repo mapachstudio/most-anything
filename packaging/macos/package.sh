@@ -112,6 +112,11 @@ cp "$WORK/bin/craft-anything" "$APP/Contents/MacOS/craft-anything"
 if [ "$HAS_CLI" = 1 ]; then cp "$WORK/bin/craft-anything-cli" "$APP/Contents/MacOS/craft-anything-cli"; fi
 cp "$ICNS" "$APP/Contents/Resources/Most Anything.icns"
 # Licences of the embedded fonts (assets/fonts, OFL-1.1).
+# Apache-2.0 §4: con cada distribucion van una copia de la LICENCIA y los
+# avisos del NOTICE. El paquete de macOS no llevaba ninguno de los dos:
+# solo las licencias de las fuentes.
+copy_docs "$APP/Contents/Resources"
+
 mkdir -p "$APP/Contents/Resources/Licenses"
 copy_font_licences "$APP/Contents/Resources/Licenses"
 sed -e "s/@VERSION@/$VERSION/g" -e "s/@SHORT_VERSION@/$SHORT_VERSION/g" \
