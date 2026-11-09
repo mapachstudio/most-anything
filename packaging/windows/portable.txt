@@ -4,4 +4,4 @@ While this file sits next to most-anything.exe, Most Anything keeps its settings
 index and engine store in the CraftAnythingData folder beside it, and writes nothing to %APPDATA%.
 Copy the whole folder to move Most Anything with its settings.
 
-Delete this file to use the normal per-user settings folder (%APPDATA%\craft-anything) instead.
+Delete this file to use the normal per-user settings folder (%APPDATA%\most-anything) instead.

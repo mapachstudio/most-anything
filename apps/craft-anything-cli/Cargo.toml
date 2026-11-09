@@ -33,3 +33,7 @@ tempfile = "3"
 [build-dependencies]
 # The DPI-aware manifest for craft-anything-cli.exe; build.rs only uses it when targeting Windows.
 winresource = "0.1"
+
+[[bin]]
+name = "most-anything-cli"
+path = "src/main.rs"

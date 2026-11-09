@@ -2,7 +2,7 @@
 # Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 # Build, sign and (optionally) notarize the macOS release artifacts:
 #
-#   $DIST/craft-anything-<version>-macos-<arch>.dmg          Most Anything.app on a drag-to-Applications DMG
+#   $DIST/most-anything-<version>-macos-<arch>.dmg          Most Anything.app on a drag-to-Applications DMG
 #   $DIST/craft-anything-cli-<version>-macos-<arch>.zip      the headless CLI (when apps/craft-anything-cli exists)
 #
 # Usage: packaging/macos/package.sh [--arch universal|aarch64|x86_64] [--skip-build]
@@ -106,10 +106,10 @@ ICNS="$ROOT/assets/app-icon/most-anything.icns"
 echo "==> assembling $APP"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 # The executable keeps the machine name (CFBundleExecutable); the bundle carries the display name.
-cp "$WORK/bin/craft-anything" "$APP/Contents/MacOS/craft-anything"
+cp "$WORK/bin/most-anything" "$APP/Contents/MacOS/most-anything"
 # The CLI goes beside it: the app starts it as the MCP server its coding agents use, and finds it
 # next to its own executable (`self_cli_path`). Without it every Claude Code build fails (#91).
-if [ "$HAS_CLI" = 1 ]; then cp "$WORK/bin/craft-anything-cli" "$APP/Contents/MacOS/craft-anything-cli"; fi
+if [ "$HAS_CLI" = 1 ]; then cp "$WORK/bin/most-anything-cli" "$APP/Contents/MacOS/most-anything-cli"; fi
 cp "$ICNS" "$APP/Contents/Resources/Most Anything.icns"
 # Licences of the embedded fonts (assets/fonts, OFL-1.1).
 # Apache-2.0 §4: con cada distribucion van una copia de la LICENCIA y los
@@ -129,15 +129,15 @@ printf 'APPL????' >"$APP/Contents/PkgInfo"
 # The nested code is the main executable and the CLI; frameworks/helpers would be signed here too.
 # The CLI keeps the identifier its zip has.
 if [ "$HAS_CLI" = 1 ]; then
-  sign --options runtime --identifier com.grupomostmexico.mostanything-cli "$APP/Contents/MacOS/craft-anything-cli"
+  sign --options runtime --identifier com.grupomostmexico.mostanything-cli "$APP/Contents/MacOS/most-anything-cli"
 fi
-sign --options runtime --entitlements "$HERE/entitlements.plist" "$APP/Contents/MacOS/craft-anything"
+sign --options runtime --entitlements "$HERE/entitlements.plist" "$APP/Contents/MacOS/most-anything"
 sign --options runtime --entitlements "$HERE/entitlements.plist" "$APP"
 codesign --verify --strict --deep --verbose=2 "$APP"
 
 if [ "$NOTARIZE" = 1 ]; then
-  ditto -c -k --keepParent "$APP" "$WORK/craft-anything-notarize.zip"
-  notarize "$WORK/craft-anything-notarize.zip"
+  ditto -c -k --keepParent "$APP" "$WORK/most-anything-notarize.zip"
+  notarize "$WORK/most-anything-notarize.zip"
   retry xcrun stapler staple "$APP"
   retry xcrun stapler validate "$APP"
   spctl --assess --type execute -vvv "$APP"
@@ -185,8 +185,8 @@ if ! codesign --verify --strict --deep --verbose=2 "$MOUNT/Most Anything.app"; t
   hdiutil_retry detach detach "$MOUNT" >/dev/null || true
   exit 1
 fi
-if [ "$HAS_CLI" = 1 ] && ! "$MOUNT/Most Anything.app/Contents/MacOS/craft-anything-cli" --version; then
-  echo "error: the app in the DMG has no working craft-anything-cli beside its executable" >&2
+if [ "$HAS_CLI" = 1 ] && ! "$MOUNT/Most Anything.app/Contents/MacOS/most-anything-cli" --version; then
+  echo "error: the app in the DMG has no working most-anything-cli beside its executable" >&2
   hdiutil_retry detach detach "$MOUNT" >/dev/null || true
   exit 1
 fi
@@ -203,23 +203,23 @@ if [ "$HAS_CLI" = 1 ]; then
   echo "==> building $CLI_ZIP"
   CLI_DIR="$WORK/most-anything-cli-$VERSION-macos-$ARCH"
   mkdir -p "$CLI_DIR"
-  cp "$WORK/bin/craft-anything-cli" "$CLI_DIR/"
+  cp "$WORK/bin/most-anything-cli" "$CLI_DIR/"
   copy_docs "$CLI_DIR"
   # Same Developer ID and hardened runtime as the app, with an explicit reverse-DNS identifier
   # (codesign would otherwise use the bare file name).
-  sign --options runtime --identifier com.grupomostmexico.mostanything-cli "$CLI_DIR/craft-anything-cli"
-  codesign --verify --strict --verbose=2 "$CLI_DIR/craft-anything-cli"
+  sign --options runtime --identifier com.grupomostmexico.mostanything-cli "$CLI_DIR/most-anything-cli"
+  codesign --verify --strict --verbose=2 "$CLI_DIR/most-anything-cli"
   rm -f "$CLI_ZIP"
   ditto -c -k --keepParent "$CLI_DIR" "$CLI_ZIP"
   # notarytool accepts a zip of the bare binary. A bare Mach-O can't carry a stapled ticket, so
   # Gatekeeper looks the notarization up online when a quarantined copy first runs.
   if [ "$NOTARIZE" = 1 ]; then notarize "$CLI_ZIP"; fi
-  "$WORK/bin/craft-anything-cli" --version
+  "$WORK/bin/most-anything-cli" --version
 else
   warn "apps/craft-anything-cli is not in this workspace: no CLI zip"
   rm -f "$CLI_ZIP"
 fi
 
-"$WORK/bin/craft-anything" --version
+"$WORK/bin/most-anything" --version
 echo "==> done (check the artifacts as shipped with packaging/macos/verify.sh --arch $ARCH)"
 ls -lh "$DIST"/most-anything*-"$VERSION"-macos-"$ARCH".*

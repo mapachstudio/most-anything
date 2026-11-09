@@ -4,8 +4,8 @@
 
 .DESCRIPTION
   Produces, in $env:DIST (default: dist/release):
-    craft-anything-<version>-windows-<arch>.msi            per-machine installer (WiX v5)
-    craft-anything-<version>-windows-<arch>-portable.zip   most-anything.exe (+ craft-anything-cli.exe), portable.txt and the licences
+    most-anything-<version>-windows-<arch>.msi            per-machine installer (WiX v5)
+    most-anything-<version>-windows-<arch>-portable.zip   most-anything.exe (+ most-anything-cli.exe), portable.txt and the licences
 
   craft-anything-cli.exe is built and shipped once apps/craft-anything-cli exists in the workspace.
 
@@ -57,8 +57,8 @@ if (-not $env:MOST_ANYTHING_BUILD_SHA) { $env:MOST_ANYTHING_BUILD_SHA = (git -C 
 if (-not $env:MOST_ANYTHING_BUILD_DATE) { $env:MOST_ANYTHING_BUILD_DATE = (Get-Date).ToUniversalTime().ToString('yyyy-MM-dd') }
 
 # The headless CLI ships next to the app once apps/craft-anything-cli exists.
-$HasCli = Test-Path (Join-Path $Root 'apps\craft-anything-cli\Cargo.toml')
-$Bins = @('craft-anything'); if ($HasCli) { $Bins += 'craft-anything-cli' }
+$HasCli = Test-Path (Join-Path $Root 'apps\most-anything-cli\Cargo.toml')
+$Bins = @('most-anything'); if ($HasCli) { $Bins += 'most-anything-cli' }
 
 Write-Output "Most Anything $Version for Windows $Arch ($Target): $($Bins -join ', ')"
 
@@ -83,7 +83,7 @@ function Get-PeHeader([string] $Path) {
   return @{ Machine = [BitConverter]::ToUInt16($bytes, $pe + 4); Subsystem = [BitConverter]::ToUInt16($bytes, $pe + 0x5C) }
 }
 $Machine = switch ($Arch) { 'x64' { 0x8664 } 'x86' { 0x14C } 'arm64' { 0xAA64 } }
-$checks = @(, @('most-anything.exe', 2)); if ($HasCli) { $checks += , @('craft-anything-cli.exe', 3) }
+$checks = @(, @('most-anything.exe', 2)); if ($HasCli) { $checks += , @('most-anything-cli.exe', 3) }
 foreach ($check in $checks) {
   $h = Get-PeHeader (Join-Path $Bin $check[0])
   if ($h.Machine -ne $Machine) { throw "$($check[0]) is for machine 0x$('{0:X}' -f $h.Machine), expected 0x$('{0:X}' -f $Machine) ($Arch)" }
@@ -178,7 +178,7 @@ Compress-Archive -Path $Portable -DestinationPath $Zip
 # Smoke-test the CLI when this machine can run it. An ARM64 build made on an x64 runner can't run
 # here; .github/workflows/windows-arm64.yml installs and runs it on ARM64 instead.
 $HostArch = [System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture.ToString().ToLowerInvariant()
-$Smoke = if ($HasCli) { 'craft-anything-cli.exe' } else { 'most-anything.exe' }
+$Smoke = if ($HasCli) { 'most-anything-cli.exe' } else { 'most-anything.exe' }
 if ($Arch -ne 'arm64' -or $HostArch -eq 'arm64') {
   # most-anything.exe is a GUI-subsystem exe: pipe it so PowerShell waits and shows its --version output.
   Invoke-Native "$Smoke --version" { & (Join-Path $Stage $Smoke) --version | Out-Host }

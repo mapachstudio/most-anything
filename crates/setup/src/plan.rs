@@ -15,7 +15,7 @@ pub struct PlanRequest {
     /// Client ids. Empty (and not `all_detected`) means "refresh the clients that already have our entry".
     pub clients: Vec<String>,
     pub all_detected: bool,
-    /// Program and args to register, e.g. `["/usr/local/bin/craft-anything-cli", "mcp"]`.
+    /// Program and args to register, e.g. `["/usr/local/bin/most-anything-cli", "mcp"]`.
     pub command: Vec<String>,
     /// Also install the skill into each selected client's skills folder.
     pub include_skill: bool,

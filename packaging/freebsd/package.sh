@@ -2,13 +2,13 @@
 # Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 # Build and package Most Anything for FreeBSD:
 #
-#   $DIST/craft-anything-<version>-freebsd-x86_64.tar.gz   a /usr/local-style tree:
-#       craft-anything-<version>-freebsd-x86_64/{bin, share/applications, share/icons,
-#       share/metainfo, share/doc/craft-anything}
+#   $DIST/most-anything-<version>-freebsd-x86_64.tar.gz   a /usr/local-style tree:
+#       most-anything-<version>-freebsd-x86_64/{bin, share/applications, share/icons,
+#       share/metainfo, share/doc/most-anything}
 #   bin/ holds craft-anything, plus craft-anything-cli once apps/craft-anything-cli exists.
 #
 # Install by copying the tree's contents into /usr/local:
-#   tar -xzf craft-anything-<version>-freebsd-x86_64.tar.gz --strip-components 1 -C /usr/local
+#   tar -xzf most-anything-<version>-freebsd-x86_64.tar.gz --strip-components 1 -C /usr/local
 #
 # Usage: packaging/freebsd/package.sh [--skip-build] [--dry-run]
 #   --dry-run   stage the tree from stub binaries and list it, without building (works on any OS)
@@ -90,7 +90,7 @@ fi
 # ---- stage a /usr/local-style tree --------------------------------------------------------------
 # FreeBSD's install(1) has no -D: create the directories first.
 mkdir -p "$STAGE/bin" "$STAGE/share/applications" \
-  "$STAGE/share/metainfo" "$STAGE/share/icons" "$STAGE/share/doc/craft-anything"
+  "$STAGE/share/metainfo" "$STAGE/share/icons" "$STAGE/share/doc/most-anything"
 for b in "${BINS[@]}"; do
   install -m 755 "$BIN/$b" "$STAGE/bin/"
   strip "$STAGE/bin/$b" 2>/dev/null || true
@@ -100,12 +100,12 @@ install -m 644 "$LINUX/$APP_ID.desktop" "$STAGE/share/applications/$APP_ID.deskt
 sed -e "s/@VERSION@/$VERSION/g" -e "s/@DATE@/$MOST_ANYTHING_BUILD_DATE/g" \
   "$LINUX/$APP_ID.metainfo.xml.in" >"$STAGE/share/metainfo/$APP_ID.metainfo.xml"
 cp -R "$ROOT/assets/app-icon/hicolor" "$STAGE/share/icons/"
-copy_docs "$STAGE/share/doc/craft-anything"
-if [ -f "$ROOT/ATTRIBUTION.md" ]; then install -m 644 "$ROOT/ATTRIBUTION.md" "$STAGE/share/doc/craft-anything/"; fi
+copy_docs "$STAGE/share/doc/most-anything"
+if [ -f "$ROOT/ATTRIBUTION.md" ]; then install -m 644 "$ROOT/ATTRIBUTION.md" "$STAGE/share/doc/most-anything/"; fi
 
 for f in "${BINS[@]/#/bin/}" "share/applications/$APP_ID.desktop" \
   "share/icons/hicolor/256x256/apps/$APP_ID.png" \
-  share/doc/craft-anything/LICENSE-MIT share/doc/craft-anything/LICENSE-APACHE; do
+  share/doc/most-anything/LICENSE-MIT share/doc/most-anything/LICENSE-APACHE; do
   if [ ! -e "$STAGE/$f" ]; then echo "error: $f is missing from the package" >&2; exit 1; fi
 done
 

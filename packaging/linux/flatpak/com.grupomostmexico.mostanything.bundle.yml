@@ -1,8 +1,8 @@
 # Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 # Flatpak manifest for the single-file bundle attached to every GitHub release
-# (craft-anything-<version>-linux-<arch>.flatpak). Build it with packaging/linux/flatpak-bundle.sh.
+# (most-anything-<version>-linux-<arch>.flatpak). Build it with packaging/linux/flatpak-bundle.sh.
 #
-# It repackages the release's own Linux tarball (craft-anything-<version>-linux-<arch>.tar.gz,
+# It repackages the release's own Linux tarball (most-anything-<version>-linux-<arch>.tar.gz,
 # built on Ubuntu 22.04 by package.sh) instead of compiling Rust inside flatpak-builder: no
 # network and no vendored crate sources during the build, a few seconds instead of 20+ minutes,
 # and byte-for-byte the same binaries as the AppImage/deb/rpm. The script unpacks the tarball
@@ -16,7 +16,7 @@ id: com.grupomostmexico.mostanything
 runtime: org.freedesktop.Platform
 runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
-command: craft-anything
+command: most-anything
 finish-args:
   # Display: Wayland first; X11 only when no Wayland compositor is running.
   - --socket=wayland
@@ -35,16 +35,16 @@ finish-args:
   # AI backends (Anthropic, OpenAI, OpenRouter, local servers) and optional engine downloads.
   - --share=network
 modules:
-  - name: craft-anything
+  - name: most-anything
     buildsystem: simple
     build-commands:
-      - install -Dm755 bin/craft-anything /app/bin/craft-anything
+      - install -Dm755 bin/most-anything /app/bin/most-anything
       # The headless CLI, in tarballs built with apps/craft-anything-cli.
-      - if [ -x bin/craft-anything-cli ]; then install -Dm755 bin/craft-anything-cli /app/bin/craft-anything-cli; fi
+      - if [ -x bin/most-anything-cli ]; then install -Dm755 bin/most-anything-cli /app/bin/most-anything-cli; fi
       - install -Dm644 share/applications/com.grupomostmexico.mostanything.desktop /app/share/applications/com.grupomostmexico.mostanything.desktop
       # Already has the release's version and date substituted by package.sh.
       - install -Dm644 share/metainfo/com.grupomostmexico.mostanything.metainfo.xml /app/share/metainfo/com.grupomostmexico.mostanything.metainfo.xml
-      - mkdir -p /app/share/icons /app/share/doc && cp -R share/icons/hicolor /app/share/icons/ && cp -R share/doc/craft-anything /app/share/doc/
+      - mkdir -p /app/share/icons /app/share/doc && cp -R share/icons/hicolor /app/share/icons/ && cp -R share/doc/most-anything /app/share/doc/
     sources:
       - type: dir
         path: stage

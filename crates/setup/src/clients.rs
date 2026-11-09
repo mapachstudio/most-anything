@@ -514,7 +514,7 @@ mod tests {
 
     #[test]
     fn ownership() {
-        assert!(is_owned_entry(&json!({"command": "/opt/bin/craft-anything-cli", "args": ["mcp"]})));
+        assert!(is_owned_entry(&json!({"command": "/opt/bin/most-anything-cli", "args": ["mcp"]})));
         assert!(is_owned_entry(&json!({"command": "C:\\x\\craft-anything-cli.exe", "args": ["mcp", "--all-tools"]})));
         assert!(is_owned_entry(&json!({"type": "local", "command": ["/b/craft-anything-cli", "mcp"]})));
         assert!(!is_owned_entry(&json!({"command": "npx", "args": ["craft-anything-cli", "mcp"]})));

@@ -276,7 +276,7 @@ fn nested_fields(schema: &Value, prop: &Value, path: &str, depth: usize, out: &m
 pub fn help(spec: &ToolSpec, schema: &Value) -> String {
     let props = schema_props(schema);
     let req = required(schema);
-    let mut s = format!("{} — {}\n\n{}\n\nUsage: craft-anything-cli {}", spec.cli_name(), spec.title, spec.summary, spec.cli_name());
+    let mut s = format!("{} — {}\n\n{}\n\nUsage: most-anything-cli {}", spec.cli_name(), spec.title, spec.summary, spec.cli_name());
     if spec.requires == Requires::Target {
         s.push_str(" <target-path>");
     }

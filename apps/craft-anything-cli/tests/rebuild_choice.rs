@@ -15,7 +15,7 @@ use std::time::Duration;
 /// Run the built CLI with only what the test gives it: no provider keys or installed agents leak in.
 fn cli(args: &[&str], config: &Path, home: &Path, bin: &Path) -> Output {
     let path = format!("{}:/usr/bin:/bin", bin.display());
-    Process::new(env!("CARGO_BIN_EXE_craft-anything-cli"))
+    Process::new(env!("CARGO_BIN_EXE_most-anything-cli"))
         .args(args)
         .env_clear()
         .env("MOST_ANYTHING_CONFIG_DIR", config)

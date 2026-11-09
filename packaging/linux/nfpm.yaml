@@ -5,7 +5,7 @@
 # NFPM_ARCH and MOST_ANYTHING_MAINTAINER.
 #
 #   nfpm package -f packaging/linux/nfpm.yaml -p deb -t dist/release/
-name: craft-anything
+name: most-anything
 arch: ${NFPM_ARCH}
 platform: linux
 version: ${VERSION}
@@ -66,11 +66,11 @@ overrides:
       - xdg-desktop-portal
 
 contents:
-  - src: ${STAGE}/usr/bin/craft-anything
-    dst: /usr/bin/craft-anything
+  - src: ${STAGE}/usr/bin/most-anything
+    dst: /usr/bin/most-anything
     file_info: { mode: 0755 }
-  - src: ${STAGE}/usr/bin/craft-anything-cli #cli
-    dst: /usr/bin/craft-anything-cli #cli
+  - src: ${STAGE}/usr/bin/most-anything-cli #cli
+    dst: /usr/bin/most-anything-cli #cli
     file_info: { mode: 0755 } #cli
   - src: ${STAGE}/usr/share/
     dst: /usr/share/

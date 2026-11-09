@@ -17,7 +17,7 @@ runtime-version: '26.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
-command: craft-anything
+command: most-anything
 finish-args:
   # Display: Wayland first; X11 only when no Wayland compositor is running.
   - --socket=wayland
@@ -38,16 +38,16 @@ finish-args:
 build-options:
   append-path: /usr/lib/sdk/rust-stable/bin
 modules:
-  - name: craft-anything
+  - name: most-anything
     buildsystem: simple
     build-options:
       env:
-        CARGO_HOME: /run/build/craft-anything/cargo
+        CARGO_HOME: /run/build/most-anything/cargo
         CARGO_NET_OFFLINE: 'true'
     build-commands:
       - cargo --offline build --release --locked -p craft-anything -p craft-anything-cli
-      - install -Dm755 target/release/craft-anything /app/bin/craft-anything
-      - install -Dm755 target/release/craft-anything-cli /app/bin/craft-anything-cli
+      - install -Dm755 target/release/most-anything /app/bin/most-anything
+      - install -Dm755 target/release/most-anything-cli /app/bin/most-anything-cli
       - install -Dm644 packaging/linux/com.grupomostmexico.mostanything.desktop /app/share/applications/com.grupomostmexico.mostanything.desktop
       - mkdir -p /app/share/icons && cp -R assets/app-icon/hicolor /app/share/icons/
       - >-

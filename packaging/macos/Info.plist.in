@@ -11,7 +11,7 @@
   <key>CFBundleName</key>
   <string>Most Anything</string>
   <key>CFBundleExecutable</key>
-  <string>craft-anything</string>
+  <string>most-anything</string>
   <key>CFBundleIdentifier</key>
   <string>com.grupomostmexico.mostanything</string>
   <key>CFBundleInfoDictionaryVersion</key>
