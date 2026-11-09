@@ -117,7 +117,7 @@ impl Viewer {
                     )
                     .color(TEXT_DIM),
                 );
-                ui.hyperlink_to("Get the desktop app", "https://github.com/storytold/craft-anything/releases/latest");
+                ui.hyperlink_to("Get the desktop app", "https://github.com/mapachstudio/most-anything/releases/latest");
             });
         });
     }

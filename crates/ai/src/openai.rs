@@ -23,7 +23,7 @@ pub const OPENROUTER_MODELS: &[&str] = &[OPENROUTER_DEFAULT_MODEL, KIMI_K3_1];
 pub const GEMINI_DEFAULT_MODEL: &str = "gemini-3.8-flash";
 pub const GEMINI_MODELS: &[&str] = &[GEMINI_DEFAULT_MODEL, "gemini-4-argon"];
 /// Generic app identification for OpenRouter (no personal data).
-pub const APP_REFERER: &str = "https://github.com/storytold/craft-anything";
+pub const APP_REFERER: &str = "https://github.com/mapachstudio/most-anything";
 pub const APP_TITLE: &str = "Most Anything";
 /// OpenCode Go (a subscription): an OpenAI-compatible base, the key from its console, and a session
 /// header the service asks every client to send so routing and prompt caching follow a conversation.
