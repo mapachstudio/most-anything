@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! The Most Anything egui interface: Simple mode (make something from a prompt, or ask about a
 //! target) and Advanced mode (the full workbench). Both drive the same engine.
 //!
@@ -1897,7 +1898,7 @@ impl CraftApp {
 /// The 256 px app icon.
 pub static APP_ICON_PNG: &[u8] = include_bytes!("../../../assets/app-icon/hicolor/256x256/apps/com.grupomostmexico.mostanything.png");
 /// The app icon's master SVG, drawn at the exact pixel size wherever the app shows its icon.
-pub static APP_ICON_SVG: &[u8] = include_bytes!("../../../assets/app-icon/craft-anything.svg");
+pub static APP_ICON_SVG: &[u8] = include_bytes!("../../../assets/app-icon/most-anything.svg");
 
 /// The app icon at `size` points.
 pub fn app_icon(size: f32) -> egui::Image<'static> {

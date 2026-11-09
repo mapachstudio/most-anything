@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Where a new project goes: the projects folder from Settings, or a folder the person picks,
 //! which may already have their files. Then they're asked (unless they said not to) whether those
 //! files are the app to edit in place or material to start from.

@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! The person's installed Copilot CLI, driven over ACP with our MCP tools rather than its
 //! native file and shell tools. Sign-in, credential storage and refresh stay in Copilot CLI.
 

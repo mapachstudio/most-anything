@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! JEB tools: a small MCP client (Streamable HTTP, JSON-RPC 2.0) for a JEB MCP server the user
 //! runs themselves on this machine. The server URL comes from Settings → Engines (`jeb_url`).
 //! We never start JEB, never retry, only talk plain HTTP to a loopback address, and bound every

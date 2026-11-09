@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+# Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 # Build and package Most Anything for Linux (<arch> is x86_64 or aarch64, or riscv64 when cross-compiling):
 #
 #   $DIST/craft-anything-<version>-linux-<arch>.AppImage  any distro with glibc >= the build host's
@@ -45,7 +46,7 @@ case "$ARCH" in
   *) echo "unsupported architecture $ARCH" >&2; exit 2 ;;
 esac
 export MOST_ANYTHING_MAINTAINER="${MOST_ANYTHING_MAINTAINER:-Most Anything maintainers <craft-anything@storyteller.ai>}"
-BASENAME="craft-anything-$VERSION-linux-$ARCH"
+BASENAME="most-anything-$VERSION-linux-$ARCH"
 
 echo "==> Most Anything $VERSION for Linux $ARCH ($FORMATS; ${BINS[*]})"
 

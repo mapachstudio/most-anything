@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! `app/mechanics.json`: the numbers and rules that shape how a rebuild plays, in a form checks
 //! can read. The builder keeps it next to `app/MECHANICS.md` (the same values, written for
 //! people); the mechanics check reads it after each build. Its schema is published in

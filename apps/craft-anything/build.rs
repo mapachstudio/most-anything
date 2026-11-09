@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Windows only: embed the app icon and version info (VERSIONINFO) into `craft-anything.exe`.
 //!
 //! On every other target this does nothing. A missing resource compiler is a warning, so a
@@ -7,13 +8,13 @@
 
 fn main() {
     println!("cargo:rerun-if-changed=build.rs");
-    println!("cargo:rerun-if-changed=../../assets/app-icon/craft-anything.ico");
+    println!("cargo:rerun-if-changed=../../assets/app-icon/most-anything.ico");
     println!("cargo:rerun-if-env-changed=MOST_ANYTHING_REQUIRE_WINRES");
     if std::env::var("CARGO_CFG_TARGET_OS").as_deref() != Ok("windows") {
         return;
     }
     let mut res = winresource::WindowsResource::new();
-    res.set_icon("../../assets/app-icon/craft-anything.ico")
+    res.set_icon("../../assets/app-icon/most-anything.ico")
         .set("ProductName", "Most Anything")
         .set("FileDescription", "Most Anything: find out how any software works")
         .set("LegalCopyright", "Copyright (c) the ArtCraft Team and the Craft Anything contributors; modificaciones Copyright (c) 2026 Grupo MOST. MIT OR Apache-2.0.")

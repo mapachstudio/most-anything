@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! The Project screen: one thing being made. Left: what it is, the four steps, checks and
 //! actions (preview, folder, details). Right: a plain-words activity feed with question and
 //! approval cards, and a box to ask for changes. Technical detail (each tool the agent used)

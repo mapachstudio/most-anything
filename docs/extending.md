@@ -1,4 +1,5 @@
 <!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # Extending Most Anything
 
 Every part people tend to change sits behind a seam: a trait or a table with built-in entries and one

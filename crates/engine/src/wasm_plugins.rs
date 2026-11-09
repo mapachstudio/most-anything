@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! WASM component plugins (R1.8 phase 2): each `[[plugins.wasm]]` entry is a component exporting
 //! `craft-anything:plugin/tools` (see `crates/engines/wit/plugin.wit`), whose tools become
 //! Most Anything tools in a toolset of their own.

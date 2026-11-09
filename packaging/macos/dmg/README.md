@@ -1,4 +1,5 @@
 <!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # macOS DMG window
 
 What Finder shows when the DMG opens: a 660 × 400 pt background with the app icon and the
@@ -8,7 +9,7 @@ scripting on CI, nothing extra installed in the signing job).
 
 | File | What |
 |---|---|
-| `background.svg` | Source of the background: the app icon (`assets/app-icon/craft-anything.svg`, linked, not copied) cropped as a cover on the Most Anything blue (`#4e7bfb`), ink and paper, DM Sans and JetBrains Mono (from `assets/fonts`, not embedded). |
+| `background.svg` | Source of the background: the app icon (`assets/app-icon/most-anything.svg`, linked, not copied) cropped as a cover on the Most Anything blue (`#4e7bfb`), ink and paper, DM Sans and JetBrains Mono (from `assets/fonts`, not embedded). |
 | `background.tiff` | The background at 1x (660 × 400 px, 72 dpi) and 2x (1320 × 800 px, 144 dpi) in one HiDPI TIFF (Deflate, sRGB). Goes to `.background/background.tiff`. |
 | `DS_Store` | Finder's view settings for the volume: window size, icon size 128, Most Anything.app at (326, 205), `Applications` at (574, 205), and the background. Goes to `.DS_Store`. |
 | `generate.py` | Writes `background.tiff` and `DS_Store` from the SVG and the layout above. |

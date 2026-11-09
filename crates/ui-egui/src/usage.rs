@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! What the AI has used: each project's building time, tokens and reported cost (saved by its
 //! runs in `usage.json`, so they add up across restarts), and the session's total since the app
 //! opened. An API key's cost comes from what it was charged; Claude Code gives its own estimate

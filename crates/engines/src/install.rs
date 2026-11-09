@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Managed engine installs: download a pinned archive, verify its SHA-256 **before** unpacking, and
 //! lay it out in the engine store so [`crate::locate`] finds it. The pins live in the engine table
 //! ([`crate::table`]); every pin carries the publisher's SHA-256.

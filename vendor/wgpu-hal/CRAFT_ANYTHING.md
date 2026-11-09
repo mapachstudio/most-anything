@@ -1,4 +1,5 @@
 <!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # wgpu-hal 30.0.1, patched for Most Anything
 
 This is a copy of `wgpu-hal` 30.0.1 (MIT OR Apache-2.0, see `LICENSE.*`) with one change, used through

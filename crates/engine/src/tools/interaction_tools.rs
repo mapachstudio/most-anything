@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Talking to the person while an agent works: `core_person_ask` (a question with suggested answers)
 //! and `core_action_approve` (the permission check a coding agent calls before an action, e.g.
 //! Claude Code's `--permission-prompt-tool`). Both go through the session's [`Inbox`]; the app

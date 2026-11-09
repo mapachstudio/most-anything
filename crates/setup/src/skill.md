@@ -1,4 +1,5 @@
 <!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 ---
 name: craft-anything
 description: Investigate how shipped software works (programs, apps, packages, firmware, web bundles) with evidence-backed answers through the Most Anything MCP tools, keeping a durable brief, plan, hypotheses, findings and handoff in the project.

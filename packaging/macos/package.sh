@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+# Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 # Build, sign and (optionally) notarize the macOS release artifacts:
 #
 #   $DIST/craft-anything-<version>-macos-<arch>.dmg          Most Anything.app on a drag-to-Applications DMG
@@ -41,8 +42,8 @@ IDENTITY="${MACOS_SIGN_IDENTITY:--}"
 SHORT_VERSION="${VERSION%%-*}"
 WORK="$CARGO_TARGET_DIR/macos-package"
 APP="$WORK/Most Anything.app"
-DMG="$DIST/craft-anything-$VERSION-macos-$ARCH.dmg"
-CLI_ZIP="$DIST/craft-anything-cli-$VERSION-macos-$ARCH.zip"
+DMG="$DIST/most-anything-$VERSION-macos-$ARCH.dmg"
+CLI_ZIP="$DIST/most-anything-cli-$VERSION-macos-$ARCH.zip"
 
 NOTARIZE=0
 if [ "$IDENTITY" = "-" ]; then
@@ -99,8 +100,8 @@ notarize() {
 }
 
 # ---- icon --------------------------------------------------------------------------------------
-# The committed .icns (assets/app-icon/craft-anything.icns, rendered from the icon source).
-ICNS="$ROOT/assets/app-icon/craft-anything.icns"
+# The committed .icns (assets/app-icon/most-anything.icns, rendered from the icon source).
+ICNS="$ROOT/assets/app-icon/most-anything.icns"
 
 # ---- Most Anything.app ----------------------------------------------------------------------
 echo "==> assembling $APP"
@@ -110,7 +111,7 @@ cp "$WORK/bin/craft-anything" "$APP/Contents/MacOS/craft-anything"
 # The CLI goes beside it: the app starts it as the MCP server its coding agents use, and finds it
 # next to its own executable (`self_cli_path`). Without it every Claude Code build fails (#91).
 if [ "$HAS_CLI" = 1 ]; then cp "$WORK/bin/craft-anything-cli" "$APP/Contents/MacOS/craft-anything-cli"; fi
-cp "$ICNS" "$APP/Contents/Resources/craft-anything.icns"
+cp "$ICNS" "$APP/Contents/Resources/Most Anything.icns"
 # Licences of the embedded fonts (assets/fonts, OFL-1.1).
 mkdir -p "$APP/Contents/Resources/Licenses"
 copy_font_licences "$APP/Contents/Resources/Licenses"
@@ -196,7 +197,7 @@ fi
 # ---- CLI ---------------------------------------------------------------------------------------
 if [ "$HAS_CLI" = 1 ]; then
   echo "==> building $CLI_ZIP"
-  CLI_DIR="$WORK/craft-anything-cli-$VERSION-macos-$ARCH"
+  CLI_DIR="$WORK/most-anything-cli-$VERSION-macos-$ARCH"
   mkdir -p "$CLI_DIR"
   cp "$WORK/bin/craft-anything-cli" "$CLI_DIR/"
   copy_docs "$CLI_DIR"

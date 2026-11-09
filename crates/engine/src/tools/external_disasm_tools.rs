@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Thin, read-only wrappers over optional external disassemblers and decompilers: `objdump` (GNU
 //! binutils or LLVM) for one fixed operation at a time, `rizin` for one allow-listed read-only
 //! command, and ILSpy's command line (`ilspycmd`) for .NET assemblies. All run through the

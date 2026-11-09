@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Plugins end to end: Most Anything's own MCP server (`craft-anything-cli mcp`) configured as a
 //! plugin, refreshed, listed and called through the CLI. Everything stays in temp folders.
 

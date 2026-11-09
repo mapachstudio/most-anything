@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! `craft-anything-cli`: every tool as a subcommand, the MCP server, setup, doctor and headless chat.
 //!
 //! Exit codes: 0 success, 1 the operation failed (a structured error is printed), 2 usage error,

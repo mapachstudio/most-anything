@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Simple mode's front door, for people new to computers: two numbered questions in plain words
 //! ("What do you want to recreate?", "Say what you want"), big targets and one big Start button. Below it,
 //! the projects made so far.

@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! What is being made. Each kind of target (website, app, game) is a [`TargetKind`]: how a
 //! request is recognised as one, its default stack, what the builder is told, and the
 //! [`Check`]s that judge a build. A [`KindRegistry`] holds them; add a kind by implementing the

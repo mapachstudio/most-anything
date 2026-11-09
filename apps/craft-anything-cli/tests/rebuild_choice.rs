@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! `rebuild` picks the AI it was told to use: a run on an API backend must not add a coding agent.
 //! Each test gives the binary its own config, home and `PATH`, so the person's settings and the
 //! agents installed on the machine don't decide the result.

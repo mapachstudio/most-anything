@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Games (and apps decompiled in Deep mode) keep their numbers in `app/MECHANICS.md` for people and in `app/mechanics.json` for
 //! checks ([`craft_anything_engine::mechanics`]). [`MechanicsCheck`] holds the build to the
 //! sheet: it must exist and be readable, and every number in it must appear in the code as

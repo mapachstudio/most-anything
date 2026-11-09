@@ -1,8 +1,9 @@
 <!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # Hosting Most Anything for the web
 
-`craft-anything-web-<version>.zip` (from the GitHub release, or `packaging/web/package.sh`) holds a
-static site in `craft-anything-web-<version>/`:
+`most-anything-web-<version>.zip` (from the GitHub release, or `packaging/web/package.sh`) holds a
+static site in `most-anything-web-<version>/`:
 
 | File | What it is |
 |---|---|
@@ -86,5 +87,5 @@ Headless Chrome has no WebGPU adapter, so it runs on WebGL2 through SwiftShader:
 ```sh
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
   --use-angle=swiftshader --enable-unsafe-swiftshader --window-size=1440,900 \
-  --timeout=30000 --screenshot=craft-anything-web.png "http://127.0.0.1:8767/"
+  --timeout=30000 --screenshot=most-anything-web.png "http://127.0.0.1:8767/"
 ```

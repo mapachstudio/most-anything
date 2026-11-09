@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Protocol tests against a fake bridge server (a thread that speaks our NDJSON protocol). No
 //! Ghidra is involved: these prove framing, token auth, request timeouts, cancellation and that
 //! dropping the client cleans up the connection.

@@ -1,4 +1,5 @@
 <!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
+<!-- Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # Most Anything app icon
 
 The **raven**: the Crafting Apps' shared icon, made by the ArtCraft team. An engraved raven head
@@ -17,10 +18,10 @@ icons pad the tile onto Apple's 824/1024 icon grid; every other render uses the 
 
 ## Files
 
-- `craft-anything.svg`: the master SVG (also the hicolor scalable icon), about 100 KB.
-- `craft-anything-1024.png`: 1024 px render of the tile.
-- `craft-anything.icns`: macOS bundle icon.
-- `craft-anything.ico`: Windows icon (16, 20, 24, 32, 40, 48, 64, 128, 256).
+- `most-anything.svg`: the master SVG (also the hicolor scalable icon), about 100 KB.
+- `most-anything-1024.png`: 1024 px render of the tile.
+- `most-anything.icns`: macOS bundle icon.
+- `most-anything.ico`: Windows icon (16, 20, 24, 32, 40, 48, 64, 128, 256).
 - `hicolor/<size>/apps/com.grupomostmexico.mostanything.png` (16–512) and
   `hicolor/scalable/apps/com.grupomostmexico.mostanything.svg`: Linux icon theme.
 - `trace.py`: traces the raven artwork (a 2000 px raster) into the SVG with vtracer.
@@ -32,7 +33,7 @@ icons pad the tile onto Apple's 824/1024 icon grid; every other render uses the 
 ```sh
 # From the 2000 px raven artwork (needs numpy, Pillow and vtracer; svgo 3.3.2 shrinks the paths):
 python trace.py raven.webp master.svg 1000 6 0
-npx svgo@3.3.2 -p 1 master.svg -o craft-anything.svg
+npx svgo@3.3.2 -p 1 master.svg -o most-anything.svg
 # Every render (needs resvg on PATH; the .icns needs macOS's iconutil):
 packaging/icons.sh
 ```

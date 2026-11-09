@@ -24,18 +24,7 @@ identificadores de código, no marcas presentadas al usuario.
 
 Su formato no admite comentarios:
 
-- `crates/ui-egui/src/fr.tsv`
-- `crates/ui-egui/src/i18n/cs.tsv`
-- `crates/ui-egui/src/i18n/de.tsv`
-- `crates/ui-egui/src/i18n/ko.tsv`
-- `crates/ui-egui/src/i18n/ru.tsv`
-- `crates/ui-egui/src/i18n/zh-hans.tsv`
-- `crates/ui-egui/src/i18n/zh-hant.tsv`
-- `crates/ui-egui/src/ja.tsv`
-- `packaging/linux/ai.storyteller.craft-anything.metainfo.xml.in`
-- `packaging/macos/Info.plist.in`
-- `packaging/macos/entitlements.plist`
-- `packaging/windows/portable.txt`
+(ninguno)
 
 ## Atribución
 

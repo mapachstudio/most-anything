@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! OpenAI chat completions (and every OpenAI-compatible server: OpenRouter, Ollama, LM Studio,
 //! llama.cpp, vLLM…): streaming, function tools, and a ReAct text fallback for models without
 //! tool calling.

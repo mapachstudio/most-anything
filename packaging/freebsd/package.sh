@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+# Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 # Build and package Most Anything for FreeBSD:
 #
 #   $DIST/craft-anything-<version>-freebsd-x86_64.tar.gz   a /usr/local-style tree:
@@ -59,7 +60,7 @@ if [ "$DRY_RUN" = 0 ] && [ "$(uname -s)" != FreeBSD ]; then
   echo "error: build on FreeBSD (or pass --dry-run to check the tree layout)" >&2
   exit 2
 fi
-BASENAME="craft-anything-$VERSION-freebsd-$ARCH"
+BASENAME="most-anything-$VERSION-freebsd-$ARCH"
 
 echo "==> Most Anything $VERSION for FreeBSD $ARCH"
 

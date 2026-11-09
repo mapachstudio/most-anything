@@ -37,8 +37,8 @@ case "$ARCH" in
   *) echo "unknown --arch $ARCH" >&2; exit 2 ;;
 esac
 
-DMG="$DIST/craft-anything-$VERSION-macos-$ARCH.dmg"
-CLI_ZIP="$DIST/craft-anything-cli-$VERSION-macos-$ARCH.zip"
+DMG="$DIST/most-anything-$VERSION-macos-$ARCH.dmg"
+CLI_ZIP="$DIST/most-anything-cli-$VERSION-macos-$ARCH.zip"
 IDENTITY="${MACOS_SIGN_IDENTITY:--}"
 STRICT=0
 if [ "$IDENTITY" != "-" ] && [ -n "${APPLE_ID:-}" ] && [ -n "${APPLE_PASSWORD:-}" ] && [ -n "${APPLE_TEAM_ID:-}" ]; then
@@ -86,9 +86,9 @@ trap 'rm -rf "$WORK"' EXIT
 if [ "$HAS_CLI" = 1 ]; then
   echo "==> $(basename "$CLI_ZIP")"
   ditto -x -k "$CLI_ZIP" "$WORK/cli"
-  CLI="$WORK/cli/craft-anything-cli-$VERSION-macos-$ARCH/craft-anything-cli"
+  CLI="$WORK/cli/most-anything-cli-$VERSION-macos-$ARCH/craft-anything-cli"
   if [ ! -x "$CLI" ]; then
-    echo "error: $(basename "$CLI_ZIP") has no executable craft-anything-cli-$VERSION-macos-$ARCH/craft-anything-cli" >&2
+    echo "error: $(basename "$CLI_ZIP") has no executable most-anything-cli-$VERSION-macos-$ARCH/craft-anything-cli" >&2
     exit 1
   fi
 

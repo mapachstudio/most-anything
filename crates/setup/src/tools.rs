@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Connecting Most Anything to coding-agent apps, as tools (registered next to the engine's own
 //! through `Engine::shared`), so it can be done without the app: what would change, applying it,
 //! the health checks, and removing our entries again. Ids follow docs/tool-ids.md.

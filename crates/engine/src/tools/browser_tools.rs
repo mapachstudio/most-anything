@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Browser tools over the Chrome DevTools Protocol (loopback CDP).
 //!
 //! Passive tools attach to a user-started browser (`--remote-debugging-port`) or, when asked,

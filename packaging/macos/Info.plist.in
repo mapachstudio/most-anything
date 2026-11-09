@@ -29,7 +29,7 @@
   <key>CraftAnythingBuildCommit</key>
   <string>@BUILD_SHA@</string>
   <key>CFBundleIconFile</key>
-  <string>craft-anything</string>
+  <string>Most Anything</string>
   <key>LSApplicationCategoryType</key>
   <string>public.app-category.developer-tools</string>
   <!-- Must match MACOSX_DEPLOYMENT_TARGET in package.sh. Big Sur is the first release on

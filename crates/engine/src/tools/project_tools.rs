@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Projects (what the person is making) as tools, so every client — the app, the CLI, an MCP
 //! agent — can list them, read one with its conversation, and answer its questions without the
 //! app. Ids follow docs/tool-ids.md.

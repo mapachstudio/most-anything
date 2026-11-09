@@ -1,4 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
+// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Windows only: mark `craft-anything-cli.exe` DPI-aware (an application manifest), so window
 //! pictures (`native_window_capture`) and screen coordinates are in real pixels at any display
 //! scaling. On every other target this does nothing. A missing resource compiler is a warning,
