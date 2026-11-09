@@ -1,5 +1,4 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! A game that draws isn't yet a game that plays: a first slice can draw a level with no player
 //! in it. The brief asks every game for a `--self-test <file.json>` option (play the core loop
 //! with scripted input, measure it from the game's own state, save the results, exit), and

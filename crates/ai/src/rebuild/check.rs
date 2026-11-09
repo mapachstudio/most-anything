@@ -1,5 +1,4 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Building a project with its own tools (cargo, npm, or the game engine's), for [`BuildCheck`].
 //! A plain static site has no build, and passes as it is. A person's own project builds and tests
 //! itself the way its toolchain says.

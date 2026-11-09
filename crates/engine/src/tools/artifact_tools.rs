@@ -1,5 +1,4 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Artifacts: content-addressed inventories of archives and app bundles, safe extraction, and
 //! comparison. Also hosts the filesystem and evidence-input helpers the JavaScript, web and
 //! application tool modules share.

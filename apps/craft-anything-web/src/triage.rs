@@ -1,5 +1,4 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! What a dropped file is: native triage for programs, a signature check for everything else.
 //!
 //! Pure and synchronous (no clock, threads or file system), so it is safe in the browser.

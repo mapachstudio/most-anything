@@ -1,5 +1,4 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Game engines in the UI: the "Build with" choice on Make, the step-by-step "Get Unity / Unreal /
 //! Godot" dialog, the engines list in Settings, and the download progress shown everywhere. Also a
 //! game's generated-assets switch and the fal.ai key it needs.

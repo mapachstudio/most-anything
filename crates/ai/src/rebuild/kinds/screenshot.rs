@@ -1,5 +1,4 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Apps and games can't be photographed from outside the way a website can, so the brief asks the
 //! builder for a `--screenshot <file.png>` option (draw about 120 frames, save the screen, exit).
 //! [`ScreenshotCheck`] holds the build to it: it starts the finished program with that option,

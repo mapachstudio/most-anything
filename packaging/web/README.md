@@ -1,5 +1,4 @@
 <!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
-<!-- Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # Hosting Most Anything for the web
 
 `most-anything-web-<version>.zip` (from the GitHub release, or `packaging/web/package.sh`) holds a

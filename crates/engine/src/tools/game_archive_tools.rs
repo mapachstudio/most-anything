@@ -1,5 +1,4 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Game archives: what's inside a game's packed files, and taking one out. Only the parts of the
 //! file that describe its contents are read (an Unreal pak's footer and index), and a file taken
 //! out is streamed, so a pak of many gigabytes is fine.

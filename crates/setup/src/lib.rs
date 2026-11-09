@@ -1,5 +1,4 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Connect Most Anything to coding-agent apps: detect them, plan the change, merge our MCP
 //! server entry into their config without disturbing anything else (comments included), back up,
 //! verify, roll back on failure, install our skill, check health (`doctor`) and uninstall.

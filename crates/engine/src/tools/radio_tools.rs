@@ -1,5 +1,4 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Radio signal recordings, decoded by rtl_433 run as an external program (never linked): it reads
 //! a saved recording (I/Q samples such as `.cu8`/`.cs16`/`.cf32`, or AM/FM `.s16`), recognises the
 //! devices it knows (weather stations, remotes, tyre sensors, meters…) and prints one JSON object

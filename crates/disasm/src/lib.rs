@@ -1,5 +1,4 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Most Anything's own native engine: decoding, functions, control flow, references, pseudo-C.
 //!
 //! [`Image`] wraps a parsed container and its bytes; [`Program::analyze`] discovers functions

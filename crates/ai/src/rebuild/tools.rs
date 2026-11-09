@@ -1,5 +1,4 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Rebuild control as tools, registered from this layer next to the engine's own
 //! ([`craft_anything_engine::Engine::shared`]): start a build (new or a follow-up), see whether
 //! it's running, add a note while it works, and stop it. The conversation, questions and result

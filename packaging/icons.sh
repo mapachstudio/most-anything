@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-# Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 # Regenerate every app icon from assets/app-icon/most-anything.svg (the canonical artwork).
 #
 # Needs: resvg (brew install resvg / cargo install resvg). On macOS, iconutil also writes the

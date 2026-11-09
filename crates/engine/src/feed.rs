@@ -1,5 +1,4 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! A project's conversation, as data: what the person asked, what the builder did and said, its
 //! checklist, questions and checks. It's kept in the project folder (`feed.json`); a rebuild run
 //! appends to it as it goes (`ai::rebuild::feed`), and every client reads the same file.

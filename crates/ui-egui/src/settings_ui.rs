@@ -1,5 +1,4 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Settings: General (mode, theme, language), Engines (Ghidra, tool paths), AI, Builds (when a
 //! build is good enough, generated art), Plugins (MCP servers), Safety.
 

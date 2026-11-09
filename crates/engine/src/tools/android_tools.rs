@@ -1,5 +1,4 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-// Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 //! Android apps with built-in parsers: the APK (manifest from binary XML, permissions,
 //! components, signing certificates, DEX files, native libraries), DEX classes and methods with a
 //! smali-like bytecode listing, cross-DEX references, compiled resources per locale, and whether

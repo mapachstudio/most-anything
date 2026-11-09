@@ -1,5 +1,4 @@
 <!-- Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
-<!-- Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0. -->
 # AGENTS.md: guide for AI agents and contributors
 
 Most Anything is a native, pure-Rust app that shows anyone how a piece of software works (programs, apps, files,

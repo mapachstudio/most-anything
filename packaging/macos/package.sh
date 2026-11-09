@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-# Modificado por Grupo MOST para Most Anything. Obra original: Most Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
 # Build, sign and (optionally) notarize the macOS release artifacts:
 #
 #   $DIST/craft-anything-<version>-macos-<arch>.dmg          Most Anything.app on a drag-to-Applications DMG
