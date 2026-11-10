@@ -3,7 +3,7 @@
 //! server entry into their config without disturbing anything else (comments included), back up,
 //! verify, roll back on failure, install our skill, check health (`doctor`) and uninstall.
 //!
-//! Typical flow (what `craft-anything-cli setup` does):
+//! Typical flow (what `most-anything-cli setup` does):
 //! ```no_run
 //! use craft_anything_setup::*;
 //! let host = Host::current();

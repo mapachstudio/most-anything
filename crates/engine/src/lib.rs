@@ -239,7 +239,7 @@ impl Engine {
 
     fn call_inner(&self, id: &str, params: Value, opts: CallOptions<'_>) -> Result<ToolOutput, ToolError> {
         let spec = *self.registry.get(id).ok_or_else(|| {
-            ToolError::invalid(format!("No tool named {id}")).with_remediation("List tools with `craft-anything-cli commands` or the command palette.")
+            ToolError::invalid(format!("No tool named {id}")).with_remediation("List tools with `most-anything-cli commands` or the command palette.")
         })?;
         // Stop works while waiting for the session, and a holder that looks stuck is an error here,
         // not a wait forever. Tools are long jobs: the label says so (they have their own deadlines).

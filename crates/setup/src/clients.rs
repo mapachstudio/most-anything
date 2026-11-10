@@ -247,7 +247,7 @@ pub fn is_owned_entry(entry: &serde_json::Value) -> bool {
     let Some(cmd) = entry_command(entry) else { return false };
     let Some((program, args)) = cmd.split_first() else { return false };
     let file = program.rsplit(['/', '\\']).next().unwrap_or_default();
-    (file == "craft-anything-cli" || file.eq_ignore_ascii_case("craft-anything-cli.exe")) && args.first().is_some_and(|a| a == "mcp")
+    (file == "most-anything-cli" || file.eq_ignore_ascii_case("most-anything-cli.exe")) && args.first().is_some_and(|a| a == "mcp")
 }
 
 /// Every supported client, resolved for `host`.
@@ -517,7 +517,7 @@ mod tests {
         assert!(is_owned_entry(&json!({"command": "/opt/bin/most-anything-cli", "args": ["mcp"]})));
         assert!(is_owned_entry(&json!({"command": "C:\\x\\craft-anything-cli.exe", "args": ["mcp", "--all-tools"]})));
         assert!(is_owned_entry(&json!({"type": "local", "command": ["/b/craft-anything-cli", "mcp"]})));
-        assert!(!is_owned_entry(&json!({"command": "npx", "args": ["craft-anything-cli", "mcp"]})));
+        assert!(!is_owned_entry(&json!({"command": "npx", "args": ["most-anything-cli", "mcp"]})));
         assert!(!is_owned_entry(&json!({"command": "/b/craft-anything-cli", "args": ["doctor"]})));
         assert!(!is_owned_entry(&json!({"url": "http://x"})));
     }

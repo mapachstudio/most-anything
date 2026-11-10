@@ -453,7 +453,7 @@ impl AiHub {
         match name {
             Some(n) if cfg.get(n).is_none() => {
                 return Err(
-                    ToolError::invalid(format!("No AI backend named {n:?}")).with_remediation("See `craft-anything-cli ai list`, or add one in Settings → AI.")
+                    ToolError::invalid(format!("No AI backend named {n:?}")).with_remediation("See `most-anything-cli ai list`, or add one in Settings → AI.")
                 );
             }
             Some(n) => {
@@ -652,7 +652,7 @@ impl AiHub {
         let session = self.engine.try_session().ok_or_else(|| ToolError::invalid("The app is busy with another task. Try again in a moment."))?;
         let config = AiConfig::from_table(&session.settings.ai)?;
         let backend = config.get(name).cloned().ok_or_else(|| {
-            ToolError::invalid(format!("No AI backend named {name:?}")).with_remediation("See `craft-anything-cli ai list`, or add one in Settings → AI.")
+            ToolError::invalid(format!("No AI backend named {name:?}")).with_remediation("See `most-anything-cli ai list`, or add one in Settings → AI.")
         })?;
         Ok(ModelContext { backend, directory: session.project.as_ref().map(|p| p.root.clone()) })
     }
@@ -751,7 +751,7 @@ impl AiHub {
 
     fn entry(&self, name: &str) -> Result<BackendEntry, ToolError> {
         self.config().get(name).cloned().ok_or_else(|| {
-            ToolError::invalid(format!("No AI backend named {name:?}")).with_remediation("See `craft-anything-cli ai list`, or add one in Settings → AI.")
+            ToolError::invalid(format!("No AI backend named {name:?}")).with_remediation("See `most-anything-cli ai list`, or add one in Settings → AI.")
         })
     }
 

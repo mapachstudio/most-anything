@@ -1,5 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-//! Windows only: mark `craft-anything-cli.exe` DPI-aware (an application manifest), so window
+//! Windows only: mark `most-anything-cli.exe` DPI-aware (an application manifest), so window
 //! pictures (`native_window_capture`) and screen coordinates are in real pixels at any display
 //! scaling. On every other target this does nothing. A missing resource compiler is a warning,
 //! unless `MOST_ANYTHING_REQUIRE_WINRES=1` (the release workflow) makes it an error.
@@ -20,7 +20,7 @@ fn main() {
         return;
     }
     let mut res = winresource::WindowsResource::new();
-    res.set_manifest(MANIFEST).set("OriginalFilename", "craft-anything-cli.exe").set("InternalName", "craft-anything-cli");
+    res.set_manifest(MANIFEST).set("OriginalFilename", "most-anything-cli.exe").set("InternalName", "most-anything-cli");
     if let Err(e) = res.compile() {
         if std::env::var_os("MOST_ANYTHING_REQUIRE_WINRES").is_some() {
             println!("cargo::error=embedding Windows resources failed: {e}");

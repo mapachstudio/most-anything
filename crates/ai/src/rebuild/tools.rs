@@ -271,7 +271,7 @@ fn rebuild_question_ask(ctx: &mut Ctx<'_>, params: Value) -> Result<ToolOutput, 
     let p: QuestionParams = parse_params(params)?;
     let engine = engine(ctx).ok_or_else(|| {
         ToolError::new(ErrorCode::FeatureMissing, "Questions about a build aren't available in this engine.")
-            .with_remediation("Use the app or `craft-anything-cli`.")
+            .with_remediation("Use the app or `most-anything-cli`.")
     })?;
     let ws = open(&p.project)?;
     let after = craft_anything_engine::feed::load(&ws).len();
@@ -298,7 +298,7 @@ fn rebuild_questions_list(_ctx: &mut Ctx<'_>, params: Value) -> Result<ToolOutpu
 fn rebuild_start(ctx: &mut Ctx<'_>, params: Value) -> Result<ToolOutput, ToolError> {
     let p: StartParams = parse_params(params)?;
     let engine = engine(ctx).ok_or_else(|| {
-        ToolError::new(ErrorCode::FeatureMissing, "Building isn't available in this engine.").with_remediation("Use the app or `craft-anything-cli rebuild`.")
+        ToolError::new(ErrorCode::FeatureMissing, "Building isn't available in this engine.").with_remediation("Use the app or `most-anything-cli rebuild`.")
     })?;
     let runs = runs(ctx);
     let settings: &Settings = &ctx.session.settings;

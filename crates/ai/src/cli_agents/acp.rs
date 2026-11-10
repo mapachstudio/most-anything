@@ -987,7 +987,7 @@ printf '{"jsonrpc":"2.0","id":%s,"result":{"stopReason":"end_turn"}}\n' "$prompt
 "#;
         std::fs::write(&program, script).unwrap();
         std::fs::set_permissions(&program, std::fs::Permissions::from_mode(0o755)).unwrap();
-        let mcp = McpCommand { command: "craft-anything-cli".into(), args: vec!["mcp".into()], notes: None };
+        let mcp = McpCommand { command: "most-anything-cli".into(), args: vec!["mcp".into()], notes: None };
         let mut c = AcpConversation::new("Scripted ACP", "gemini-cli", program.display().to_string(), vec![recovery.into()], dir.path().into(), mcp, None)
             .with_preamble("P:".into());
         let finish = |c: &mut AcpConversation| {

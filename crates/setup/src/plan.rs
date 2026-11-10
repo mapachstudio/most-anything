@@ -86,7 +86,7 @@ pub fn backup_path(p: &Path) -> PathBuf {
     skill::backup_path(p)
 }
 
-/// The default registration: this machine's `craft-anything-cli` plus `mcp`.
+/// The default registration: this machine's `most-anything-cli` plus `mcp`.
 pub fn default_command() -> Result<Vec<String>, ToolError> {
     let p = craft_anything_platform::self_cli_path().ok_or_else(|| {
         ToolError::new(ErrorCode::EngineMissing, "Couldn't find craft-anything-cli.")

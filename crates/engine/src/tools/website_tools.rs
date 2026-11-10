@@ -234,7 +234,7 @@ fn open_site(ctx: &mut Ctx<'_>, dl: &Deadline) -> Result<Arc<SiteBrowser>, ToolE
     live_site(ctx, dl).ok_or_else(|| {
         let fix = match ctx.caller {
             Caller::Cli => {
-                "Each CLI command starts its own browser and closes it when it ends, so a site opened by an earlier command isn't open here. Run web_site_open and the tools that use the page in one session: an MCP client (`craft-anything-cli mcp`), the app, or `craft-anything-cli rebuild`."
+                "Each CLI command starts its own browser and closes it when it ends, so a site opened by an earlier command isn't open here. Run web_site_open and the tools that use the page in one session: an MCP client (`most-anything-cli mcp`), the app, or `most-anything-cli rebuild`."
             }
             _ => "Open one first with web_site_open.",
         };
@@ -1378,7 +1378,7 @@ mod tests {
             assert!(!out.exists());
             err.remediation.unwrap_or_default()
         };
-        assert!(fix(crate::Caller::Cli).contains("Each CLI command starts its own browser") && fix(crate::Caller::Cli).contains("craft-anything-cli mcp"));
+        assert!(fix(crate::Caller::Cli).contains("Each CLI command starts its own browser") && fix(crate::Caller::Cli).contains("most-anything-cli mcp"));
         assert_eq!(fix(crate::Caller::Mcp), "Open one first with web_site_open.");
     }
 

@@ -43,7 +43,7 @@ impl Check {
 pub struct DoctorRequest {
     /// Only these clients (ids); empty = every detected client.
     pub clients: Vec<String>,
-    /// The CLI to check and self-test; defaults to this machine's `craft-anything-cli`.
+    /// The CLI to check and self-test; defaults to this machine's `most-anything-cli`.
     pub cli_path: Option<PathBuf>,
     /// Checks computed elsewhere (e.g. AI backend reachability from the CLI).
     pub extra: Vec<Check>,
@@ -72,13 +72,13 @@ pub fn doctor(host: &Host, req: &DoctorRequest) -> DoctorReport {
     // The CLI binary.
     let cli = req.cli_path.clone().or_else(craft_anything_platform::self_cli_path);
     match &cli {
-        Some(p) if p.is_file() => checks.push(Check::new("binary", CheckStatus::Ok, format!("craft-anything-cli is at {}", p.display()))),
+        Some(p) if p.is_file() => checks.push(Check::new("binary", CheckStatus::Ok, format!("most-anything-cli is at {}", p.display()))),
         Some(p) => checks.push(Check::new("binary", CheckStatus::Fail, format!("{} does not exist.", p.display())).fix("Reinstall Most Anything.")),
         None => checks.push(
-            Check::new("binary", CheckStatus::Fail, "craft-anything-cli was not found.").fix("Install Most Anything; the CLI ships next to the desktop app."),
+            Check::new("binary", CheckStatus::Fail, "most-anything-cli was not found.").fix("Install Most Anything; the CLI ships next to the desktop app."),
         ),
     }
-    let on_path = craft_anything_platform::which_all("craft-anything-cli");
+    let on_path = craft_anything_platform::which_all("most-anything-cli");
     if on_path.len() > 1 {
         let list: Vec<String> = on_path.iter().map(|p| p.display().to_string()).collect();
         checks.push(
@@ -101,7 +101,7 @@ pub fn doctor(host: &Host, req: &DoctorRequest) -> DoctorReport {
         if !skill_dirs.contains(&c.skills_dir) {
             skill_dirs.push(c.skills_dir.clone());
         }
-        let setup_cmd = format!("craft-anything-cli setup --client {}", c.id);
+        let setup_cmd = format!("most-anything-cli setup --client {}", c.id);
         let text = match std::fs::read_to_string(&c.config) {
             Ok(t) => t,
             Err(e) if e.kind() == std::io::ErrorKind::NotFound => {
@@ -150,8 +150,8 @@ pub fn doctor(host: &Host, req: &DoctorRequest) -> DoctorReport {
         let name = format!("skill:{}", d.display());
         checks.push(match skill::inspect(d) {
             SkillState::Current => Check::new(name, CheckStatus::Ok, "The Most Anything skill is installed and current."),
-            SkillState::Outdated => Check::new(name, CheckStatus::Warn, "The Most Anything skill is out of date.").fix("craft-anything-cli setup --yes"),
-            SkillState::Missing => Check::new(name, CheckStatus::Info, "The Most Anything skill isn't installed here.").fix("craft-anything-cli setup --yes"),
+            SkillState::Outdated => Check::new(name, CheckStatus::Warn, "The Most Anything skill is out of date.").fix("most-anything-cli setup --yes"),
+            SkillState::Missing => Check::new(name, CheckStatus::Info, "The Most Anything skill isn't installed here.").fix("most-anything-cli setup --yes"),
             SkillState::Foreign => Check::new(name, CheckStatus::Warn, "Another skill uses the craft-anything folder name."),
         });
     }
@@ -242,7 +242,7 @@ pub fn mcp_self_test(program: &str, args: &[String], timeout: Duration) -> Check
         .stdin_bytes(input.into_bytes())
         .timeout(timeout)
         .stdout_cap(32 * 1024 * 1024)
-        .label("craft-anything-cli mcp")
+        .label("most-anything-cli mcp")
         .run()
     {
         Ok(o) => o,

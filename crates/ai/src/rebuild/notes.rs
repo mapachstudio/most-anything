@@ -1,7 +1,7 @@
 //! Notes the person adds while the builder works, handed over at the builder's next step instead
 //! of after its whole turn. The run writes each one to `inbox/notes/<id>.json`; a coding agent
 //! that runs a command after every tool call (Claude Code's PostToolUse hook, running
-//! `craft-anything-cli builder-notes <dir>`) claims what's there by renaming it to
+//! `most-anything-cli builder-notes <dir>`) claims what's there by renaming it to
 //! `<id>.read.json` and gives the text to the model; the run sees the rename and shows the note as
 //! read. The rename is the one moment a note changes hands, so "take back" works until then.
 //! Notes nobody claimed still go in after the turn, as before.

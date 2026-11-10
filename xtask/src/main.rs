@@ -172,8 +172,8 @@ const APP_LAYER: u8 = 7;
 /// Apps that are user interfaces of their own. The browser viewer can't build on the UI crate
 /// (it pulls in native-only crates), so it draws with egui directly and may use only the
 /// wasm-safe crates.
-const UI_APPS: &[&str] = &["craft-anything", "craft-anything-web"];
-const WASM_APPS: &[&str] = &["craft-anything-web"];
+const UI_APPS: &[&str] = &["craft-anything", "most-anything-web"];
+const WASM_APPS: &[&str] = &["most-anything-web"];
 
 fn layers(root: &Path) -> bool {
     let layer: BTreeMap<&str, u8> = LAYERS.iter().copied().collect();

@@ -150,7 +150,7 @@ fn web_scripts_save(ctx: &mut Ctx<'_>, params: Value) -> Result<ToolOutput, Tool
             Err(r) => skipped.push(json!({"url": s.url, "reason": r})),
         }
     }
-    let manifest = json!({"format": "craft-anything-web-script-export", "version": 1, "source": source_name, "scripts": written, "skipped": skipped});
+    let manifest = json!({"format": "most-anything-web-script-export", "version": 1, "source": source_name, "scripts": written, "skipped": skipped});
     let manifest_bytes = serde_json::to_vec_pretty(&manifest).map_err(|e| ToolError::internal(e.to_string()))?;
     write_new_file(&out, &["manifest.json".to_string()], &manifest_bytes).map_err(|e| ToolError::new(ErrorCode::FileError, e))?;
     let files_dir = out.join("files");

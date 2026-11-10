@@ -32,7 +32,7 @@ pub fn start() {
                 options,
                 Box::new(|cc| {
                     if let Some(rs) = &cc.wgpu_render_state {
-                        log::info!("craft-anything-web: wgpu backend {:?}", rs.adapter.get_info().backend);
+                        log::info!("most-anything-web: wgpu backend {:?}", rs.adapter.get_info().backend);
                     }
                     Viewer::setup(&cc.egui_ctx);
                     let inbox = Inbox::default();

@@ -317,7 +317,7 @@ pub fn ai(cli: &Cli, c: &AiCommand, f: Format) -> u8 {
         },
         AiCommand::Effort { name, level: None } => {
             let Some(b) = hub.backends().into_iter().find(|b| b.name == *name) else {
-                return fail(&ToolError::invalid(format!("No AI backend named {name:?}")).with_remediation("See `craft-anything-cli ai list`."), f);
+                return fail(&ToolError::invalid(format!("No AI backend named {name:?}")).with_remediation("See `most-anything-cli ai list`."), f);
             };
             let options = hub.options();
             match craft_anything_ai::effort_in_use(&b, options.get(name)) {
@@ -396,14 +396,14 @@ pub fn doctor_checks() -> Vec<craft_anything_setup::Check> {
     let hub = AiHub::new(engine);
     let results = hub.check_reachability();
     if results.is_empty() {
-        return vec![Check::new("ai", CheckStatus::Info, "No AI backend is set up (optional).").fix("Run `craft-anything-cli ai detect`, then `ai add`.")];
+        return vec![Check::new("ai", CheckStatus::Info, "No AI backend is set up (optional).").fix("Run `most-anything-cli ai detect`, then `ai add`.")];
     }
     results
         .into_iter()
         .map(|(name, r)| match r {
             Ok(ms) => Check::new(format!("ai:{name}"), CheckStatus::Ok, format!("{name} answered in {ms} ms.")),
             Err(why) => Check::new(format!("ai:{name}"), CheckStatus::Warn, format!("{name} isn't reachable: {why}"))
-                .fix(format!("Run `craft-anything-cli ai test {name}` for details.")),
+                .fix(format!("Run `most-anything-cli ai test {name}` for details.")),
         })
         .collect()
 }

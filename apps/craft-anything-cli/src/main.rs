@@ -1,5 +1,5 @@
 // Modificado por Grupo MOST para Most Anything. Obra original: Craft Anything del equipo ArtCraft (https://github.com/storytold/craft-anything), Apache-2.0.
-//! `craft-anything-cli`: every tool as a subcommand, the MCP server, setup, doctor and headless chat.
+//! `most-anything-cli`: every tool as a subcommand, the MCP server, setup, doctor and headless chat.
 //!
 //! Exit codes: 0 success, 1 the operation failed (a structured error is printed), 2 usage error,
 //! 130 interrupted.
@@ -25,8 +25,8 @@ use std::sync::atomic::{AtomicBool, Ordering};
 pub static INTERRUPTED: AtomicBool = AtomicBool::new(false);
 
 #[derive(Debug, Parser)]
-#[command(name = "craft-anything-cli", version, about = "Most Anything on the command line: every tool, the MCP server, setup and doctor.")]
-#[command(after_help = "Every tool is also a subcommand: `craft-anything-cli commands` lists them, `craft-anything-cli <tool> --help` shows its options.\n\
+#[command(name = "most-anything-cli", version, about = "Most Anything on the command line: every tool, the MCP server, setup and doctor.")]
+#[command(after_help = "Every tool is also a subcommand: `most-anything-cli commands` lists them, `most-anything-cli <tool> --help` shows its options.\n\
 When a tool has its own --format option (core-target-open, ...), --format after the tool name goes to the tool; pick the output with --output-format (or --format before the tool name). `report` has no format option of its own: use `report --html` for HTML.")]
 pub struct Cli {
     /// Output format. `--output-format` always means this, even after a tool that has its own `--format`.
@@ -106,7 +106,7 @@ pub enum Command {
     /// added while it works (printed as the hook's JSON; nothing when none wait).
     #[command(hide = true)]
     BuilderNotes { dir: PathBuf },
-    /// Run a tool by name: `craft-anything-cli <tool> [path] [--key value] [--json '{..}' | @file.json | -]`.
+    /// Run a tool by name: `most-anything-cli <tool> [path] [--key value] [--json '{..}' | @file.json | -]`.
     #[command(external_subcommand)]
     Tool(Vec<String>),
 }
@@ -493,7 +493,7 @@ fn tool(cli: &Cli, args: &[String], f: Format) -> u8 {
         Err(e) => return fail(&e, f),
     };
     let Some(spec) = engine.registry().get(name).copied() else {
-        return usage(&format!("unknown command {name:?}. Run `craft-anything-cli commands` to list tools, or --help for built-in commands."));
+        return usage(&format!("unknown command {name:?}. Run `most-anything-cli commands` to list tools, or --help for built-in commands."));
     };
     let schema = engine.registry().input_schema(&spec);
     let tool_has_project = schema.pointer("/properties/project").is_some();

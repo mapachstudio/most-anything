@@ -111,13 +111,13 @@ pub struct McpCommand {
 }
 
 impl McpCommand {
-    /// Our installed CLI (`craft-anything-cli mcp [--project <dir>] [--inbox <dir>]`). Remote runs
+    /// Our installed CLI (`most-anything-cli mcp [--project <dir>] [--inbox <dir>]`). Remote runs
     /// use the name on the remote PATH and have no local project or inbox.
     pub fn local_or_remote(remote: bool, project: Option<PathBuf>, inbox: Option<PathBuf>) -> McpCommand {
         let command = if remote {
-            "craft-anything-cli".to_string()
+            "most-anything-cli".to_string()
         } else {
-            craft_anything_platform::self_cli_path().map(|p| p.display().to_string()).unwrap_or_else(|| "craft-anything-cli".to_string())
+            craft_anything_platform::self_cli_path().map(|p| p.display().to_string()).unwrap_or_else(|| "most-anything-cli".to_string())
         };
         let mut args = vec!["mcp".to_string()];
         if let Some(p) = project.filter(|_| !remote) {
@@ -133,7 +133,7 @@ impl McpCommand {
     }
 }
 
-/// Whether the `craft-anything-cli` a builder's tool server runs from (None: there isn't one) can
+/// Whether the `most-anything-cli` a builder's tool server runs from (None: there isn't one) can
 /// start. Without it Claude Code stops at its first approval with a stack trace (#91). A check
 /// that ran out of time says nothing about the program, so the build goes ahead. Stopping the
 /// build ends the check, as `ErrorCode::Cancelled`.
@@ -2179,11 +2179,11 @@ echo '{"type":"turn.completed","usage":{"input_tokens":1,"output_tokens":1}}'
     fn a_missing_or_broken_helper_is_said_plainly() {
         let stop = CancelToken::default();
         let none = cli_can_start(None, &stop).unwrap_err();
-        assert!(none.message.contains("craft-anything-cli") && none.message.contains("missing"), "{none:?}");
+        assert!(none.message.contains("most-anything-cli") && none.message.contains("missing"), "{none:?}");
         assert!(none.remediation.as_deref().is_some_and(|r| r.contains("Install the latest")), "{none:?}");
 
         let dir = tempfile::tempdir().unwrap();
-        let gone = cli_can_start(Some(&dir.path().join("craft-anything-cli")), &stop).unwrap_err();
+        let gone = cli_can_start(Some(&dir.path().join("most-anything-cli")), &stop).unwrap_err();
         assert!(gone.message.contains("wouldn't start"), "{gone:?}");
         assert!(gone.remediation.is_some());
     }

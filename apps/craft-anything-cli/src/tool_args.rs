@@ -1,4 +1,4 @@
-//! Turn `craft-anything-cli <tool> [path] [--json '{..}' | @file.json] [--key value…]` into tool params,
+//! Turn `most-anything-cli <tool> [path] [--json '{..}' | @file.json] [--key value…]` into tool params,
 //! using the tool's JSON schema to type each flag.
 
 use craft_anything_engine::{Requires, ToolSpec};
