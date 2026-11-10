@@ -24,5 +24,5 @@ fn main() {
 
 #[cfg(not(target_arch = "wasm32"))]
 fn main() {
-    eprintln!("craft-anything-web only runs in the browser: build it with `trunk build --release` in apps/craft-anything-web");
+    eprintln!("most-anything-web only runs in the browser: build it with `trunk build --release` in apps/craft-anything-web");
 }

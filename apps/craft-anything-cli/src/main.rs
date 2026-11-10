@@ -251,7 +251,7 @@ fn run(cli: Cli) -> u8 {
             let engine = match make_engine(cli.project.as_deref(), cli.deep_for_run()) {
                 Ok(e) => e,
                 Err(e) => {
-                    eprintln!("craft-anything mcp: {}", e.message);
+                    eprintln!("most-anything mcp: {}", e.message);
                     return 1;
                 }
             };
@@ -271,7 +271,7 @@ fn run(cli: Cli) -> u8 {
                 .map_err(|error| ToolError::invalid(format!("Invalid shared target: {error}")))
                 .and_then(|targets| engine.session().restore_targets(&targets));
             if let Err(error) = restored {
-                eprintln!("craft-anything mcp: {}", error.message);
+                eprintln!("most-anything mcp: {}", error.message);
                 return 1;
             }
             opts.all_tools |= *all_tools;
@@ -279,7 +279,7 @@ fn run(cli: Cli) -> u8 {
             match craft_anything_mcp::serve_stdio(engine, opts) {
                 Ok(()) => 0,
                 Err(e) => {
-                    eprintln!("craft-anything mcp: {e}");
+                    eprintln!("most-anything mcp: {e}");
                     1
                 }
             }
